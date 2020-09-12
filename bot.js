@@ -11,7 +11,14 @@ squid.name = "squid";
 squid.commands = new Discord.Collection();
 squid.message_triggers = new Discord.Collection();
 
-require(`./utils/command_handler.js`)(squid);
+const commands = fs.readdirSync(`./commands/`).filter(f => f.endsWith(`.js`));
+
+for (let file of commands) {
+    let command = require(`./commands/${file}`);
+
+    if (command.enabled)
+        squid.commands.set(command.name, command);
+}
 
 squid.on(`ready`, () => {
     squid.user.setActivity(`Mante`, { type: `LISTENING` });
@@ -26,15 +33,12 @@ squid.on(`ready`, () => {
 });
 
 squid.on(`message`, message => {
-    let message_events = fs.readdirSync(`./utils/message_events/`).filter(f => f.endsWith(`.js`));
-
-    for (let file of message_events) {
-        let script = require(`./utils/message_events/${file}`);
-        script.run(message, squid);
-    }
+    require(`./utils/message_trigger.js`).run(message, squid);
 
     if (message.author.bot || !message.guild || !(message.content.startsWith(squid.prefix) || message.content.startsWith(`s!`)))
         return;
+
+    require(`./utils/leveling.js`).run(message, squid);
 
     let args = message.content.slice(squid.prefix.length).trim().split(/ +/g);
     let message_command = args.shift().toLowerCase();

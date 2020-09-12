@@ -11,7 +11,7 @@ module.exports = {
     name: "datapack",
     enabled: true,
     permission_level: 0,
-    beta: true,
+    beta: false,
     description: "Generates a Minecraft Datapack based on command's arguments",
     usage: "<type> [config]",
     run: async (client, message, args) => {
