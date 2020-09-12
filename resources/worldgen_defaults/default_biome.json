@@ -1,0 +1,44 @@
+{
+    "starts": [],
+    "spawners": {},
+    "spawn_costs": {},
+    "surface_builder": {
+        "config": {
+            "top_material": {
+                "Name": "minecraft:diamond_block"
+            },
+            "under_material": {
+                "Name": "minecraft:stone"
+            },
+            "underwater_material": {
+                "Name": "minecraft:gravel"
+            }
+        },
+        "type": "minecraft:badlands"
+    },
+    "carvers": {},
+    "features": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+    ],
+    "scale": 0.0,
+    "temperature": 0.0,
+    "downfall": 0.0,
+    "effects": {
+        "fog_color": 0,
+        "water_color": 0,
+        "water_fog_color": 0,
+        "sky_color": 0
+    },
+    "precipitation": "none",
+    "category": "none",
+    "depth": 0.0
+}

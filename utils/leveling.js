@@ -1,0 +1,97 @@
+const
+    database = require(`../firebase_connection`),
+    utils = require(`../util_functions`),
+    { randomInt } = require(`mathjs`);
+
+module.exports = {
+    run: async (message, client) => {
+        if (!message.guild || message.author.bot)
+            return;
+
+        const guild_config = (await database.get_guild_config_value(message.guild.id, `settings`)).val();
+
+        if (!guild_config) {
+            database.create_guild(message.guild.id);
+            return;
+        }
+
+        if (!guild_config.xp_enabled)
+            return;
+
+        const user_data = (await database.get_user_data(message.guild.id, message.author.id)).val();
+
+        if (!user_data) {
+            database.create_squid_user(message.guild.id, message.author.id);
+            database.increment_stats_length(message.guild.id);
+            return;
+        }
+
+        const now = Date.now();
+        const last_date = user_data.last_xp_message_timestamp;
+
+        if (now - last_date < guild_config.xp_cooldown)
+            return;
+
+        database.set_user_value(message.guild.id, message.author.id, `last_xp_message_timestamp`, now);
+
+        var old_level = user_data.level;
+
+        var xp = user_data.xp;
+        xp += randomInt(guild_config.xp_min, guild_config.xp_max);
+        if (guild_config.old_leveling == true)
+            xp -= Math.max(0, Math.floor(180 * (old_level / 8) / ((old_level / 8) * (old_level / 8) + 120)) - 1);
+
+        var new_level = 0;
+        var level_xp = 100;
+        while (xp >= level_xp) {
+            new_level++;
+            if (guild_config.old_leveling == true)
+                level_xp += new_level * new_level + 50 * new_level + 100;
+            else
+                level_xp += Math.floor(new_level * (new_level * new_level + 10 * new_level + 268.247) / 29.38) + 91;
+        }
+
+        database.set_squid_rank(message.guild.id, message.author.id, xp, new_level);
+
+        if (new_level <= old_level)
+            return;
+
+        const levelup_message_adjectives = (await database.get_guild_config_value(message.guild.id, `levelup_message_adjectives`)).val();
+        const levelup_emoji = (await database.get_guild_config_value(message.guild.id, `levelup_emoji`)).val();
+        const level_roles = (await database.get_guild_config_value(message.guild.id, `level_roles`)).val();
+
+        const levelup_adjective = utils.random_string_array(levelup_message_adjectives);
+
+        message.channel.send(`The ${levelup_adjective} **${message.author.username}** has just leveled up to level **${new_level}**! ${levelup_emoji}`);
+
+        if (!level_roles)
+            return;
+
+        if (!level_roles[`level_${new_level}`])
+            return;
+
+        const new_level_role_id = level_roles[`level_${new_level}`].role_id;
+
+        if (!new_level_role_id)
+            return;
+
+        if (!message.guild.roles.cache.find(r => r.id == new_level_role_id))
+            return;
+
+        for (var i = 0; i < new_level; i++) {
+            if (!level_roles[`level_${i}`])
+                continue;
+
+            if (utils.has_role_id(message.guild, message.member, level_roles[`level_${i}`].role_id))
+                message.member.roles.remove(utils.find_role_id(message.guild, level_roles[`level_${i}`].role_id));
+        }
+
+        const new_level_role = message.guild.roles.cache.find(r => r.id == new_level_role_id);
+        message.member.roles.add(new_level_role);
+
+        const new_role_emoji = guild_config.new_role_emoji;
+
+        if (guild_config.new_role_message_enabled)
+            message.channel.send(`**${message.author.username}** has recieved a new rank: **${new_level_role.name}**! ${new_role_emoji}`);
+    }
+}
