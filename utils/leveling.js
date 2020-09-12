@@ -1,6 +1,6 @@
 const
-    database = require(`../firebase_connection`),
-    utils = require(`../util_functions`),
+    database = require(`./firebase_connection`),
+    utils = require(`./util_functions`),
     { randomInt } = require(`mathjs`);
 
 module.exports = {
