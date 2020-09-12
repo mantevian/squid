@@ -1,6 +1,6 @@
 const
-    database = require(`../firebase_connection.js`),
-    utils = require(`../util_functions.js`);
+    database = require(`./firebase_connection.js`),
+    utils = require(`./util_functions.js`);
 
 module.exports = {
     run: async function run(message, client) {

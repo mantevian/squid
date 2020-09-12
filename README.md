@@ -1,6 +1,6 @@
 # Squid
 Initially made for my friends' private server, but I'm slowly making it more public. It's a small general purpose bot with a very few unique features.
-Prefix: `s/`, but `s!` is allowed since apparently s/ can be used to edit a previous message's content.
+Prefix: `s/`, but `s!` is allowed since apparently `s/` can be used to edit a previous message's content.
 
 ## General
 ### Permission Levels
@@ -22,10 +22,6 @@ For example, we have a trigger called `ping_pong` that is supposed to reply "Pon
 The action order system allows things such as making a role mentionable, sending a message mentioning it and then setting it unmentionable.
 
 ## Commands
-> birthday_table
-* Permission Level: 0
-* Private command, can only be enabled for a server by Bot Owner.
-
 > config
 * Permission Level: 3
 * Used to set the bot's configuration for a specific server.
@@ -42,7 +38,7 @@ The action order system allows things such as making a role mentionable, sending
 * Generates Minecraft datapacks.
 * Usage: `datapack <args*>`
 * Examples:
-  * `datapack type=infinite_dimensions dim_count=10 biome_count=10`.
+  * `datapack type=random_dimensions dim_count=10 biome_count=10`.
   
 > eval
 * Permission Level: 4
@@ -57,7 +53,7 @@ The action order system allows things such as making a role mentionable, sending
 * Permission Level: 0
 * Shows server's XP leaderboard.
 * Usage: `leaderboard <page>`
-* Example: `leaderboard 5`
+* Example: `leaderboard 3`
 
 > level_roles
 * Permission Level: 3
@@ -76,16 +72,6 @@ The action order system allows things such as making a role mentionable, sending
 * Checks someone's XP rank.
 * Usage: `rank [user ID]`
 * Example: `rank 240841342723424256`
-
-> set_birthday
-* Permission Level: 3
-* Private command. Sets or removes a server member's birthday in the database.
-* Usage:
-  * `set_birthday <user name> <month> <date>`
-  * `set_birthday <user name> remove`
-* Examples:
-  * `set_birthday 240841342723424256 7 18`
-  * `set_birthday 240841342723424256 remove`
   
 > set_rank
 * Permission Level: 3
@@ -97,7 +83,7 @@ The action order system allows things such as making a role mentionable, sending
 * Permission Level: 3
 * Configures server's message triggers.
 * Usage:
-  * `trigger create <trigger name> <text channel ID>` - adds a trigger to the server. By default only works in the specific channel entered in the command,
+  * `trigger create <trigger name> <text channel ID>` - adds a trigger to the server. By default only works in the specific channel entered in the command (use `-1` as text channel ID to enable it in all channels),
   * `trigger remove <trigger name>` - removes a trigger from the server,
   * `trigger add_requirement <trigger name> <order> <args*>` - adds a requirement for this trigger,
   * `trigger add_action <trigger name> <order> <args*>` - adds an action for this trigger.
@@ -115,6 +101,13 @@ The action order system allows things such as making a role mentionable, sending
   * `vc play <YouTube link> <voice channel name>` - plays a YouTube audio in a voice channel.
   
 ## Reference
+### Datapacks
+> random_dimensions
+* Generates a datapack consisting of multiple dimensions, each consisting of multiple unique biomes.
+* Arguments:
+  * `dim_count` - how many dimensions to generate,
+  * `biome_count` - how many biomes to generate in each dimension.
+
 ### Message trigger requirements
 > author_has_role
 * Passes if whoever sent a message has a specific role.
@@ -200,6 +193,3 @@ The action order system allows things such as making a role mentionable, sending
 
 > unpin_message
 * Unpins this message.
-
-# Collar Bot
-Made exclusively for a Geometry Dash server called "Collar", provides the point system. Documentation is work in progress.
