@@ -1,10 +1,10 @@
 {
-  "name": "discord_bots",
-  "version": "1.0.0",
+  "name": "squid",
+  "version": "0.1.0",
   "engines": {
     "node": "12.16.x"
   },
-  "description": "Mante's Discord Bots - Squid and Collar Bot",
+  "description": "Mante's Discord Bot - Squid",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

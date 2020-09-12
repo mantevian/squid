@@ -1,10 +1,9 @@
 const
-    database = require(`../../utils/firebase_connection.js`),
+    database = require(`../utils/firebase_connection.js`),
     { createCanvas, loadImage, registerFont } = require('canvas'),
     fs = require('fs'),
     request = require('request'),
-    config = require(`../../config.js`),
-    { lerp } = require(`../../utils/util_functions`);
+    { lerp } = require(`../utils/util_functions`);
 
 module.exports = {
     name: "rank",

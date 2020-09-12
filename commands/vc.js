@@ -1,4 +1,5 @@
-const ytdl = require('ytdl-core-discord');
+const
+    ytdl = require('ytdl-core-discord');
 
 module.exports = {
     name: "vc",

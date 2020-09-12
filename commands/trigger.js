@@ -1,6 +1,6 @@
 const
-    database = require(`../../utils/firebase_connection.js`),
-    utils = require(`../../utils/util_functions.js`);
+    database = require(`../utils/firebase_connection.js`),
+    utils = require(`../utils/util_functions.js`);
 
 module.exports = {
     name: "trigger",
@@ -24,7 +24,7 @@ module.exports = {
                             channel_id: args[2],
                         });
                         message.reply(`Successfully saved a new message trigger: \`${args[1]}\` in <#${args[2]}>!`);
-                        require(`../../utils/squid_save_triggers.js`)(client);
+                        require(`../utils/squid_save_triggers.js`)(client);
                     }
                 });
                 break;
@@ -36,7 +36,7 @@ module.exports = {
                     else {
                         database.db.ref(`guild_config/${message.guild.id}/message_triggers/${args[1]}`).set(null);
                         message.reply(`Successfully removed the message trigger \`${args[1]}\`.`);
-                        require(`../../utils/squid_save_triggers.js`)(client);
+                        require(`../utils/squid_save_triggers.js`)(client);
                     }
                 });
 
@@ -48,7 +48,7 @@ module.exports = {
                         var config = utils.args_parse(message.content);
                         database.db.ref(`guild_config/${message.guild.id}/message_triggers/${args[1]}/requirements/${args[2]}`).set(config);
                         message.reply(`Successfully saved a new message trigger requirement \`[${args[2]}] ${config.requirement}\` for \`${args[1]}\`!`);
-                        require(`../../utils/squid_save_triggers.js`)(client);
+                        require(`../utils/squid_save_triggers.js`)(client);
                     }
                 });
                 break;
@@ -61,7 +61,7 @@ module.exports = {
                         var config = utils.args_parse(message.content);
                         database.db.ref(`guild_config/${message.guild.id}/message_triggers/${args[1]}/actions/${args[2]}`).set(config);
                         message.reply(`Successfully saved a new message trigger action \`[${args[2]}] ${config.action}\` for \`${args[1]}\`!`);
-                        require(`../../utils/squid_save_triggers.js`)(client);
+                        require(`../utils/squid_save_triggers.js`)(client);
                     }
                 });
                 break;

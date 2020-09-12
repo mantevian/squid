@@ -1,6 +1,6 @@
 const
     { MessageEmbed } = require(`discord.js`),
-    config = require(`../../config.js`);
+    config = require(`../config.js`);
 
 module.exports = {
     name: "help",

@@ -1,5 +1,5 @@
 const
-    database = require(`../../utils/firebase_connection.js`),
+    database = require(`../utils/firebase_connection.js`),
     { createCanvas, loadImage, registerFont } = require(`canvas`),
     fs = require(`fs`)
 

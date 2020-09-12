@@ -1,7 +1,7 @@
 const
-    database = require(`../../utils/firebase_connection.js`),
+    database = require(`../utils/firebase_connection.js`),
     { MessageEmbed } = require(`discord.js`),
-    utils = require(`../../utils/util_functions.js`);
+    utils = require(`../utils/util_functions.js`);
 
 module.exports = {
     name: "config",

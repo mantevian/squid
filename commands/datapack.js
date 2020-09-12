@@ -1,7 +1,7 @@
 const
     fs = require(`fs`),
-    { RNG } = require(`../../utils/random.js`),
-    utils = require(`../../utils/util_functions.js`),
+    { RNG } = require(`../utils/random.js`),
+    utils = require(`../utils/util_functions.js`),
     { promisify } = require(`util`),
     JSZip = require(`jszip`),
     zip = new JSZip(),
