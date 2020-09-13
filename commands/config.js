@@ -38,17 +38,12 @@ module.exports = {
 
             case `set`:
                 var config = Object.entries(utils.args_parse(message.content));
-                config.forEach(c => {
-                    if (c[1] == "true")
-                        c[1] = true;
-                    if (c[1] == "false")
-                        c[1] = false;
-                    if (parseInt(c[1]) != NaN)
-                        c[1] = parseInt(c[1]);
-                        
+                config.forEach(c => {                        
                     database.set_guild_config_value(message.guild.id, c[0], c[1]);
                     message.reply(`Successfully changed the server's configuration!`);
                 });
+            default:
+                message.reply(`Command usage: \`view <item> OR set <item1=value1> [item2=value2] ...\``);
         }
     }
 }

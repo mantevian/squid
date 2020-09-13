@@ -13,7 +13,7 @@ Each command has a permission level assigned to it, restricting its usage from m
 
 ### Command argument syntax
 Some commands use straight default syntax where all arguments go in a specific order: `s/command <arg1> <arg2> ...`, these arguments are listed in `<>` if they are necessary and `[]` if optional.
-Arguments are listed as `<args*>` if they use a different syntax `item=value`. This is used for complex commands and a list of possible items is always provided in the documentation.
+Arguments are listed as `<args*>` if they use a different syntax: `item=value` for numbers or single word strings, or `item="Hello World"` for multiple word strings. This is used for complex commands and a list of possible items is always provided in the documentation.
 
 ### Message triggers
 The message trigger system allows making complex custom commands and actions for the bot. Server owners can create message triggers for their servers. A trigger activates whenever a message is sent and if a message passes its requirements, its actions are performed in a specific configurable order. A list of all possible values for this are listed below under **Reference**.
@@ -145,7 +145,7 @@ The action order system allows things such as making a role mentionable, sending
 > message_content
 * Checks for text of the message.
 * Arguments:
-  * `text` - the needed text. **NOTE: currently does not support spaces**,
+  * `text` - the needed text.,
   * `message_content_includes` - if true, the whole message doesn't need to match `text` but just include it,
   * `case_sensitive` - if true, the message has to exactly match `text` in terms of letter case.
   
@@ -174,7 +174,7 @@ The action order system allows things such as making a role mentionable, sending
 * Sends a message.
 * Arguments:
   * `channel_id` - a text channel to send the message to. `-1` for the same channel as this message's,
-  * `text` - the text to send. **NOTE: currently does not support spaces**.
+  * `text` - the text to send..
   
 > set_role_mentionable
 * Sets a role's mentionable setting.

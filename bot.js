@@ -52,28 +52,25 @@ squid.on(`message`, message => {
         database.get_guild_config_value(message.guild.id, `settings/use_beta_features`).then(snapshot => {
             if (!snapshot.val())
                 return;
-            var data = snapshot.val();
-            if (!data) {
-                if (command.beta == true) {
-                    message.reply(`This command is a beta feature which means it's under development. If you want to use beta features in this server, run \`s!config set use_beta_features=true\`, however keep in mind that these commands are not guaranteed to work properly and can cause bugs/crashes.`)
-                    return;
-                }
+            var enable_beta = snapshot.val();
+            if (enable_beta === false && command.beta === true) {
+                message.reply(`This command is a beta feature which means it's under development. If you want to use beta features in this server, run \`s!config set use_beta_features=true\`, however keep in mind that these commands are not guaranteed to work properly and can cause bugs/crashes.`);
+                return;
             }
-            switch (command.permission_level) {
-                case 0: command.run(squid, message, args);
-                    break;
-                case 1: if (message.member.hasPermission("MANAGE_MESSAGES") || message.author.id == config.bot_owner_id) command.run(squid, message, args);
-                else message.reply("You don't have the permission to run this command!");
-                    break;
-                case 2: if (message.member.hasPermission("MANAGE_GUILD") || message.author.id == config.bot_owner_id) command.run(squid, message, args);
-                else message.reply("You don't have the permission to run this command!");
-                    break;
-                case 3: if (message.member == message.guild.owner || message.author.id == config.bot_owner_id) command.run(squid, message, args);
-                else message.reply("You don't have the permission to run this command!");
-                    break;
-                case 4: if (message.author.id == config.bot_owner_id) command.run(squid, message, args);
-                else message.reply("You don't have the permission to run this command!");
-            }
+            var users_perm_level = 0;
+            if (message.member.hasPermission("MANAGE_MESSAGES"))
+                users_perm_level = 1;
+            if (message.member.hasPermission("MANAGE_GUILD"))
+                users_perm_level = 2;
+            if (message.member == message.guild.owner)
+                users_perm_level = 3;
+            if (message.author.id == config.bot_owner_id)
+                users_perm_level = 4;
+
+            if (command.permission_level <= users_perm_level)
+                command.run(squid, message, args);
+            else
+                message.reply("You don't have the permission to run this command!");
         });
     }
 });

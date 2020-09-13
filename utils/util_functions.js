@@ -1,26 +1,63 @@
 module.exports.args_parse = function args_parse(text) {
-    var args = { };
+    var args = {};
     const split_text = text.split(/[ ]+/);
     const args_count = split_text.length;
-
+    var reading_string = false;
+    var current_field = "";
     for (var i = 0; i < args_count; i++) {
         let arg = split_text[i];
-        if (arg.includes(`=`)) {
-            let field = arg.split(`=`)[0];
-            let value = arg.split(`=`)[1];
-            if (parseInt(value, 10).toString() == value)
-                value = parseInt(value);
+        let field = arg.split(`=`)[0];
+        let value = arg.split(`=`)[1];
 
-            if (parseFloat(value).toString() == value)
-                value = parseFloat(value);
+        if (value == "true") {
+            args[field] = true;
+            continue;
+        }
 
-            if (value == "true")
-                value = true;
-            
-            if (value == "false")
-                value = false;
+        if (value == "false") {
+            args[field] = false;
+            continue;
+        }
 
-            args[field] = value;
+        if (parseInt(value, 10).toString() == value) {
+            args[field] = parseInt(value);
+            continue;
+        }
+
+        if (parseFloat(value).toString() == value) {
+            args[field] = parseFloat(value);
+            continue;
+        }
+
+        if (!reading_string) {
+            current_field = field;
+
+            if (arg.includes(`=`)) {
+                args[field] = value;
+
+                if (value.startsWith(`"`)) {
+                    args[current_field] = value.substring(1);
+                    reading_string = true;
+
+                    if (value.endsWith(`"`)) {
+                        args[current_field] = value.slice(1, -1);
+                        reading_string = false;
+                    }
+                }
+            }
+        }
+        else {
+            if (!args[current_field])
+                args[current_field] = "";
+
+            args[current_field] += " ";
+
+            if (arg.endsWith(`"`)) {
+                reading_string = false;
+                args[current_field] += arg.slice(0, -1);
+            }
+            else
+                args[current_field] += arg;
         }
     }
 
