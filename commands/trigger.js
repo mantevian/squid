@@ -24,7 +24,7 @@ module.exports = {
                             channel_id: args[2],
                         });
                         message.reply(`Successfully saved a new message trigger: \`${args[1]}\` in <#${args[2]}>!`);
-                        require(`../utils/squid_save_triggers.js`)(client);
+                        require(`../utils/save_triggers.js`)(client);
                     }
                 });
                 break;

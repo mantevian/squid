@@ -23,13 +23,7 @@ for (let file of commands) {
 squid.on(`ready`, () => {
     squid.user.setActivity(`Mante`, { type: `LISTENING` });
     console.log(`squiddley`);
-
-    squid.guilds.cache.forEach(async (g) => {
-        var guild_triggers = (await database.get_guild_config_value(g.id, `message_triggers`)).val();
-        if (guild_triggers) {
-            squid.message_triggers.set(g.id, guild_triggers);
-        }
-    });
+    require(`./utils/save_triggers.js`)(squid);
 });
 
 squid.on(`message`, message => {
