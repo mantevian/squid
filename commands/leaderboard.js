@@ -146,7 +146,7 @@ module.exports = {
 
                     let glow = await loadImage(`./resources/leaderboard_glow.png`);
 
-                    ctx.globalAlpha = list[i].xp_ratio;
+                    ctx.globalAlpha = list[i].xp_ratio * 0.75;
                     ctx.shadowColor = `rgb(${list[i].color[0]},${list[i].color[1]},${Math.floor(Math.min(list[i].color[2] * 2, 255))})`;
                     ctx.drawImage(glow, 146, i * 67 + 107);
                     ctx.shadowColor = `#00000000`;
