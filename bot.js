@@ -28,11 +28,10 @@ squid.on(`ready`, () => {
 
 squid.on(`message`, message => {
     require(`./utils/message_trigger.js`).run(message, squid);
+    require(`./utils/leveling.js`).run(message, squid);
 
     if (message.author.bot || !message.guild || !(message.content.startsWith(squid.prefix) || message.content.startsWith(`s!`)))
         return;
-
-    require(`./utils/leveling.js`).run(message, squid);
 
     let args = message.content.slice(squid.prefix.length).trim().split(/ +/g);
     let message_command = args.shift().toLowerCase();
