@@ -126,6 +126,9 @@ module.exports = {
                     ctx.font = `33pt Neucha`;
                     ctx.fillStyle = `rgb(${Math.floor(Math.min(list[i].color[0] * 1.25, 255))},${Math.floor(Math.min(list[i].color[1] * 1.5, 255))},${Math.floor(Math.min(list[i].color[2] * 1.75, 255))})`;
                     let name = list[i].name;
+                    if (name.length > 16)
+                        name = name.slice(0, 15) + `...`;
+                        
                     let w = ctx.measureText(name).width;
 
                     ctx.textAlign = `start`;
