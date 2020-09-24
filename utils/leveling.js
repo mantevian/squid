@@ -38,8 +38,6 @@ module.exports = {
 
         var xp = user_data.xp;
         xp += randomInt(guild_config.xp_min, guild_config.xp_max);
-        if (guild_config.old_leveling == true)
-            xp -= Math.max(0, Math.floor(180 * (old_level / 8) / ((old_level / 8) * (old_level / 8) + 120)) - 1);
 
         var new_level = 0;
         var level_xp = 100;
