@@ -92,6 +92,7 @@ module.exports = {
                 list = list.reverse();
 
                 registerFont(`./resources/neucha.ttf`, { family: "Neucha" });
+                registerFont(`./resources/sans-serif.ttf`, { family: "Neucha" });
 
                 const canvas = createCanvas(800, 800);
                 var ctx = canvas.getContext(`2d`);
@@ -128,7 +129,7 @@ module.exports = {
                     let name = list[i].name;
                     if (name.length > 16)
                         name = name.slice(0, 15) + `...`;
-                        
+
                     let w = ctx.measureText(name).width;
 
                     ctx.textAlign = `start`;

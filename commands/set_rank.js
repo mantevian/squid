@@ -11,15 +11,18 @@ module.exports = {
         var id = args[0];
         var xp = parseInt(args[1]);
 
-        database.get_user_data(message.guild.id, id).then(function (snapshot) {
+        database.get_user_value(message.guild.id, id, `xp`).then(function (snapshot) {
             if (!snapshot)
                 message.reply(`Can't find that user.`);
             else {
-                database.set_squid_rank(message.guild.id, id, xp);
-                const name = message.guild.members.cache.find(m => m.id == id).user.username;
+                database.set_squid_xp(message.guild.id, id, xp);
+                let name = id;
+
+                if (message.guild.members.cache.find(m => m.id == id))
+                    name = message.guild.members.cache.find(m => m.id == id).user.username;
+                    
                 message.reply(`Changed **${name}**'s XP to **${xp}**!`);
             }
-        })
-        
+        });
     }
 }

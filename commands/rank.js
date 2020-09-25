@@ -17,16 +17,14 @@ module.exports = {
         var member = message.member;
         var user = message.author;
 
-        if (args[0] != undefined) {
-            if (args[0].length == 19) {
-                id = args[0];
-                member = message.guild.members.cache.find(m => m.id == id);
-                if (!member) {
-                    message.reply(`Can't find that user.`);
-                    return;
-                }
-                user = message.guild.members.cache.find(m => m.id == id).user;
+        if (args[0]) {
+            id = args[0];
+            member = message.guild.members.cache.find(m => m.id == id);
+            if (!member) {
+                message.reply(`Can't find that user.`);
+                return;
             }
+            user = message.guild.members.cache.find(m => m.id == id).user;
         }
 
         const r_download = function (uri, filename, callback) {

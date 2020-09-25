@@ -107,6 +107,10 @@ module.exports.set_collar_user_value = function set_collar_user_value(user_id, k
     this.set_user_value(config.collar_guild_id, user_id, key, value);
 }
 
+module.exports.set_squid_xp = function set_squid_rank(guild_id, user_id, xp) {
+    this.set_user_value(guild_id, user_id, `xp`, xp);
+}
+
 module.exports.set_squid_rank = function set_squid_rank(guild_id, user_id, xp, level) {
     this.set_user_value(guild_id, user_id, `xp`, xp);
     this.set_user_value(guild_id, user_id, `level`, level);
