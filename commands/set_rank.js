@@ -5,7 +5,8 @@ module.exports = {
     name: "set_rank",
     enabled: true,
     permission_level: 3,
-    description: "Change one's XP",
+    beta: false,
+    description: "Change a server member's XP",
     usage: "<user ID> <xp>",
     run: async (client, message, args) => {
         var id = args[0];

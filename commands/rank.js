@@ -9,6 +9,7 @@ module.exports = {
     name: "rank",
     enabled: true,
     permission_level: 0,
+    beta: false,
     description: "Displays your stats on a server such as XP and Level",
     args: 0,
     usage: "[user id]",

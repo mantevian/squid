@@ -6,6 +6,7 @@ module.exports = {
     name: "help",
     enabled: true,
     permission_level: 0,
+    beta: false,
     description: "Shows info about the bot",
     args: 0,
     usage: "[command]",

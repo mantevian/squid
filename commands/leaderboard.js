@@ -7,6 +7,7 @@ module.exports = {
     name: "leaderboard",
     enabled: true,
     permission_level: 0,
+    beta: false,
     description: "Shows server's leaderboard by XP",
     args: 1,
     usage: "[page]",
