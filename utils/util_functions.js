@@ -64,43 +64,19 @@ module.exports.args_parse = function args_parse(text) {
     return args;
 }
 
-module.exports.random_string = function random_string() {
-    return arguments[Math.floor(Math.random() * arguments.length)]
-}
-
-module.exports.random_string_array = function random_string_array(arr) {
+module.exports.random_choice = function random_choice(arr) {
     return arr[Math.floor(Math.random() * arr.length)]
 }
 
-module.exports.has_role = function has_role(m, r) {
-    if (m.roles.cache.find(ro => ro.name == r)) return true;
-    return false;
-}
-
-module.exports.has_role_id = function has_role_id(g, u, r) {
+module.exports.has_role = function has_role(g, u, r) {
     if (!u)
         return false;
     if (g.members.cache.find(m => m.id == u).roles.cache.find(ro => ro.id == r)) return true;
     return false;
 }
 
-module.exports.has_role_includes = function has_role_includes(m, r) {
-    if (m.roles.cache.find(ro => ro.name.toLowerCase().includes(r.toLowerCase()))) return true;
-    return false;
-}
-
 module.exports.find_role = function find_role(g, r) {
-    if (g.roles.cache.find(ro => ro.name == r)) return g.roles.cache.find(ro => ro.name == r);
-    return undefined;
-}
-
-module.exports.find_role_id = function find_role_id(g, r) {
     if (g.roles.cache.find(ro => ro.id == r)) return g.roles.cache.find(ro => ro.id == r);
-    return undefined;
-}
-
-module.exports.find_role_includes = function find_role_includes(g, r) {
-    if (g.roles.cache.find(ro => ro.name.toLowerCase().includes(r.toLowerCase()))) return g.roles.cache.find(ro => ro.name.toLowerCase().includes(r.toLowerCase()));
     return undefined;
 }
 
@@ -137,4 +113,20 @@ module.exports.rm_arr_by_val = function rm_arr_by_val(a, v) {
 
 module.exports.lerp = function lerp(start, end, t) {
     return start * (1 - t) + end * t;
+}
+
+module.exports.weighted_random_choice = function weighted_random_choice(arr) {
+    var entries = [];
+    var accumulated_weight = 0;
+
+    for (var i = 0; i < arr.length; i++) {
+        accumulated_weight += arr[i].weight;
+        entries.push({ item: arr[i].item, accumulated_weight: accumulated_weight });
+    }
+    
+    for (var i = 0; i < arr.length; i++) {
+        var r = Math.random() * accumulated_weight;
+        if (entries[i].accumulated_weight >= r)
+            return entries[i].item;
+    }
 }

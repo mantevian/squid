@@ -26,23 +26,7 @@ const database = firebase.database();
 module.exports.db = app.database();
 
 module.exports.create_guild = function create_guild(guild_id) {
-    database.ref(`guild_config/${guild_id}`).set({
-        level_roles: null,
-        levelup_message_adjectives: config.default_levelup_adjectives,
-        levelup_emoji: config.default_levelup_emoji,
-        levelup_message_enabled: true,
-        settings: {
-            xp_enabled: config.default_xp_enabled,
-            xp_cooldown: config.default_xp_cooldown,
-            xp_min: config.default_xp_min,
-            xp_max: config.default_xp_max,
-            new_role_message_enabled: true,
-            new_role_emoji: config.default_new_role_emoji,
-            use_beta_features: false,
-            hide_uncached_from_leaderboards: false,
-            old_leveling: false,
-        }
-    });
+    database.ref(`guild_config/${guild_id}`).set(config.default_guild_config);
 }
 
 module.exports.get_guild_config = function get_guild_config(guild_id) {

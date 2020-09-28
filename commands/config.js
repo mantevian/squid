@@ -20,7 +20,7 @@ module.exports = {
                             .setTitle(`${message.guild.name} configuration list`)
                         entries.forEach((e, i) => {
                             if (e[0] != `level_roles`)
-                                list += `**${e[0]}**: ${e[1].toString()}\n`;
+                                list += `**${e[0]}**: ${JSON.stringify(e[1])}\n`;
 
                             if (i == entries.length - 1) {
                                 embed.setDescription(list);
@@ -31,7 +31,7 @@ module.exports = {
                     }
                     else {
                         const item = args[1];
-                        message.channel.send(`**${item}**: ${snapshot.val()[item]}`);
+                        message.channel.send(`**${item}**: ${JSON.stringify(snapshot.val()[item])}`);
                     }
                 });
                 break;

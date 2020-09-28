@@ -33,11 +33,11 @@ module.exports = {
                         let r = requirements[i][1];
                         switch (r.requirement) {
                             case `author_has_role`:
-                                if (!utils.has_role_id(message.guild, message.author.id, r.role_id))
+                                if (!utils.has_role(message.guild, message.author.id, r.role_id))
                                     if (!r.inverted)
                                         requirements_met = false;
 
-                                if (utils.has_role_id(message.guild, message.author.id, r.role_id))
+                                if (utils.has_role(message.guild, message.author.id, r.role_id))
                                     if (r.inverted)
                                         requirements_met = false;
                                 break;
@@ -281,7 +281,7 @@ module.exports = {
 
                                 switch (a.forced_role) {
                                     case -1:
-                                        if (utils.has_role_id(message.guild, u_id, a.role_id))
+                                        if (utils.has_role(message.guild, u_id, a.role_id))
                                             utils.remove_role(message.guild, u_id, a.role_id);
                                         else
                                             utils.add_role(message.guild, u_id, a.role_id);

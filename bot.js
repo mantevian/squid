@@ -43,7 +43,7 @@ squid.on(`message`, message => {
     let command = squid.commands.get(message_command);
 
     if (command) {
-        database.get_guild_config_value(message.guild.id, `settings/use_beta_features`).then(snapshot => {
+        database.get_guild_config_value(message.guild.id, `use_beta_features`).then(snapshot => {
             if (!snapshot.val())
                 return;
             var enable_beta = snapshot.val();

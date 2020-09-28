@@ -8,14 +8,14 @@ module.exports = {
         if (!message.guild || message.author.bot)
             return;
 
-        const guild_config = (await database.get_guild_config_value(message.guild.id, `settings`)).val();
+        const guild_settings = (await database.get_guild_config_value(message.guild.id, `settings`)).val();
 
-        if (!guild_config) {
+        if (!guild_settings) {
             database.create_guild(message.guild.id);
             return;
         }
 
-        if (!guild_config.xp_enabled)
+        if (!guild_settings.xp_enabled)
             return;
 
         const user_data = (await database.get_user_data(message.guild.id, message.author.id)).val();
@@ -29,7 +29,7 @@ module.exports = {
         const now = Date.now();
         const last_date = user_data.last_xp_message_timestamp;
 
-        if (now - last_date < guild_config.xp_cooldown)
+        if (now - last_date < guild_settings.xp_cooldown)
             return;
 
         database.set_user_value(message.guild.id, message.author.id, `last_xp_message_timestamp`, now);
@@ -37,13 +37,13 @@ module.exports = {
         var old_level = user_data.level;
 
         var xp = user_data.xp;
-        xp += randomInt(guild_config.xp_min, guild_config.xp_max);
+        xp += randomInt(guild_settings.xp_min, guild_settings.xp_max);
 
         var new_level = 0;
         var level_xp = 100;
         while (xp >= level_xp) {
             new_level++;
-            if (guild_config.old_leveling == true)
+            if (guild_settings.old_leveling == true)
                 level_xp += new_level * new_level + 50 * new_level + 100;
             else
                 level_xp += Math.floor(new_level * (new_level * new_level + 10 * new_level + 268.247) / 29.38) + 91;
@@ -58,7 +58,7 @@ module.exports = {
         const levelup_emoji = (await database.get_guild_config_value(message.guild.id, `levelup_emoji`)).val();
         const level_roles = (await database.get_guild_config_value(message.guild.id, `level_roles`)).val();
 
-        const levelup_adjective = utils.random_string_array(levelup_message_adjectives);
+        const levelup_adjective = utils.weighted_random_choice(levelup_message_adjectives);
 
         message.channel.send(`The ${levelup_adjective} **${message.author.username}** has just leveled up to level **${new_level}**! ${levelup_emoji}`);
 
@@ -80,16 +80,16 @@ module.exports = {
             if (!level_roles[`level_${i}`])
                 continue;
 
-            if (utils.has_role_id(message.guild, message.member, level_roles[`level_${i}`].role_id))
-                message.member.roles.remove(utils.find_role_id(message.guild, level_roles[`level_${i}`].role_id));
+            if (utils.has_role(message.guild, message.member, level_roles[`level_${i}`].role_id))
+                message.member.roles.remove(utils.find_role(message.guild, level_roles[`level_${i}`].role_id));
         }
 
         const new_level_role = message.guild.roles.cache.find(r => r.id == new_level_role_id);
         message.member.roles.add(new_level_role);
 
-        const new_role_emoji = guild_config.new_role_emoji;
-
-        if (guild_config.new_role_message_enabled)
+        if (guild_settings.new_role_message_enabled) {
+            const new_role_emoji = (await database.get_guild_config_value(message.guild.id, `new_role_emoji`)).val();
             message.channel.send(`**${message.author.username}** has recieved a new rank: **${new_level_role.name}**! ${new_role_emoji}`);
+        }
     }
 }

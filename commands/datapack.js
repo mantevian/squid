@@ -38,14 +38,14 @@ module.exports = {
                     defaults[files[i].slice(0, -5)] = JSON.parse(fs.readFileSync(`resources/worldgen_defaults/${files[i]}`, `utf8`));
 
                 function get_random_stateless_block() {
-                    return `minecraft:${utils.random_string_array(defaults.stateless_block_list)}`;
+                    return `minecraft:${utils.random_choice(defaults.stateless_block_list)}`;
                 }
 
                 for (var d = 0; d < config.dim_count; d++) {
                     var dimension_type = {
                         has_raids: rng.next_int_ranged(0, 2) > 0,
                         logical_height: 256,
-                        infiniburn: utils.random_string_array(["minecraft:infiniburn_overworld", "minecraft:infiniburn_nether", "minecraft:infiniburn_end"]),
+                        infiniburn: utils.random_choice(["minecraft:infiniburn_overworld", "minecraft:infiniburn_nether", "minecraft:infiniburn_end"]),
                         ambient_light: Math.max(rng.next_int_ranged(0, 110) / 100 - 0.1, 1.0),
                         piglin_safe: rng.next_int_ranged(0, 2) > 0,
                         bed_works: rng.next_int_ranged(0, 2) > 0,
@@ -55,7 +55,7 @@ module.exports = {
                         coordinate_scale: rng.next_int_ranged(10, 999990) / 1000,
                         has_skylight: rng.next_int_ranged(0, 2) > 1,
                         has_ceiling: rng.next_int_ranged(0, 2) > 1,
-                        effects: utils.random_string_array(["minecraft:overworld", "minecraft:the_nether", "minecraft:the_end"]),
+                        effects: utils.random_choice(["minecraft:overworld", "minecraft:the_nether", "minecraft:the_end"]),
                     }
 
                     var dimension = defaults.default_dimension;
@@ -134,8 +134,8 @@ module.exports = {
 
                         biome.player_spawn_friendly = rng.next_int_ranged(0, 2) > 0;
 
-                        biome.category = utils.random_string_array(defaults.biome_category_list);
-                        biome.precipitation = utils.random_string_array(defaults.biome_precipitation_list);
+                        biome.category = utils.random_choice(defaults.biome_category_list);
+                        biome.precipitation = utils.random_choice(defaults.biome_precipitation_list);
 
                         if (rng.next_int_ranged(0, 3) == 0) {
                             biome.surface_builder = {
@@ -150,11 +150,11 @@ module.exports = {
                                         Name: get_random_stateless_block()
                                     }
                                 },
-                                type: `minecraft:${utils.random_string_array(defaults.surface_builder_type_list)}`
+                                type: `minecraft:${utils.random_choice(defaults.surface_builder_type_list)}`
                             }
                         }
                         else
-                            biome.surface_builder = `minecraft:${utils.random_string_array(defaults.surface_builder_list)}`;
+                            biome.surface_builder = `minecraft:${utils.random_choice(defaults.surface_builder_list)}`;
 
                         biome.features = [[], [], [], [], [], [], [], [], [], []];
                         biome.spawners = {
@@ -169,10 +169,10 @@ module.exports = {
                         biome.carvers = {};
 
                         for (var f = 0; f < rng.next_int_ranged(1, 25); f++)
-                            biome.features[rng.next_int_ranged(0, 10)].push(utils.random_string_array(defaults.configured_feature_list));
+                            biome.features[rng.next_int_ranged(0, 10)].push(utils.random_choice(defaults.configured_feature_list));
 
                         for (var s = 0; s < rng.next_int_ranged(1, 25); s++) {
-                            var mob = utils.random_string_array(defaults.spawner_list);
+                            var mob = utils.random_choice(defaults.spawner_list);
                             var spawner_type;
                             switch (mob) {
                                 case `bat`:
@@ -272,7 +272,7 @@ module.exports = {
                         }
 
                         for (var c = 0; c < rng.next_int_ranged(1, 8); c++) {
-                            var block = utils.random_string_array([`air`, `liquid`]);
+                            var block = utils.random_choice([`air`, `liquid`]);
                             biome.carvers[`${block}`] = [];
                             for (var i = 0; i < defaults.biome_carver_list.length; i++) {
                                 if (rng.next_int_ranged(0, 2) == 1)
