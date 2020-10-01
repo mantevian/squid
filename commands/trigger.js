@@ -39,6 +39,7 @@ module.exports = {
                         require(`../utils/save_triggers.js`)(client);
                     }
                 });
+                break;
 
             case `add_requirement`:
                 database.db.ref(`guild_config/${message.guild.id}/message_triggers/${args[1]}`).once(`value`).then(function (snapshot) {
@@ -66,6 +67,5 @@ module.exports = {
                 });
                 break;
         }
-
     }
 }
