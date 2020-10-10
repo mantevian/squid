@@ -10,7 +10,7 @@ module.exports = {
     description: "Control the server's stats",
     usage: "stats create|update|remove [stat_name, display_name] OR members add|remove|set [user_id, stat_name=amount ...]",
     run: async (client, message, args) => {
-        var config = utils.args_parse(args);
+        var config = utils.args_parse(message.content);
 
         switch (args[0]) {
             case `stats`:
@@ -58,13 +58,16 @@ module.exports = {
                 switch (args[1]) {
                     case `add`:
                     case `a`:
-                        var stat = (await database.get_user_value(message.guild.id, config.user_id, config.stat_name)).val();
-                        if (!stat) {
-                            message.reply(`Nothing found.`);
-                            return;
+                        var config_array = Object.entries(config);
+                        for (var i = 0; i < config_array.length; i++) {
+                            var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
+                            if (!stat) {
+                                message.reply(`Unknown stat name: \`${config_array[i][0]}\``);
+                                return;
+                            }
+                            stat += parseInt(config_array[i][1]);
+                            database.set_user_value(message.guild.id, config.user_id, config_array[i][0], stat);
                         }
-                        stat += parseInt(config.amount);
-                        database.set_user_value(message.guild.id, config.user_id, config.stat_name, stat);
                         var user = message.guild.members.cache.find(m => m.user.id == config.user_id).username;
                         if (!user)
                             user = config.user_id;
@@ -73,13 +76,16 @@ module.exports = {
 
                     case `remove`:
                     case `r`:
-                        var stat = (await database.get_user_value(message.guild.id, config.user_id, config.stat_name)).val();
-                        if (!stat) {
-                            message.reply(`Nothing found.`);
-                            return;
+                        var config_array = Object.entries(config);
+                        for (var i = 0; i < config_array.length; i++) {
+                            var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
+                            if (!stat) {
+                                message.reply(`Unknown stat name: \`${config_array[i][0]}\``);
+                                return;
+                            }
+                            stat -= parseInt(config_array[i][1]);
+                            database.set_user_value(message.guild.id, config.user_id, config_array[i][0], stat);
                         }
-                        stat -= parseInt(config.amount);
-                        database.set_user_value(message.guild.id, config.user_id, config.stat_name, stat);
                         var user = message.guild.members.cache.find(m => m.user.id == config.user_id).username;
                         if (!user)
                             user = config.user_id;
@@ -88,18 +94,20 @@ module.exports = {
 
                     case `set`:
                     case `s`:
-                        var stat = (await database.get_user_value(message.guild.id, config.user_id, config.stat_name)).val();
-                        if (!stat) {
-                            message.reply(`Nothing found.`);
-                            return;
+                        var config_array = Object.entries(config);
+                        for (var i = 0; i < config_array.length; i++) {
+                            var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
+                            if (!stat) {
+                                message.reply(`Unknown stat name: \`${config_array[i][0]}\``);
+                                return;
+                            }
+                            stat = parseInt(config_array[i][1]);
+                            database.set_user_value(message.guild.id, config.user_id, config_array[i][0], stat);
                         }
-                        stat = parseInt(config.amount);
-                        database.set_user_value(message.guild.id, config.user_id, config.stat_name, stat);
                         var user = message.guild.members.cache.find(m => m.user.id == config.user_id).username;
                         if (!user)
                             user = config.user_id;
                         message.reply(`Changed ${user}'s ${stat_name} to ${stat}!`);
-                        break;
                 }
                 break;
 
