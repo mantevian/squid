@@ -22,7 +22,7 @@ module.exports = {
         var member = message.member;
         var user = message.author;
 
-        if (args[0]) {
+        if (args_config.id) {
             id = args_config.id;
             member = message.guild.members.cache.find(m => m.id == id);
             if (!member) {
@@ -91,7 +91,7 @@ module.exports = {
             var list = ``;
 
             for (var i = 0; i < stats_array.length; i++)
-                if (stats_array[i][1] != `last_xp_message_timestamp`)
+                if (stats_array[i][0] != `last_xp_message_timestamp`)
                     list += `**${stats_array[i][0]}:** ${stats_array[i][1]}`;
 
             const embed = new MessageEmbed()
