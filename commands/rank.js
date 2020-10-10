@@ -4,7 +4,8 @@ const
     fs = require('fs'),
     request = require('request'),
     { lerp } = require(`../utils/util_functions`),
-    { MessageEmbed } = require(`discord.js`);
+    { MessageEmbed } = require(`discord.js`),
+    utils = require(`../utils/util_functions.js`);
 
 module.exports = {
     name: "rank",
