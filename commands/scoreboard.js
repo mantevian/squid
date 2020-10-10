@@ -71,7 +71,7 @@ module.exports = {
                             stat += parseInt(config_array[i][1]);
                             database.set_user_value(message.guild.id, config.user_id, config_array[i][0], stat);
                         }
-                        var user = message.guild.members.cache.find(m => m.user.id == config.user_id).username;
+                        var user = message.guild.members.cache.find(m => m.user.id == config.user_id).user.username;
                         if (!user)
                             user = config.user_id;
                         message.reply(`Updated ${user}'s stats!`);
@@ -86,13 +86,13 @@ module.exports = {
 
                             var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
                             if (!stat) {
-                                message.reply(`Unknown stat name: \`${config_array[i][0]}\``);
+                                message.reply(`Unknown stat name: \`${config_array[i][0]}\`.`);
                                 return;
                             }
                             stat -= parseInt(config_array[i][1]);
                             database.set_user_value(message.guild.id, config.user_id, config_array[i][0], stat);
                         }
-                        var user = message.guild.members.cache.find(m => m.user.id == config.user_id).username;
+                        var user = message.guild.members.cache.find(m => m.user.id == config.user_id).user.username;
                         if (!user)
                             user = config.user_id;
                         message.reply(`Updated ${user}'s stats!`);
@@ -107,7 +107,7 @@ module.exports = {
 
                             database.set_user_value(message.guild.id, config.user_id, config_array[i][0], parseInt(config_array[i][1]));
                         }
-                        var user = message.guild.members.cache.find(m => m.user.id == config.user_id).username;
+                        var user = message.guild.members.cache.find(m => m.user.id == config.user_id).user.username;
                         if (!user)
                             user = config.user_id;
                         message.reply(`Updated ${user}'s stats!`);
