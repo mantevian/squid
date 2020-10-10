@@ -69,7 +69,7 @@ module.exports = {
                     temp_xp = level_xp - level * level - 50 * level - 100;
                 }
                 else {
-                    var xp_mod = Math.floor(level * (level * level + 10 * level + 268.247) / 29.38) + 91;
+                    var xp_mod = Math.floor(level * (level * level + 20 * level + 800) / 35.49165) + 131;
                     level_xp += xp_mod;
                     temp_xp = level_xp - xp_mod;
                 }

@@ -46,7 +46,7 @@ module.exports = {
             if (guild_settings.old_leveling == true)
                 level_xp += new_level * new_level + 50 * new_level + 100;
             else
-                level_xp += Math.floor(new_level * (new_level * new_level + 10 * new_level + 268.247) / 29.38) + 91;
+                level_xp += Math.floor(new_level * (new_level * new_level + 20 * new_level + 800) / 35.49165) + 131;
         }
 
         database.set_squid_rank(message.guild.id, message.author.id, xp, new_level);

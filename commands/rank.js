@@ -3,7 +3,8 @@ const
     { createCanvas, loadImage, registerFont } = require('canvas'),
     fs = require('fs'),
     request = require('request'),
-    { lerp } = require(`../utils/util_functions`);
+    { lerp } = require(`../utils/util_functions`),
+    { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     name: "rank",
@@ -14,12 +15,14 @@ module.exports = {
     args: 0,
     usage: "[user id]",
     run: async (client, message, args) => {
+        const args_config = utils.args_parse(message.content);
+
         var id = message.author.id;
         var member = message.member;
         var user = message.author;
 
         if (args[0]) {
-            id = args[0];
+            id = args_config.id;
             member = message.guild.members.cache.find(m => m.id == id);
             if (!member) {
                 message.reply(`Can't find that user.`);
@@ -47,13 +50,14 @@ module.exports = {
             return;
         }
 
-        var xp = (await database.get_user_value(message.guild.id, id, `xp`)).val();
+        var stats = (await database.get_user_data(message.guild.id, id)).val();
 
-        if (!xp) {
+        if (!stats) {
             message.reply(`Can't fetch your data! Make sure you've got some XP first.`);
             return;
         }
 
+        var xp = stats.xp;
         var temp_xp = xp;
         var level = 0;
         var level_xp = 100;
@@ -64,7 +68,7 @@ module.exports = {
                 temp_xp = level_xp - level * level - 50 * level - 100;
             }
             else {
-                var xp_mod = Math.floor(level * (level * level + 10 * level + 268.247) / 29.38) + 91;
+                var xp_mod = Math.floor(level * (level * level + 20 * level + 800) / 35.49165) + 131;
                 level_xp += xp_mod;
                 temp_xp = level_xp - xp_mod;
             }
@@ -80,6 +84,24 @@ module.exports = {
         profile_color = profile_color.slice(-6);
 
         registerFont(`./resources/neucha.ttf`, { family: "Neucha" });
+
+        if (args_config.custom) {
+            var stats_array = Object.entries(stats);
+            var list = ``;
+
+            for (var i = 0; i < stats_array.length; i++)
+                if (stats_array[i][1] != `last_xp_message_timestamp`)
+                    list += `**${stats_array[i][0]}:** ${stats_array[i][1]}`;
+
+            const embed = new MessageEmbed()
+                .setAuthor(user.username, user.displayAvatarURL({ format: `png`, size: 256 }))
+                .setTitle(`Stats in ${message.guild.name}`)
+                .setDescription(list)
+                .setTimestamp(Date.now());
+
+            message.channel.send(embed);
+            return;
+        }
 
         r_download(user.displayAvatarURL({ format: `png`, size: 256 }), `${__dirname}/avatar_${id}.png`, async function () {
             const canvas = createCanvas(700, 336);
