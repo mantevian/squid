@@ -62,7 +62,7 @@ module.exports = {
                         for (var i = 0; i < config_array.length; i++) {
                             if (config_array[i][0] == `user_id`)
                                 continue;
-                                
+
                             var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
                             if (!stat) {
                                 message.reply(`Unknown stat name: \`${config_array[i][0]}\``);
@@ -105,13 +105,7 @@ module.exports = {
                             if (config_array[i][0] == `user_id`)
                                 continue;
 
-                            var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
-                            if (!stat) {
-                                message.reply(`Unknown stat name: \`${config_array[i][0]}\``);
-                                return;
-                            }
-                            stat = parseInt(config_array[i][1]);
-                            database.set_user_value(message.guild.id, config.user_id, config_array[i][0], stat);
+                            database.set_user_value(message.guild.id, config.user_id, config_array[i][0], parseInt(config_array[i][1]));
                         }
                         var user = message.guild.members.cache.find(m => m.user.id == config.user_id).username;
                         if (!user)
