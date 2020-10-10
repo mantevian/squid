@@ -60,6 +60,9 @@ module.exports = {
                     case `a`:
                         var config_array = Object.entries(config);
                         for (var i = 0; i < config_array.length; i++) {
+                            if (config_array[i][0] == `user_id`)
+                                continue;
+                                
                             var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
                             if (!stat) {
                                 message.reply(`Unknown stat name: \`${config_array[i][0]}\``);
@@ -78,6 +81,9 @@ module.exports = {
                     case `r`:
                         var config_array = Object.entries(config);
                         for (var i = 0; i < config_array.length; i++) {
+                            if (config_array[i][0] == `user_id`)
+                                continue;
+                                
                             var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
                             if (!stat) {
                                 message.reply(`Unknown stat name: \`${config_array[i][0]}\``);
@@ -96,6 +102,9 @@ module.exports = {
                     case `s`:
                         var config_array = Object.entries(config);
                         for (var i = 0; i < config_array.length; i++) {
+                            if (config_array[i][0] == `user_id`)
+                                continue;
+
                             var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
                             if (!stat) {
                                 message.reply(`Unknown stat name: \`${config_array[i][0]}\``);
