@@ -22,8 +22,8 @@ module.exports = {
         var member = message.member;
         var user = message.author;
 
-        if (args_config.id) {
-            id = args_config.id;
+        if (args_config.user_id) {
+            id = args_config.user_id;
             member = message.guild.members.cache.find(m => m.id == id);
             if (!member) {
                 message.reply(`Can't find that user.`);
@@ -54,7 +54,7 @@ module.exports = {
         var stats = (await database.get_user_data(message.guild.id, id)).val();
 
         if (!stats) {
-            message.reply(`Can't fetch your data! Make sure you've got some XP first.`);
+            message.reply(`Can't fetch the data! Make sure you've got some XP first.`);
             return;
         }
 
