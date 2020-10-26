@@ -63,9 +63,15 @@ module.exports = {
                             if (config_array[i][0] == `user_id`)
                                 continue;
 
+                            var stat_on_server = (await database.get_guild_config_value(message.guild.id, `scoreboard/${config_array[i][0]}`)).val();
+                            if (!stat_on_server) {
+                                message.reply(`This server doesn't have the stat \`${config_array[i][0]}\`.`);
+                                return;
+                            }
+
                             var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
                             if (!stat) {
-                                message.reply(`Unknown stat name: \`${config_array[i][0]}\``);
+                                message.reply(`This user doesn't have the stat \`${config_array[i][0]}\` set to anything.`);
                                 return;
                             }
                             stat += parseInt(config_array[i][1]);
@@ -84,9 +90,15 @@ module.exports = {
                             if (config_array[i][0] == `user_id`)
                                 continue;
 
+                            var stat_on_server = (await database.get_guild_config_value(message.guild.id, `scoreboard/${config_array[i][0]}`)).val();
+                            if (!stat_on_server) {
+                                message.reply(`This server doesn't have the stat \`${config_array[i][0]}\`.`);
+                                return;
+                            }
+
                             var stat = (await database.get_user_value(message.guild.id, config.user_id, config_array[i][0])).val();
                             if (!stat) {
-                                message.reply(`Unknown stat name: \`${config_array[i][0]}\`.`);
+                                message.reply(`This user doesn't have the stat \`${config_array[i][0]}\` set to anything.`);
                                 return;
                             }
                             stat -= parseInt(config_array[i][1]);
@@ -104,6 +116,12 @@ module.exports = {
                         for (var i = 0; i < config_array.length; i++) {
                             if (config_array[i][0] == `user_id`)
                                 continue;
+
+                            var stat_on_server = (await database.get_guild_config_value(message.guild.id, `scoreboard/${config_array[i][0]}`)).val();
+                            if (!stat_on_server) {
+                                message.reply(`This server doesn't have the stat \`${config_array[i][0]}\`.`);
+                                return;
+                            }
 
                             database.set_user_value(message.guild.id, config.user_id, config_array[i][0], parseInt(config_array[i][1]));
                         }

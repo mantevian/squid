@@ -1,4 +1,3 @@
-const { ObjectNodeDependencies } = require("mathjs");
 const
     database = require(`../utils/firebase_connection.js`),
     utils = require(`../utils/util_functions.js`);
@@ -78,6 +77,30 @@ module.exports = {
                             database.db.ref(`guild_config/${message.guild.id}/message_triggers/${args[1]}/${config[i][0]}`).set(config[i][1]);
                         message.reply(`Successfully updated the message trigger \`${args[1]}\`!`);
                         require(`../utils/save_triggers.js`)(client);
+                    }
+                });
+                break;
+
+            case `view`:
+                database.get_guild_config_value(message.guild.id, `message_triggers`).then(function (snapshot) {
+                    const entries = Object.entries(snapshot.val());
+                    if (args.length == 1) {
+                        var list = ``;
+                        const embed = new MessageEmbed()
+                            .setTitle(`${message.guild.name} trigger list`)
+                        entries.forEach((e, i) => {
+                            list += `**${e[0]}**: ${JSON.stringify(e[1])}\n`;
+
+                            if (i == entries.length - 1) {
+                                embed.setDescription(list);
+                                message.channel.send(embed);
+                                return;
+                            }
+                        });
+                    }
+                    else {
+                        const item = args[1];
+                        message.channel.send(`**${item}**: ${JSON.stringify(snapshot.val()[item])}`);
                     }
                 });
                 break;

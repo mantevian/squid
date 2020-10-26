@@ -54,7 +54,10 @@ module.exports = {
         var stats = (await database.get_user_data(message.guild.id, id)).val();
 
         if (!stats) {
-            message.reply(`Can't fetch the data! Make sure you've got some XP first.`);
+            if (id == message.author.id)
+                message.reply(`Can't fetch your data! Make sure you've got some XP first.`);
+            else
+                message.reply(`Can't fetch the data! Make sure they've got some XP first.`);
             return;
         }
 
