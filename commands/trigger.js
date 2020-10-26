@@ -1,3 +1,4 @@
+const { ObjectNodeDependencies } = require("mathjs");
 const
     database = require(`../utils/firebase_connection.js`),
     utils = require(`../utils/util_functions.js`);
@@ -62,6 +63,20 @@ module.exports = {
                         var config = utils.args_parse(message.content);
                         database.db.ref(`guild_config/${message.guild.id}/message_triggers/${args[1]}/actions/${args[2]}`).set(config);
                         message.reply(`Successfully saved a new message trigger action \`[${args[2]}] ${config.action}\` for \`${args[1]}\`!`);
+                        require(`../utils/save_triggers.js`)(client);
+                    }
+                });
+                break;
+
+            case `update`:
+                database.db.ref(`guild_config/${message.guild.id}/message_triggers/${args[1]}`).once(`value`).then(function (snapshot) {
+                    if (!snapshot)
+                        message.reply(`The trigger \`${args[1]}\` does not exist in this server.`);
+                    else {
+                        var config = Object.entries(utils.args_parse(message.content));
+                        for (var i = 0; i < config.length; i++)
+                            database.db.ref(`guild_config/${message.guild.id}/message_triggers/${args[1]}/${config[i][0]}`).set(config[i][1]);
+                        message.reply(`Successfully updated the message trigger \`${args[1]}\`!`);
                         require(`../utils/save_triggers.js`)(client);
                     }
                 });
