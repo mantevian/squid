@@ -7,7 +7,7 @@ module.exports.args_parse = function args_parse(text) {
     for (var i = 0; i < args_count; i++) {
         let arg = split_text[i];
         let field = arg.split(`=`)[0];
-        let value = arg.split(`=`)[1];
+        let value = arg.substring(field.length + 1);
 
         if (value == "true") {
             args[field] = true;

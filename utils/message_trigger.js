@@ -32,6 +32,11 @@ module.exports = {
                     for (var i = 0; i < requirements.length; i++) {
                         let r = requirements[i][1];
                         switch (r.requirement) {
+                            case `chance`:
+                                if (Math.random() > r.chance)
+                                    requirements_met = false;
+                                break;
+
                             case `author_has_role`:
                                 if (!utils.has_role(message.guild, message.author.id, r.role_id))
                                     if (!r.inverted)
@@ -73,7 +78,6 @@ module.exports = {
                                     if (r.inverted)
                                         requirements_met = false;
 
-
                                 let n = parseInt(message.content);
 
                                 if (r.max && r.min) {
@@ -99,66 +103,34 @@ module.exports = {
                                         requirements_met = false;
                                 break;
 
-                            case `author_xp`:
-                                var snapshot = await database.get_user_data(message.guild.id, message.author.id);
+                            case `author_stats`:
+                                var snapshot = await database.get_user_value(message.guild.id, message.author.id, r.stat_name);
                                 if (!snapshot || snapshot.val() == null)
                                     return;
 
-                                var xp = await snapshot.val().xp;
+                                var stat = await snapshot.val();
                                 if (r.operation == `<`)
-                                    if (xp >= r.xp)
+                                    if (stat >= r.value)
                                         requirements_met = false;
 
                                 if (r.operation == `>`)
-                                    if (xp <= r.xp)
+                                    if (stat <= r.value)
                                         requirements_met = false;
 
                                 if (r.operation == `<=`)
-                                    if (xp > r.xp)
+                                    if (stat > r.value)
                                         requirements_met = false;
 
                                 if (r.operation == `>=`)
-                                    if (xp < r.xp)
+                                    if (stat < r.value)
                                         requirements_met = false;
 
                                 if (r.operation == `=`)
-                                    if (xp != r.xp)
+                                    if (stat != r.value)
                                         requirements_met = false;
 
                                 if (r.operation == `!=`)
-                                    if (xp == r.xp)
-                                        requirements_met = false;
-                                break;
-
-                            case `author_level`:
-                                var snapshot = await database.get_user_data(message.guild.id, message.author.id);
-                                if (!snapshot || snapshot.val() == null)
-                                    return;
-
-                                var level = await snapshot.val().level;
-
-                                if (r.operation == `<`)
-                                    if (level >= r.level)
-                                        requirements_met = false;
-
-                                if (r.operation == `>`)
-                                    if (level <= r.level)
-                                        requirements_met = false;
-
-                                if (r.operation == `<=`)
-                                    if (level > r.level)
-                                        requirements_met = false;
-
-                                if (r.operation == `>=`)
-                                    if (level < r.level)
-                                        requirements_met = false;
-
-                                if (r.operation == `=`)
-                                    if (level != r.level)
-                                        requirements_met = false;
-
-                                if (r.operation == `!=`)
-                                    if (level == r.level)
+                                    if (stat == r.value)
                                         requirements_met = false;
                                 break;
 
