@@ -10,6 +10,7 @@ squid.name = "squid";
 
 squid.commands = new Discord.Collection();
 squid.message_triggers = new Discord.Collection();
+squid.scoreboards = new Discord.Collection();
 
 const commands = fs.readdirSync(`./commands/`).filter(f => f.endsWith(`.js`));
 

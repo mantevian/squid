@@ -24,6 +24,8 @@ module.exports = {
 
                         database.set_guild_config_value(message.guild.id, `scoreboard/${config.stat_name}/display_name`, config.display_name);
                         message.reply(`Added a new scoreboard stat \`${config.stat_name}\`: **${config.display_name}**!`);
+
+                        require(`../utils/save_guild_scoreboards.js`)(client);
                         break;
 
                     case `update`:
@@ -34,6 +36,8 @@ module.exports = {
                         }
                         database.set_guild_config_value(message.guild.id, `scoreboard/${config.stat_name}/display_name`, config.display_name);
                         message.reply(`Updated the scoreboard stat \`${config.stat_name}\`: **${config.display_name}**!`);
+
+                        require(`../utils/save_guild_scoreboards.js`)(client);
                         break;
 
                     case `remove`:
@@ -46,6 +50,8 @@ module.exports = {
                         }
                         database.set_guild_config_value(message.guild.id, `scoreboard/${config.stat_name}`, null);
                         message.reply(`Removed the scoreboard stat \`${config.stat_name}\`.`);
+
+                        require(`../utils/save_guild_scoreboards.js`)(client);
                         break;
 
                     default:
