@@ -1,4 +1,5 @@
 const
+    { MessageEmbed } = require(`discord.js`),
     database = require(`../utils/firebase_connection.js`),
     utils = require(`../utils/util_functions.js`);
 

@@ -98,11 +98,19 @@ module.exports.get_role_mentionable = function get_role_mentionable(g, r) {
 }
 
 module.exports.add_role = function add_role(g, m, r) {
-    g.members.cache.find(mem => mem.id == m).roles.add(g.roles.cache.find(role => role.id == r));
+    var role = g.roles.cache.find(role => role.id == r);
+    if (!role)
+        return;
+
+    g.members.cache.find(mem => mem.id == m).roles.add(role);
 }
 
 module.exports.remove_role = function remove_role(g, m, r) {
-    g.members.cache.find(mem => mem.id == m).roles.remove(g.roles.cache.find(role => role.id == r));
+    var role = g.roles.cache.find(role => role.id == r);
+    if (!role)
+        return;
+
+    g.members.cache.find(mem => mem.id == m).roles.remove(role);
 }
 
 module.exports.rm_arr_by_val = function rm_arr_by_val(a, v) {
