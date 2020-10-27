@@ -13,7 +13,7 @@ Each command has a permission level assigned to it, restricting its usage from m
 
 ### Command argument syntax
 Some commands use straight default syntax where all arguments go in a specific order: `s/command <arg1> <arg2> ...`, these arguments are listed in `<>` if they are necessary and `[]` if optional.
-Arguments are listed as `<args*>` if they use a different syntax: `item=value` for numbers or single word strings, or `item="Hello World"` for multiple word strings. This is used for complex commands and a list of possible items is always provided in the documentation.
+Arguments are listed as `<args*>` if they use a different syntax: `item=value` for numbers or single word strings, or `item="Hello World"` for multiple word strings. This is used for complex commands and a list of possible items is always provided in the documentation. Integers and boolean (`false`, `true`) values are properly converted from strings.
 
 ### Message triggers
 The message trigger system allows making complex custom commands and actions for the bot. Server owners can create message triggers for their servers. A trigger activates whenever a message is sent and if a message passes its requirements, its actions are performed in a specific configurable order. A list of all possible values for this are listed below under **Reference**.
@@ -37,8 +37,8 @@ The action order system allows things such as making a role mentionable, sending
 * Permission Level: 0
 * Generates Minecraft datapacks.
 * Usage: `datapack <args*>`
-* Examples:
-  * `datapack type=random_dimensions dim_count=10 biome_count=10`.
+* Example:
+  * `datapack type=random_dimensions dim_count=10 biome_count=10`
   
 > eval
 * Permission Level: 4
@@ -69,15 +69,22 @@ The action order system allows things such as making a role mentionable, sending
 
 > rank
 * Permission Level: 0
-* Checks someone's XP rank.
-* Usage: `rank [user ID]`
-* Example: `rank 240841342723424256`
-  
-> set_rank
+* Checks someone's XP rank. Enabling `custom` will not show a fancy picture, but instead will show all the custom statistics.
+* Usage: `rank [user_id=...] [custom=true|false]`
+* Examples:
+  * `rank`
+  * `rank custom=true`
+  * `rank user_id=240841342723424256`
+  * `rank user_id=240841342723424256 custom=true`
+
+> scoreboard
 * Permission Level: 3
-* Changes someone's XP rank.
-* Usage: `rank_set <user ID> <xp>
-* Example: `rank_set 240841342723424256 99999`
+* Used to manipulate custom statistics for the server.
+* Usage: `stats create|update|remove [stat_name, display_name] OR members add|remove|set [user_id, stat_name=amount ...]`
+* Examples:
+  * `scoreboard create stat_name=points display_name="Server Points"`
+  * `scoreboard update stat_name=points display_name="Better Server Points"`
+  * `scoreboard members set user_id=240841342723424256 points=20 xp=12345`
   
 > trigger
 * Permission Level: 3
@@ -90,7 +97,7 @@ The action order system allows things such as making a role mentionable, sending
 * Examples:
   * `trigger create ping_pong 123456789` - creates a trigger called `ping_pong` in the channel `<#123456789>`,
   * `trigger add_requirement ping_pong 0 requirement=message_content text=ping case_sensitive=0 message_content_includes=0` - adds a requirement of the type `message_content` that looks for messages that exactly match the string `ping` (case insensitive),
-  * `trigger add_action ping_pong 0 action=send_message text=pong!` - replies with `pong!` to all messages that pass the requirements, aka which are "ping".
+  * `trigger add_action ping_pong 0 action=send_message text="Pong!"` - replies with `Pong!` to all messages that pass the requirements, aka which are "ping".
   
 > vc
 * Permission Level: 0
@@ -106,7 +113,20 @@ The action order system allows things such as making a role mentionable, sending
 * Generates a datapack consisting of multiple dimensions, each consisting of multiple unique biomes.
 * Arguments:
   * `dim_count` - how many dimensions to generate,
-  * `biome_count` - how many biomes to generate in each dimension.
+  * `biome_count` - how many biomes to generate in each dimension,
+  * `bedrock_roof` - if a bedrock roof should be present in the dimensions. `yes` to always generate roofs, `no` to never generate them and can be omitted to have worlds both with and without a roof,
+  * `bedrock_floor` - same but for the floor,
+  * `water_liquid_only` - all worlds have water as the liquid block,
+  * `lava_liquid_only` - all worlds have lava as the liquid block, both water and lava settings should be omitted to enable random blocks as liquids,
+  * Float values between 0 and 1 (0 means never, 1 means always) that determine a chance for various global world settings to be applied to a single dimension:
+    * `has_raids` - enables Pillager raids,
+    * `piglin_safe` - keeps Piglins and Hoglins without transforming them into zombified variants (`1` for keeping safe),
+    * `bed_works` - makes beds work or explode (`0` for always exploding),
+    * `respawn_anchor_works` - makes respawn anchors work or explode,
+    * `ultrawarm` - makes lava flow for 8 blocks and water evaporate,
+    * `natural` - makes compasses and clocks spin around randomly (`0` for always unnatural) or Zombified Piglins to be spawned from nether portals (natural),
+    * `has_skylight` - whether a world has light coming from the sky,
+    * `has_ceiling` - whether a world has a bedrock ceiling.
 
 ### Message trigger requirements
 > author_has_role
@@ -115,17 +135,17 @@ The action order system allows things such as making a role mentionable, sending
   * `role_id` - the role's ID,
   * `inverted` - if true, passes if the message author does not have the role.
   
-> author_level
-* Checks message author's XP level.
+> author_stats
+* Checks message author's server stats.
 * Arguments:
-  * `level` - the amount of levels to compare with,
-  * `operation` - can be one of these: `<`, `<=`, `>`, `>=`, `=`, `!=`. Compares message author's level with the argument `level`.
-  
-> author_xp
-* Checks message author's XP.
+  * `stat_name` - the name of the scoreboard statistic,
+  * `value` - the value to compare with,
+  * `operation` - can be one of these: `<`, `<=`, `>`, `>=`, `=`, `!=`. Compares message author's stat with the argument `value`.
+
+> chance
+* Makes the requirement succeed or fail based on a random chance.
 * Arguments:
-  * `xp` - the amount of XP to compare with,
-  * `operation` - can be one of these: `<`, `<=`, `>`, `>=`, `=`, `!=`. Compares message author's XP with the argument `xp`.
+  * `chance` - a float number between 0 and 1 representing the chance for the requirement to succeed. For example, `0.5` means 50% chance, `0.3333334` is approximately 1 in 3.
   
 > compare_messages_content
 * Fetches a message and compares its content with this message's content.
@@ -174,7 +194,7 @@ The action order system allows things such as making a role mentionable, sending
 * Sends a message.
 * Arguments:
   * `channel_id` - a text channel to send the message to. `-1` for the same channel as this message's,
-  * `text` - the text to send..
+  * `text` - the text to send.
   
 > set_role_mentionable
 * Sets a role's mentionable setting.

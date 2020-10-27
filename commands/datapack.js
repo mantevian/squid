@@ -43,34 +43,37 @@ module.exports = {
 
                 for (var d = 0; d < config.dim_count; d++) {
                     var dimension_type = {
-                        has_raids: rng.next_int_ranged(0, 2) > 0,
+                        has_raids: rng.next_float() < config.has_raids,
                         logical_height: 256,
                         infiniburn: utils.random_choice(["minecraft:infiniburn_overworld", "minecraft:infiniburn_nether", "minecraft:infiniburn_end"]),
                         ambient_light: Math.max(rng.next_int_ranged(0, 110) / 100 - 0.1, 1.0),
-                        piglin_safe: rng.next_int_ranged(0, 2) > 0,
-                        bed_works: rng.next_int_ranged(0, 2) > 0,
-                        respawn_anchor_works: rng.next_int_ranged(0, 2) > 0,
-                        ultrawarm: rng.next_int_ranged(0, 2) > 0,
-                        natural: rng.next_int_ranged(0, 2) > 0,
+                        piglin_safe: rng.next_float() < config.piglin_safe,
+                        bed_works: rng.next_float() < config.bed_works,
+                        respawn_anchor_works: rng.next_float() < config.respawn_anchor_works,
+                        ultrawarm: rng.next_float() < config.ultrawarm,
+                        natural: rng.next_float() < config.natural,
                         coordinate_scale: rng.next_int_ranged(10, 999990) / 1000,
-                        has_skylight: rng.next_int_ranged(0, 2) > 1,
-                        has_ceiling: rng.next_int_ranged(0, 2) > 1,
+                        has_skylight: rng.next_float() < config.has_skylight,
+                        has_ceiling: rng.next_float() < config.has_ceiling,
                         effects: utils.random_choice(["minecraft:overworld", "minecraft:the_nether", "minecraft:the_end"]),
                     }
 
                     var dimension = defaults.default_dimension;
                     dimension.generator.settings.default_block.Name = get_random_stateless_block();
 
-                    switch (rng.next_int_ranged(0, 3)) {
-                        case 0:
-                            dimension.generator.settings.default_fluid.Name = get_random_stateless_block();
-                            break;
+                    if (!config.water_liquid_only)
+                        switch (rng.next_int_ranged(0, 3)) {
+                            case 0:
+                                dimension.generator.settings.default_fluid.Name = get_random_stateless_block();
+                                break;
 
-                        case 1:
-                            dimension.generator.settings.default_fluid.Name = `minecraft:lava`;
-                            break;
-                    }
-                        
+                            case 1:
+                                dimension.generator.settings.default_fluid.Name = `minecraft:lava`;
+                                break;
+                        }
+
+                    if (config.lava_liquid_only)
+                        dimension.generator.settings.default_fluid.Name = `minecraft:lava`
 
                     switch (config.bedrock_roof) {
                         case `no`:
@@ -298,7 +301,7 @@ module.exports = {
                     zip.file(`data/infdim/dimension_type/type_${d}.json`, JSON.stringify(dimension_type));
                 }
 
-                zip.file(`pack.mcmeta`, `{"pack":{"pack_format":6,"description":"Randomized dimensions for 1.16.2 developed by Mante#6804"}}`);
+                zip.file(`pack.mcmeta`, `{"pack":{"pack_format":6,"description":"Randomized dimensions for 1.16.3 developed by Mante#6804"}}`);
 
                 zip
                     .generateNodeStream({ type: `nodebuffer`, streamFiles: true })
