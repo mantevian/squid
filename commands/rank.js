@@ -96,8 +96,16 @@ module.exports = {
             var guild_stats = client.scoreboards.find(g => g.id == message.guild.id);
 
             for (var i = 0; i < stats_array.length; i++) {
-                if (stats_array[i][0] != `last_xp_message_timestamp`)
-                    list += `**${guild_stats[`${stats_array[i][0]}`]}:** ${stats_array[i][1]}\n`;
+                if (stats_array[i][0] != `last_xp_message_timestamp`) {
+                    var display_name = guild_stats[`${stats_array[i][0]}`];
+                    if (stats_array[i][0] == `xp`)
+                        display_name = `XP`;
+
+                    if (stats_array[i][0] == `level`)
+                        display_name = `Level`;
+
+                    list += `**${display_name}:** ${stats_array[i][1]}\n`;
+                }
             }
 
             const embed = new MessageEmbed()
