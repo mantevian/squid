@@ -93,11 +93,11 @@ module.exports = {
             var stats_array = Object.entries(stats);
             var list = ``;
 
-            var guild_stats = client.scoreboards.find(g => g.id == message.guild.id);
+            var guild_stats = client.scoreboards.get(message.guild.id);
 
             for (var i = 0; i < stats_array.length; i++) {
                 if (stats_array[i][0] != `last_xp_message_timestamp`) {
-                    var display_name = guild_stats[`${stats_array[i][0]}`];
+                    var display_name = guild_stats[`${stats_array[i][0]}`].display_name;
                     if (stats_array[i][0] == `xp`)
                         display_name = `XP`;
 
