@@ -32,7 +32,7 @@ module.exports = {
                     }
                     else {
                         const item = args[1];
-                        message.channel.send(`**${item}**: ${JSON.stringify(snapshot.val()[item])}`);
+                        message.channel.send(`Raw data for **${item}**: \`\`\`json\n${JSON.stringify(snapshot.val()[item])}\`\`\``);
                     }
                 });
                 break;
