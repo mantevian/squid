@@ -25,6 +25,7 @@ squid.on(`ready`, () => {
     squid.user.setActivity(`Mante`, { type: `LISTENING` });
     console.log(`squiddley`);
     require(`./utils/save_triggers.js`)(squid);
+    require(`./utils/save_guild_scoreboards.js`)(squid);
 });
 
 squid.on(`message`, message => {

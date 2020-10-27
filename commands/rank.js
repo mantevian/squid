@@ -97,12 +97,12 @@ module.exports = {
 
             for (var i = 0; i < stats_array.length; i++) {
                 if (stats_array[i][0] != `last_xp_message_timestamp`) {
-                    var display_name = guild_stats[`${stats_array[i][0]}`].display_name;
-                    if (stats_array[i][0] == `xp`)
-                        display_name = `XP`;
+                    var display_name = `XP`;
 
                     if (stats_array[i][0] == `level`)
                         display_name = `Level`;
+
+                    else display_name = guild_stats[`${stats_array[i][0]}`].display_name;
 
                     list += `**${display_name}:** ${stats_array[i][1]}\n`;
                 }
