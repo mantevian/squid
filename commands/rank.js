@@ -102,7 +102,8 @@ module.exports = {
                     if (stats_array[i][0] == `level`)
                         display_name = `Level`;
 
-                    else display_name = guild_stats[`${stats_array[i][0]}`].display_name;
+                    else if (guild_stats[`${stats_array[i][0]}`])
+                        display_name = guild_stats[`${stats_array[i][0]}`].display_name;
 
                     list += `**${display_name}:** ${stats_array[i][1]}\n`;
                 }
