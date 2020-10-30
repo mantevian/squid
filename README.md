@@ -99,14 +99,6 @@ The action order system allows things such as making a role mentionable, sending
   * `trigger add_requirement ping_pong 0 requirement=message_content text=ping case_sensitive=0 message_content_includes=0` - adds a requirement of the type `message_content` that looks for messages that exactly match the string `ping` (case insensitive),
   * `trigger add_action ping_pong 0 action=send_message text="Pong!"` - replies with `Pong!` to all messages that pass the requirements, aka which are "ping".
   
-> vc
-* Permission Level: 0
-* Manages the bot's voice status in the server.
-* Usage:
-  * `vc join <voice channel name>` - joins a voice channel,
-  * `vc leave` - leaves any voice channel in the server,
-  * `vc play <YouTube link> <voice channel name>` - plays a YouTube audio in a voice channel.
-  
 ## Reference
 ### Datapacks
 > random_dimensions
