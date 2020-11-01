@@ -9,11 +9,11 @@ module.exports = {
     permission_level: 3,
     beta: true,
     description: "Manage message triggers for a server",
-    usage: "create <trigger name> <channel id> OR remove <trigger name> OR add_requirement <trigger name> <args> OR add_action <trigger name> <args>",
+    usage: "create <trigger name> <type> <channel id> OR remove <trigger name> OR add_requirement <trigger name> <args> OR add_action <trigger name> <args>",
     run: async (client, message, args) => {
         switch (args[0]) {
             case `create`:
-                if (args.length != 3) {
+                if (args.length != 4) {
                     message.reply(`Usage: \`s/trigger create <trigger name> <type> <channel id>\``)
                 }
 
@@ -27,13 +27,13 @@ module.exports = {
                         message.reply(`Trigger type can only be \`sent\`, \`edited\` or \`deleted\`.`);
                         return;
                 }
-                
+
                 database.db.ref(`guild_config/${message.guild.id}/message_triggers/`).once(`value`).then(function (snapshot) {
                     if (!snapshot)
                         message.reply(`Something went wrong...`);
                     else {
                         var channel = message.guild.channels.cache.find(c => c.id == args[3]);
-                        if (!channel) {
+                        if (args[3] != `-1` && !channel) {
                             message.reply(`There is no such channel in this server!`);
                             return;
                         }
@@ -42,7 +42,7 @@ module.exports = {
                             channel_id: args[3],
                             type: args[2]
                         });
-                        if (args[2] == `-1`)
+                        if (args[3] == `-1`)
                             message.reply(`Successfully saved a new message trigger: \`${args[1]}\`!`);
                         else
                             message.reply(`Successfully saved a new message trigger: \`[${args[2]}] ${args[1]}\` in <#${args[3]}>!`);
