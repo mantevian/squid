@@ -4,13 +4,12 @@ const
     config = require(`./config.js`),
     database = require(`./utils/firebase_connection.js`);
 
-const squid = new Discord.Client();
-squid.prefix = "s/";
-squid.name = "squid";
+const client = new Discord.Client();
+client.prefix = "s/";
 
-squid.commands = new Discord.Collection();
-squid.message_triggers = new Discord.Collection();
-squid.scoreboards = new Discord.Collection();
+client.commands = new Discord.Collection();
+client.message_triggers = new Discord.Collection();
+client.scoreboards = new Discord.Collection();
 
 const commands = fs.readdirSync(`./commands/`).filter(f => f.endsWith(`.js`));
 
@@ -18,31 +17,31 @@ for (let file of commands) {
     let command = require(`./commands/${file}`);
 
     if (command.enabled)
-        squid.commands.set(command.name, command);
+        client.commands.set(command.name, command);
 }
 
-squid.on(`ready`, () => {
-    squid.user.setActivity(`Mante`, { type: `LISTENING` });
+client.on(`ready`, () => {
+    client.user.setActivity(`Mante`, { type: `LISTENING` });
     console.log(`squiddley`);
-    require(`./utils/save_triggers.js`)(squid);
-    require(`./utils/save_guild_scoreboards.js`)(squid);
+    require(`./utils/save_triggers.js`)(client);
+    require(`./utils/save_guild_scoreboards.js`)(client);
 });
 
-squid.on(`message`, message => {
-    require(`./utils/message_trigger.js`).run(message, squid);
+client.on(`message`, message => {
+    require(`./utils/message_trigger.js`).run(message, client, `sent`);
 
-    if (message.author.bot || !message.guild || !(message.content.startsWith(squid.prefix) || message.content.startsWith(`s!`))) {
-        require(`./utils/leveling.js`).run(message, squid);
+    if (message.author.bot || !message.guild || !(message.content.startsWith(client.prefix) || message.content.startsWith(`s!`))) {
+        require(`./utils/leveling.js`).run(message, client);
         return;
     }
 
-    let args = message.content.slice(squid.prefix.length).trim().split(/ +/g);
+    let args = message.content.slice(client.prefix.length).trim().split(/ +/g);
     let message_command = args.shift().toLowerCase();
 
     if (message_command.length == 0)
         return;
 
-    let command = squid.commands.get(message_command);
+    let command = client.commands.get(message_command);
 
     if (command) {
         database.get_guild_config_value(message.guild.id, `use_beta_features`).then(snapshot => {
@@ -64,11 +63,19 @@ squid.on(`message`, message => {
                 users_perm_level = 4;
 
             if (command.permission_level <= users_perm_level)
-                command.run(squid, message, args);
+                command.run(client, message, args);
             else
                 message.reply("You don't have the permission to run this command!");
         });
     }
 });
 
-squid.login(process.env.SQUID_TOKEN);
+client.on(`messageUpdate`, (old_message, new_message) => {
+    require(`./utils/message_trigger.js`).run(new_message, client, `edited`);
+});
+
+client.on(`messageDelete`, message => {
+    require(`./utils/message_trigger.js`).run(message, client, `deleted`);
+});
+
+client.login(process.env.SQUID_TOKEN);

@@ -14,25 +14,38 @@ module.exports = {
         switch (args[0]) {
             case `create`:
                 if (args.length != 3) {
-                    message.reply(`Usage: \`s/trigger create <trigger name> <channel id>\``)
+                    message.reply(`Usage: \`s/trigger create <trigger name> <type> <channel id>\``)
                 }
+
+                switch (args[2]) {
+                    case `sent`:
+                    case `edited`:
+                    case `deleted`:
+                        break;
+
+                    default:
+                        message.reply(`Trigger type can only be \`sent\`, \`edited\` or \`deleted\`.`);
+                        return;
+                }
+                
                 database.db.ref(`guild_config/${message.guild.id}/message_triggers/`).once(`value`).then(function (snapshot) {
                     if (!snapshot)
                         message.reply(`Something went wrong...`);
                     else {
-                        var channel = message.guild.channels.cache.find(c => c.id == args[2]);
+                        var channel = message.guild.channels.cache.find(c => c.id == args[3]);
                         if (!channel) {
                             message.reply(`There is no such channel in this server!`);
                             return;
                         }
                         database.db.ref(`guild_config/${message.guild.id}/message_triggers/${args[1]}`).set({
                             enabled: true,
-                            channel_id: args[2],
+                            channel_id: args[3],
+                            type: args[2]
                         });
                         if (args[2] == `-1`)
                             message.reply(`Successfully saved a new message trigger: \`${args[1]}\`!`);
                         else
-                            message.reply(`Successfully saved a new message trigger: \`${args[1]}\` in <#${args[2]}>!`);
+                            message.reply(`Successfully saved a new message trigger: \`[${args[2]}] ${args[1]}\` in <#${args[3]}>!`);
                         require(`../utils/save_triggers.js`)(client);
                     }
                 });

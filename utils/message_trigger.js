@@ -3,7 +3,7 @@ const
     utils = require(`./util_functions.js`);
 
 module.exports = {
-    run: async function run(message, client) {
+    run: async function run(message, client, trigger_type) {
         if (!message.guild)
             return;
 
@@ -15,6 +15,9 @@ module.exports = {
             for (var j = 0; j < guild_triggers.length; j++) {
                 let t = guild_triggers[j][1];
                 if (!t.enabled)
+                    continue;
+
+                if (t.type != trigger_type)
                     continue;
 
                 if (t.channel_id != -1)
@@ -32,6 +35,9 @@ module.exports = {
                     for (var i = 0; i < requirements.length; i++) {
                         let r = requirements[i][1];
                         switch (r.requirement) {
+                            case `always`:
+                                break;
+
                             case `chance`:
                                 if (Math.random() > r.chance)
                                     requirements_met = false;

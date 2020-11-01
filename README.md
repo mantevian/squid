@@ -90,7 +90,7 @@ The action order system allows things such as making a role mentionable, sending
 * Permission Level: 3
 * Configures server's message triggers.
 * Usage:
-  * `trigger create <trigger name> <text channel ID>` - adds a trigger to the server. By default only works in the specific channel entered in the command (use `-1` as text channel ID to enable it in all channels),
+  * `trigger create <trigger name> <type> <text channel ID>` - adds a trigger to the server. By default only works in the specific channel entered in the command (use `-1` as text channel ID to enable it in all channels). Type can be one of these: `sent`, `edited` or `deleted`. `sent` checks for new messages in the server, `edited` checks for edited messages and reads the new message text, `deleted` checks for deleted messages and still can read their content,
   * `trigger remove <trigger name>` - removes a trigger from the server,
   * `trigger add_requirement <trigger name> <order> <args*>` - adds a requirement for this trigger,
   * `trigger add_action <trigger name> <order> <args*>` - adds an action for this trigger.
@@ -121,6 +121,9 @@ The action order system allows things such as making a role mentionable, sending
     * `has_ceiling` - whether a world has a bedrock ceiling.
 
 ### Message trigger requirements
+> always
+* Always passes.
+
 > author_has_role
 * Passes if whoever sent a message has a specific role.
 * Arguments:
