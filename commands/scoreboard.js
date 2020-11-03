@@ -51,7 +51,7 @@ module.exports = {
 
                         let ref = database.db.ref(`/guild_stats/${message.guild.id}`).orderByChild(config.stat_name);
                         ref.on(`child_added`, async function (snapshot) {
-                            var id = snapshot.key();
+                            var id = snapshot.key;
                             database.set_user_value(message.guild.id, id, config.stat_name, null);
                             ref.off();
                         });
