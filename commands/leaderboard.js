@@ -3,7 +3,7 @@ const
     { createCanvas, loadImage, registerFont } = require(`canvas`),
     fs = require(`fs`),
     utils = require(`../utils/util_functions.js`),
-    { MessageEmbed } = require("discord.js");
+    { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     name: "leaderboard",
@@ -60,10 +60,12 @@ module.exports = {
                 else {
                     m = client.guilds.cache.find(g => g.id == message.guild.id).members.cache.find(m => m.user.id == snapshot.key);
                     name = m.user.username;
-                    discrim = `#${m.user.discriminator}`;
+                    discrim = m.user.discriminator;
                 }
 
                 var stat = snapshot.val()[config.stat_name];
+                if (!stat)
+                    stat = 0;
 
                 if (n <= stats_length - min && n >= stats_length - max) {
                     list += `**${stats_length - n}.** ${name}#${discrim}: ${stat}\n`

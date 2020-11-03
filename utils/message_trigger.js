@@ -140,6 +140,16 @@ module.exports = {
                                         requirements_met = false;
                                 break;
 
+                            case `author_is_bot`:
+                                if (r.inverted)
+                                    if (message.author.bot)
+                                        requirements_met = false;
+
+                                if (!r.inverted)
+                                    if (!message.author.bot)
+                                        requirements_met = false;
+                                break;
+
                             case `compare_messages_content`:
                                 let compared_channel_id = message.channel.id;
                                 if (r.compared_channel_id != -1)
