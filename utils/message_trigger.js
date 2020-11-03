@@ -349,7 +349,7 @@ module.exports = {
                                 if (a.user_id != `-1`)
                                     id = a.user_id;
 
-                                database.set_user_value(message.guild, id, a.stat_name, a.value);
+                                database.set_user_value(message.guild.id, id, a.stat_name, stat);
                                 break;
                         }
                     }
