@@ -1,7 +1,9 @@
 const
     database = require(`../utils/firebase_connection.js`),
     { createCanvas, loadImage, registerFont } = require(`canvas`),
-    fs = require(`fs`)
+    fs = require(`fs`),
+    utils = require(`../utils/util_functions.js`),
+    { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "leaderboard",
@@ -12,8 +14,12 @@ module.exports = {
     args: 1,
     usage: "[page]",
     run: async (client, message, args) => {
-        var page = parseInt(args[0]);
-        if (!args[0]) page = 1;
+        var config = utils.args_parse(message.content);
+        var page;
+        if (!config.page)
+            page = 1;
+        else
+            page = config.page;
 
         var list = [];
 
@@ -42,6 +48,53 @@ module.exports = {
         if (max > stats_length - 1) max = stats_length;
 
         var n = 0;
+
+        if (config.stat_name) {
+            list = ``;
+            let ref = database.db.ref(`/guild_stats/${message.guild.id}`).orderByChild(config.stat_name);
+            ref.on(`child_added`, async function (snapshot) {
+                var name = `?`;
+                var discrim = `?`;
+
+                if (!client.guilds.cache.find(g => g.id == message.guild.id).members.cache.find(m => m.user.id == snapshot.key)) name = snapshot.key
+                else {
+                    m = client.guilds.cache.find(g => g.id == message.guild.id).members.cache.find(m => m.user.id == snapshot.key);
+                    name = m.user.username;
+                    discrim = `#${m.user.discriminator}`;
+                }
+
+                var stat = snapshot.val()[config.stat_name];
+
+                if (n <= stats_length - min && n >= stats_length - max) {
+                    list += `**${stats_length - n}.** ${name}#${discrim}: ${stat}\n`
+                }
+
+                if (n == stats_length - 1) {
+                    list = list.split(`\n`).reverse().join(`\n`);
+
+                    var guild_stats = client.scoreboards.get(message.guild.id);
+
+                    var display_name = `XP`;
+
+                    if (config.stat_name == `level`)
+                        display_name = `Level`;
+
+                    else if (guild_stats[`${config.stat_name}`])
+                        display_name = guild_stats[`${config.stat_name}`].display_name;
+
+                    var embed = new MessageEmbed()
+                    .setTitle(`${message.guild.name} leaderboard // ${display_name} // Page ${page}`)
+                    .setDescription(list);
+
+                    message.channel.send(embed);
+
+                    ref.off();
+                }
+                n++;
+            });
+
+            return;
+        }
 
         let ref = database.db.ref(`/guild_stats/${message.guild.id}`).orderByChild(`xp`);
         ref.on(`child_added`, async function (snapshot) {
