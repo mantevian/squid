@@ -49,17 +49,6 @@ module.exports = {
                             return;
                         }
 
-                        var stats_length = (await database.get_guild_config_value(message.guild.id, `stats_length`)).val();
-                        let ref = database.db.ref(`/guild_stats/${message.guild.id}`).orderByChild(config.stat_name);
-                        var n = 0;
-                        ref.on(`child_added`, async function (snapshot) {
-                            var id = snapshot.key;
-                            database.set_user_value(message.guild.id, id, config.stat_name, null);
-                            n++;
-                            if (n == stats_length)
-                                ref.off();
-                        });
-
                         database.set_guild_config_value(message.guild.id, `scoreboard/${config.stat_name}`, null);
                         message.reply(`Removed the scoreboard stat \`${config.stat_name}\`.`);
 

@@ -356,11 +356,17 @@ module.exports = {
                                 }
                                 
                                 var id = message.author.id;
-                                if (a.user_id != `-1`)
+                                if (a.user_id > 0)
                                     id = a.user_id;
 
                                 var member = message.guild.members.cache.find(m => m.user.id == id);
-                                    if (!member.user || member.user.bot)
+                                    if (!member)
+                                        return;
+                                    
+                                    if (!member.user)
+                                        return;
+
+                                    if (member.user.bot)
                                         return;
 
                                 database.set_user_value(message.guild.id, id, a.stat_name, stat);

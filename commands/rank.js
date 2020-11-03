@@ -97,6 +97,9 @@ module.exports = {
 
             for (var i = 0; i < stats_array.length; i++) {
                 if (stats_array[i][0] != `last_xp_message_timestamp`) {
+                    if (!guild_stats[`${stats_array[i][0]}`])
+                        continue;
+                        
                     var display_name = `XP`;
 
                     if (stats_array[i][0] == `level`)
