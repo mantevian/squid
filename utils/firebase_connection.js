@@ -45,17 +45,7 @@ module.exports.set_guild_config_value = function set_guild_config_value(guild_id
     database.ref(`guild_config/${guild_id}/${key}`).set(value);
 }
 
-module.exports.create_collar_user = function create_collar_user(user_id) {
-    database.ref(`guild_stats/${config.collar_guild_id}/${user_id}`).set({
-        points: 0,
-        ideas_implemented: 0,
-        badges: [
-            `impossible`
-        ]
-    });
-}
-
-module.exports.create_squid_user = function create_squid_user(guild_id, user_id) {
+module.exports.create_user = function create_user(guild_id, user_id) {
     database.ref(`guild_stats/${guild_id}/${user_id}`).set({
         xp: 0,
         level: 0,
@@ -71,31 +61,15 @@ module.exports.get_user_value = async function get_user_value(guild_id, user_id,
     return database.ref(`/guild_stats/${guild_id}/${user_id}/${key}`).once(`value`);
 }
 
-module.exports.get_collar_user_value = function get_collar_user_value(user_id, key) {
-    this.get_user_value(config.collar_guild_id, user_id, key);
-}
-
 module.exports.set_user = function set_user(guild_id, user_id, new_data) {
     database.ref(`guild_stats/${guild_id}/${user_id}`).set(new_data);
-}
-
-module.exports.set_collar_user = function set_collar_user(user_id, new_data) {
-    this.set_user(config.collar_guild_id, user_id, new_data);
 }
 
 module.exports.set_user_value = function set_user_value(guild_id, user_id, key, value) {
     database.ref(`guild_stats/${guild_id}/${user_id}/${key}`).set(value);
 }
 
-module.exports.set_collar_user_value = function set_collar_user_value(user_id, key, value) {
-    this.set_user_value(config.collar_guild_id, user_id, key, value);
-}
-
-module.exports.set_squid_xp = function set_squid_rank(guild_id, user_id, xp) {
-    this.set_user_value(guild_id, user_id, `xp`, xp);
-}
-
-module.exports.set_squid_rank = function set_squid_rank(guild_id, user_id, xp, level) {
+module.exports.set_rank = function set_rank(guild_id, user_id, xp, level) {
     this.set_user_value(guild_id, user_id, `xp`, xp);
     this.set_user_value(guild_id, user_id, `level`, level);
 }

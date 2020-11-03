@@ -21,7 +21,7 @@ module.exports = {
         const user_data = (await database.get_user_data(message.guild.id, message.author.id)).val();
 
         if (!user_data) {
-            database.create_squid_user(message.guild.id, message.author.id);
+            database.create_user(message.guild.id, message.author.id);
             database.increment_stats_length(message.guild.id);
             return;
         }
@@ -49,7 +49,7 @@ module.exports = {
                 level_xp += Math.floor(new_level * (new_level * new_level + 20 * new_level + 800) / 35.49165) + 131;
         }
 
-        database.set_squid_rank(message.guild.id, message.author.id, xp, new_level);
+        database.set_rank(message.guild.id, message.author.id, xp, new_level);
 
         if (new_level <= old_level)
             return;

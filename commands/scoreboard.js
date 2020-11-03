@@ -31,7 +31,7 @@ module.exports = {
                     case `update`:
                     case `u`:
                         if (!(await database.get_guild_config_value(message.guild.id, `scoreboard/${config.stat_name}/display_name`)).val()) {
-                            message.reply(`That scoreboard stat doesn't exist yet!`);
+                            message.reply(`That scoreboard stat doesn't exist in this server!`);
                             return;
                         }
                         database.set_guild_config_value(message.guild.id, `scoreboard/${config.stat_name}/display_name`, config.display_name);
@@ -45,9 +45,17 @@ module.exports = {
                     case `delete`:
                     case `d`:
                         if (!(await database.get_guild_config_value(message.guild.id, `scoreboard/${config.stat_name}/display_name`)).val()) {
-                            message.reply(`That scoreboard stat doesn't exist yet!`);
+                            message.reply(`That scoreboard stat doesn't exist in this server!`);
                             return;
                         }
+
+                        let ref = database.db.ref(`/guild_stats/${message.guild.id}`).orderByChild(config.stat_name);
+                        ref.on(`child_added`, async function (snapshot) {
+                            var id = snapshot.key();
+                            database.set_user_value(message.guild.id, id, config.stat_name, null);
+                            ref.off();
+                        });
+
                         database.set_guild_config_value(message.guild.id, `scoreboard/${config.stat_name}`, null);
                         message.reply(`Removed the scoreboard stat \`${config.stat_name}\`.`);
 
