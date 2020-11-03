@@ -301,7 +301,7 @@ module.exports = {
 
                             case `set_user_stats`:
                                 var stat;
-                                var snapshot = await database.get_user_value(message.guild.id, message.author.id, r.stat_name);
+                                var snapshot = await database.get_user_value(message.guild.id, message.author.id, a.stat_name);
                                 if (!snapshot || snapshot.val() == null)
                                     stat = 0;
                                 else
@@ -309,47 +309,47 @@ module.exports = {
 
                                 switch (r.operation) {
                                     case `set`:
-                                        stat = r.value;
+                                        stat = a.value;
                                         break;
 
                                     case `add`:
-                                        stat += r.value;
+                                        stat += a.value;
                                         break;
 
                                     case `remove`:
-                                        stat -= r.value;
+                                        stat -= a.value;
                                         break;
 
                                     case `multiply`:
-                                        stat *= r.value;
+                                        stat *= a.value;
                                         break;
 
                                     case `divide`:
-                                        stat /= r.value;
+                                        stat /= a.value;
                                         break;
 
                                     case `divide_int`:
-                                        stat = Math.floor(stat / r.value);
+                                        stat = Math.floor(stat / a.value);
                                         break;
 
                                     case `power`:
-                                        stat = Math.pow(stat, r.value);
+                                        stat = Math.pow(stat, a.value);
                                         break;
 
                                     case `sqrt`:
-                                        stat = Math.sqrt(stat, r.value);
+                                        stat = Math.sqrt(stat, a.value);
                                         break;
 
                                     case `sqrt_int`:
-                                        stat = Math.floor(Math.sqrt(stat, r.value));
+                                        stat = Math.floor(Math.sqrt(stat, a.value));
                                         break;
                                 }
                                 
                                 var id = message.author.id;
-                                if (r.user_id != `-1`)
-                                    id = r.user_id;
+                                if (a.user_id != `-1`)
+                                    id = a.user_id;
 
-                                database.set_user_value(message.guild, id, r.stat_name, r.value);
+                                database.set_user_value(message.guild, id, a.stat_name, a.value);
                                 break;
                         }
                     }
