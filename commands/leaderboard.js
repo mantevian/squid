@@ -74,6 +74,8 @@ module.exports = {
                 if (n == stats_length - 1) {
                     list = list.split(`\n`).reverse().join(`\n`);
 
+                    if (!client.scoreboards)
+                        return;
                     var guild_stats = client.scoreboards.get(message.guild.id);
 
                     var display_name = `XP`;
@@ -85,8 +87,8 @@ module.exports = {
                         display_name = guild_stats[`${config.stat_name}`].display_name;
 
                     var embed = new MessageEmbed()
-                    .setTitle(`${message.guild.name} leaderboard // ${display_name} // Page ${page}`)
-                    .setDescription(list);
+                        .setTitle(`${message.guild.name} leaderboard // ${display_name} // Page ${page}`)
+                        .setDescription(list);
 
                     message.channel.send(embed);
 

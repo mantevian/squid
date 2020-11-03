@@ -93,6 +93,9 @@ module.exports = {
             var stats_array = Object.entries(stats);
             var list = ``;
 
+            if (!client.scoreboards)
+                return;
+                
             var guild_stats = client.scoreboards.get(message.guild.id);
 
             for (var i = 0; i < stats_array.length; i++) {

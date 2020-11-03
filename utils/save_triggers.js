@@ -7,5 +7,7 @@ module.exports = function (client) {
         if (guild_triggers) {
             client.message_triggers.set(g.id, guild_triggers);
         }
+        else
+            client.message_triggers.set(g.id, undefined);
     });
 }

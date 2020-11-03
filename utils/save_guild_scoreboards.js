@@ -7,5 +7,7 @@ module.exports = function (client) {
         if (guild_scoreboard) {
             client.scoreboards.set(g.id, guild_scoreboard);
         }
+        else
+            client.scoreboards.set(g.id, undefined);
     });
 }
