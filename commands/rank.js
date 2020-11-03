@@ -97,22 +97,20 @@ module.exports = {
                 return;
 
             var guild_stats = client.scoreboards.get(message.guild.id);
+            if (!guild_stats) {
+                message.reply(`There are no custom statistics in this server!`);
+                return;
+            }
 
             for (var i = 0; i < stats_array.length; i++) {
                 if (!stats_array[i])
                     continue;
-                    
-                if (stats_array[i][0] != `last_xp_message_timestamp`) {
-                    if (stats_array[i][0] != `level` && stats_array[i][0] != `xp` && !guild_stats[`${stats_array[i][0]}`])
+
+                if (stats_array[i][0] != `last_xp_message_timestamp` && stats_array[i][0] != `xp` && stats_array[i][0] != `level`) {
+                    if (!guild_stats[`${stats_array[i][0]}`])
                         continue;
 
-                    var display_name = `XP`;
-
-                    if (stats_array[i][0] == `level`)
-                        display_name = `Level`;
-
-                    else if (guild_stats[`${stats_array[i][0]}`])
-                        display_name = guild_stats[`${stats_array[i][0]}`].display_name;
+                    var display_name = guild_stats[`${stats_array[i][0]}`].display_name;
 
                     list += `**${display_name}:** ${stats_array[i][1]}\n`;
                 }
