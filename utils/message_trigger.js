@@ -307,7 +307,7 @@ module.exports = {
                                 else
                                     stat = await snapshot.val();
 
-                                switch (r.operation) {
+                                switch (a.operation) {
                                     case `set`:
                                         stat = a.value;
                                         break;
