@@ -298,6 +298,59 @@ module.exports = {
                                 else
                                     message.react(a.emoji);
                                 break;
+
+                            case `set_user_stats`:
+                                var stat;
+                                var snapshot = await database.get_user_value(message.guild.id, message.author.id, r.stat_name);
+                                if (!snapshot || snapshot.val() == null)
+                                    stat = 0;
+                                else
+                                    stat = await snapshot.val();
+
+                                switch (r.operation) {
+                                    case `set`:
+                                        stat = r.value;
+                                        break;
+
+                                    case `add`:
+                                        stat += r.value;
+                                        break;
+
+                                    case `remove`:
+                                        stat -= r.value;
+                                        break;
+
+                                    case `multiply`:
+                                        stat *= r.value;
+                                        break;
+
+                                    case `divide`:
+                                        stat /= r.value;
+                                        break;
+
+                                    case `divide_int`:
+                                        stat = Math.floor(stat / r.value);
+                                        break;
+
+                                    case `power`:
+                                        stat = Math.pow(stat, r.value);
+                                        break;
+
+                                    case `sqrt`:
+                                        stat = Math.sqrt(stat, r.value);
+                                        break;
+
+                                    case `sqrt_int`:
+                                        stat = Math.floor(Math.sqrt(stat, r.value));
+                                        break;
+                                }
+                                
+                                var id = message.author.id;
+                                if (r.user_id != `-1`)
+                                    id = r.user_id;
+
+                                database.set_user_value(message.guild, id, r.stat_name, r.value);
+                                break;
                         }
                     }
                 }
