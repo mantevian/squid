@@ -10,6 +10,9 @@ module.exports = {
         const triggers = client.message_triggers.array();
 
         for (var g = 0; g < triggers.length; g++) {
+            if (!triggers[g])
+                continue;
+                
             const guild_triggers = Object.entries(triggers[g]);
 
             for (var j = 0; j < guild_triggers.length; j++) {
