@@ -95,10 +95,13 @@ module.exports = {
 
             if (!client.scoreboards)
                 return;
-                
+
             var guild_stats = client.scoreboards.get(message.guild.id);
 
             for (var i = 0; i < stats_array.length; i++) {
+                if (!stats_array[i])
+                    continue;
+                    
                 if (stats_array[i][0] != `last_xp_message_timestamp`) {
                     if (stats_array[i][0] != `level` && stats_array[i][0] != `xp` && !guild_stats[`${stats_array[i][0]}`])
                         continue;
