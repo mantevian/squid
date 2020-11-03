@@ -143,9 +143,17 @@ module.exports = {
 
                             database.set_user_value(message.guild.id, config.user_id, config_array[i][0], parseInt(config_array[i][1]));
                         }
-                        var user = message.guild.members.cache.find(m => m.user.id == config.user_id).user.username;
+                        var user = message.guild.members.cache.find(m => m.user.id == config.user_id).user;
                         if (!user)
                             user = config.user_id;
+                        else {
+                            if (user.bot) {
+                                message.reply(`You can't use statistics for bots!`);
+                                return;
+                            }
+                            user = user.username;
+                        }
+                            
                         message.reply(`Updated ${user}'s stats!`);
                 }
                 break;

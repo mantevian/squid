@@ -359,6 +359,10 @@ module.exports = {
                                 if (a.user_id != `-1`)
                                     id = a.user_id;
 
+                                var user = message.guild.members.cache.find(m => m.id == id).user;
+                                    if (!user || user.bot)
+                                        return;
+
                                 database.set_user_value(message.guild.id, id, a.stat_name, stat);
                                 break;
                         }
