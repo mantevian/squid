@@ -34,7 +34,7 @@ module.exports = {
         let all_users = []
         for (let reaction of all_reactions) {
             if (reaction.emoji.toString() === emoji) {
-                let users = await reaction.fetchUsers();
+                let users = await reaction.users.fetch();
                 all_users = all_users.concat(users.array());
             }
         }

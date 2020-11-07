@@ -48,7 +48,7 @@ module.exports = {
 
             let players = [];
             for (let reaction of collected.array()) {
-                let users = await reaction.fetchUsers();
+                let users = await reaction.users.fetch();
                 players = players.concat(users.array());
             }
             players = players.filter(player => player.id != client.user.id);
