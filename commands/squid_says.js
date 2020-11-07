@@ -12,17 +12,17 @@ module.exports = {
         config.opposite_day = false;
 
         if (args.length < 2) {
-            message.reply(`Include a channel! (\`${args[0]} #<channel name>\`)`);
+            message.reply(`Include a channel! (\`${args[1]} #<channel name>\`)`);
             return;
         }
 
-        let channel = client.channels.cache.get(args[0].slice(2).slice(0, -1));
+        let channel = client.channels.cache.get(args[1].slice(2).slice(0, -1));
 
         if (!channel) {
             message.reply(`That's not a valid channel!`);
             return;
         }
-        let time = args[1] ? parseInt(args[1]) * 1000 : 60000;
+        let time = args[2] ? parseInt(args[2]) * 1000 : 60000;
         if (!time) {
             message.reply(`The time must be an integer of seconds.`);
             return;
@@ -31,7 +31,7 @@ module.exports = {
         if (channel) {
             message.channel.send(`Starting game in ${channel}!`);
         } else {
-            message.reply(`${args[0]} is not a valid channel`);
+            message.reply(`${args[1]} is not a valid channel`);
             return;
         }
 
