@@ -5,7 +5,7 @@ const
 module.exports = {
     name: "scoreboard",
     enabled: true,
-    permission_level: 3,
+    permission_level: 2,
     beta: true,
     description: "Control the server's stats",
     usage: "stats create|update|remove [stat_name, display_name] OR members add|remove|set [user_id, stat_name=amount ...]",

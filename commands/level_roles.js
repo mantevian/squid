@@ -4,7 +4,7 @@ const
 module.exports = {
     name: "level_roles",
     enabled: true,
-    permission_level: 3,
+    permission_level: 2,
     beta: false,
     description: "Set or view server's level roles. Use `remove` in <role name> to remove a role from the list",
     usage: "set <level> <role name> OR view",

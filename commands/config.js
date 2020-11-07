@@ -6,7 +6,7 @@ const
 module.exports = {
     name: "config",
     enabled: true,
-    permission_level: 3,
+    permission_level: 2,
     beta: false,
     description: "Set or view server's configuration",
     usage: "view <item> OR set <item1=value1> [item2=value2] ...",

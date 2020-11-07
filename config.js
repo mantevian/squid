@@ -1,7 +1,7 @@
 module.exports = {
     bot_owner_id: "240841342723424256",
     bot_owner_tag: "Mante#6804",
-    bot_version: "0.2.0",
+    bot_version: "0.3.0-a1",
 
     default_guild_config: {
         level_roles: null,
@@ -76,5 +76,49 @@ module.exports = {
             hide_uncached_from_leaderboards: false,
             old_leveling: false,
         }
+    },
+
+    squid_says: {
+        fake_starts: [
+            "Alright,",
+            "Okay,",
+            "Now,",
+            "Squad says",
+            "Squod says",
+            "Squ!d says",
+            "Please",
+            "Glow Squid says",
+            "Say squids"
+        ],
+        tasks: {
+            say: [
+                "hello",
+                "hi",
+                "boom",
+                "beep boop",
+                "i love this bot",
+                "squid is cool",
+                "glow squid",
+                "pog",
+                "iceologer",
+                "moobloom"
+            ],
+            react: [
+                "🤖",
+                "👍",
+                "🔥",
+                "🤔",
+                "🌊",
+                "🌅",
+                "❤️"
+            ],
+            status: [
+                "online",
+                "idle",
+                "dnd",
+                "offline"
+            ]
+        },
+        opposite_day: false
     }
 }

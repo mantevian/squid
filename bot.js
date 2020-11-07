@@ -20,6 +20,14 @@ for (let file of commands) {
         client.commands.set(command.name, command);
 }
 
+client.squid_says_minigames = [];
+const squid_says_games = fs.readdirSync(`./resources/squid_says_minigames`).filter(f => f.endsWith('.js'));
+
+for (const file of squid_says_games) {
+    const game = require(`./resources/squid_says_minigames/${file}`)
+    client.squid_says_minigames.push(game);
+}
+
 client.on(`ready`, () => {
     client.user.setActivity(`Mante`, { type: `LISTENING` });
     console.log(`squiddley`);
