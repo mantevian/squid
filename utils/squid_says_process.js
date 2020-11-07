@@ -1,5 +1,5 @@
-const random_start = require('./random_start.js'),
-    discord = require('discord.js'),
+const random_start = require(`../utils/squid_says_random_start.js`),
+    discord = require(`discord.js`),
     config = require(`../config.js`).squid_says;
 
 module.exports.run_game = async function (channel, players_, client) {

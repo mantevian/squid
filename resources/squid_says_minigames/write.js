@@ -1,5 +1,5 @@
 var fs = require('fs')
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require(`discord.js`)
 
 module.exports = {
     start_message: 'write something in chat!',

@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     start_message: 'write the following text in chat...',
