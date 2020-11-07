@@ -1,20 +1,18 @@
-const { MessageEmbed } = require(`discord.js`),
-    fs = require(`fs`);
+const { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     name: "squid_says",
     enabled: true,
     permission_level: 2,
-    beta: false,
+    beta: true,
     description: "The Simon Says game",
     usage: "start <channel> <time to join in seconds>",
     run: async (client, message, args) => {
         var config = require(`../config.js`).squid_says;
         config.opposite_day = false;
-        fs.writeFileSync(`./guilds/${message.guild.id}.json`, JSON.stringify(config));
 
         if (args.length < 2) {
-            message.reply(`Include a channel! (${args[0]} #[channelname])`);
+            message.reply(`Include a channel! (\`${args[0]} #<channel name>\`)`);
             return;
         }
 
@@ -24,7 +22,7 @@ module.exports = {
             message.reply(`That's not a valid channel!`);
             return;
         }
-        let time = args[1] ? parseInt(args[1]) * 1000 : 60000
+        let time = args[1] ? parseInt(args[1]) * 1000 : 60000;
         if (!time) {
             message.reply(`The time must be an integer of seconds.`);
             return;

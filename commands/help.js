@@ -23,7 +23,7 @@ module.exports = {
                 .setColor(message.member.displayColor)
                 .setTitle(`Squid Help`)
                 .setDescription(list)
-                .addField(`Info`, `Prefix: \`${client.prefix}\`\nBot created by: \`${config.bot_owner_tag}\`. Bot version: \`${config.bot_version}\``, true)
+                .addField(`Info`, `Prefix: \`${client.prefix}\`\nBot created by: \`${config.mante_tag}\`, credits for the Squid Says gamemode to \`${config.sputnix_tag}\`. Bot version: \`${config.bot_version}\``, true)
                 .addField(`Documentation`, `https://github.com/mantevian/squid\n\nhttps://mantevian.github.io/squid.html`, true);
 
             message.channel.send(embed);
