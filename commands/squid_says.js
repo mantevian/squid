@@ -1,4 +1,5 @@
-const { MessageEmbed } = require(`discord.js`);
+const { MessageEmbed } = require(`discord.js`),
+run_game = require(`../utils/squid_says_process.js`).run_game;
 
 module.exports = {
     name: "squid_says",
