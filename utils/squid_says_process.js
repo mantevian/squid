@@ -13,7 +13,7 @@ module.exports.run_game = async function (channel, players_, client) {
 
     while (game_is_on) {
         let games = []
-        for (let game of client.minigames) {
+        for (let game of client.squid_says_minigames) {
             if (game.name == 'opposite_day' && rounds < 4) continue
             games.push(game);
         }
