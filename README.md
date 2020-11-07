@@ -23,7 +23,7 @@ The action order system allows things such as making a role mentionable, sending
 
 ## Commands
 > config
-* Permission Level: 3
+* Permission Level: 2
 * Used to set the bot's configuration for a specific server.
 * Usage:
   * `config view` - shows all server configurations,
@@ -56,7 +56,7 @@ The action order system allows things such as making a role mentionable, sending
 * Example: `leaderboard 3`
 
 > level_roles
-* Permission Level: 3
+* Permission Level: 2
 * Sets/views server's roles given for reaching XP levels.
 * Usage:
   * `level_roles view` - shows all level roles,
@@ -78,7 +78,7 @@ The action order system allows things such as making a role mentionable, sending
   * `rank user_id=240841342723424256 custom=true`
 
 > scoreboard
-* Permission Level: 3
+* Permission Level: 2
 * Used to manipulate custom statistics for the server.
 * Usage: `stats create|update|remove [stat_name, display_name] OR members add|remove|set [user_id, stat_name=amount ...]`
 * Examples:
@@ -87,7 +87,7 @@ The action order system allows things such as making a role mentionable, sending
   * `scoreboard members set user_id=240841342723424256 points=20 xp=12345`
   
 > trigger
-* Permission Level: 3
+* Permission Level: 2
 * Configures server's message triggers.
 * Usage:
   * `trigger create <trigger name> <type> <text channel ID>` - adds a trigger to the server. By default only works in the specific channel entered in the command (use `-1` as text channel ID to enable it in all channels). Type can be one of these: `sent`, `edited` or `deleted`. `sent` checks for new messages in the server, `edited` checks for edited messages and reads the new message text, `deleted` checks for deleted messages and still can read their content,

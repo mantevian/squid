@@ -70,10 +70,13 @@ client.on(`message`, message => {
             if (message.author.id == config.bot_owner_id)
                 users_perm_level = 4;
 
-            if (command.permission_level <= users_perm_level)
+            if ((users_perm_level == 4 && command.permission_level == 4))
+                command.run(client, message, args);
+
+            else if (command.permission_level <= users_perm_level)
                 command.run(client, message, args);
             else
-                message.reply("You don't have the permission to run this command!");
+                message.reply(`You don't have the permission to run this command!`);
         });
     }
 });
