@@ -2,7 +2,7 @@
 const { MessageEmbed } = require(`discord.js`)
 module.exports = {
     start_message: 'react to this message!',
-    default_time: 20000,
+    default_time: 22500,
     name: 'react',
     run: async function (channel, players, time, client, info) {
         let all_reactions = info.start_message.awaitReactions(() => true, {
@@ -16,16 +16,16 @@ module.exports = {
         let squid_says_times_up_embed = new MessageEmbed()
             .setTitle(`Squid says time's up!`)
             .setColor(`#0F93FF`);
-        if (info.config.opposite_day) await channel.send(alright_times_up_embed)
-        else await channel.send(squid_says_times_up_embed)
-        await sleep(1000)
+        if (info.config.opposite_day) await channel.send(alright_times_up_embed);
+        else await channel.send(squid_says_times_up_embed);
+        await sleep(1000);
         all_reactions = await all_reactions;
         all_reactions = all_reactions.array();
 
         let all_users = []
         for (let reaction of all_reactions) {
-            let users = await reaction.users.fetch()
-            all_users = all_users.concat(users.array())
+            let users = await reaction.users.fetch();
+            all_users = all_users.concat(users.array());
         }
 
         let out = [];
@@ -35,23 +35,30 @@ module.exports = {
 
             if (all_users.includes(player)) {
                 if (!info.simon_said) {
-                    out.push(player)
-                    out_index.push(i)
+                    out.push(player);
+                    out_index.push(i);
                 } else {
-                    reacted = true
+                    reacted = true;
                 }
             }
 
             if (info.simon_said && !reacted) {
-                out.push(player)
-                out_index.push(i)
+                out.push(player);
+                out_index.push(i);
             }
         })
-        let new_players = players.filter((el) => !out.includes(el))
+        let new_players = players.filter((el) => !out.includes(el));
+        let draw = false;
+        if (new_players.length == 0 && players.length > 1) {
+            draw = true;
+            new_players = players;
+        }
+        
         return ({
             players_out: out,
             players_left: new_players,
-            config_out: info.config
+            config_out: info.config,
+            draw: draw
         });
     }
 }

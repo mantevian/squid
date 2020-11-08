@@ -2,7 +2,7 @@ const { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     start_message: 'don\'t write anything in chat!',
-    default_time: 10000,
+    default_time: 12500,
     name: 'dont_write',
     run: async function (channel, players, time, client, info) {
         const collector = channel.createMessageCollector(() => true);
@@ -31,7 +31,7 @@ module.exports = {
         let out = [];
         let out_index = [];
         players.forEach((player, i) => {
-            let sent_message = false
+            let sent_message = false;
             for (const message of messages) {
                 if (message.author == player) {
                     if (info.simon_said) {
@@ -46,13 +46,20 @@ module.exports = {
                 out.push(player);
                 out_index.push(i);
             }
-        })
-        let new_players = players.filter((el) => !out.includes(el))
+        });
+        let new_players = players.filter((el) => !out.includes(el));
+        let draw = false;
+        if (new_players.length == 0 && players.length > 1) {
+            draw = true;
+            new_players = players;
+        }
+        
         return ({
             players_out: out,
             players_left: new_players,
-            config_out: config
-        })
+            config_out: config,
+            draw: draw
+        });
     }
 }
 function sleep(ms) {

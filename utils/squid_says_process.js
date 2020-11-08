@@ -12,7 +12,7 @@ module.exports.run_game = async function (channel, players_, client) {
     let last_game = null;
 
     while (game_is_on) {
-        let games = []
+        let games = [];
         for (let game of client.squid_says_minigames) {
             if (game.name == 'opposite_day' && rounds < 4) continue
             games.push(game);
@@ -38,8 +38,8 @@ module.exports.run_game = async function (channel, players_, client) {
         } else {
             start = random_start(channel.guild.id, config);
         }
-        random_time = ((Math.random() * 25) + 80) / 100;
-        let actual_time = (time * random_time * current_game.default_time).clamp(5000, 25000);
+        random_time = ((Math.random() * 35) + 80) / 100;
+        let actual_time = (time * random_time * current_game.default_time).clamp(5000, 30000);
 
         let start_embed = new discord.MessageEmbed()
             .setTitle(`Task ${rounds}`)
@@ -51,12 +51,13 @@ module.exports.run_game = async function (channel, players_, client) {
         let {
             players_out,
             players_left,
-            config_out
+            config_out,
+            draw
         } = await current_game.run(channel, players, actual_time, client, {
             simon_said: start.real,
             start_message: start_message,
             config: config
-        })
+        });
         config = config_out;
 
         await sleep(1000);
@@ -74,10 +75,14 @@ module.exports.run_game = async function (channel, players_, client) {
             embed.setTitle(`${players_out.map(user => user.username).join(', ')} ${players_out.length > 1 ? "are" : "is"} out with ${rounds} points...`)
                 .setDescription('Players still in: ' + get_players_still_in() + '\n\nThe next task starts in 15 seconds...')
                 .setColor(`#FF230F`);
-        } else {
+        } else if (!draw) {
             embed.setTitle('Good job! Nobody fell out!\n\n')
                 .setDescription('Players still in: ' + get_players_still_in() + '\n\nThe next task starts in 15 seconds...')
                 .setColor(`#33CC14`);
+        } else {
+            embed.setTitle('Oh no, everyone is out! There is no certain winner yet, so everyone gets to continue playing!\n\n')
+                .setDescription('Players still in: ' + get_players_still_in() + '\n\nThe next task starts in 15 seconds...')
+                .setColor(`#FF230F`);
         }
 
         channel.send(embed);
@@ -88,7 +93,7 @@ module.exports.run_game = async function (channel, players_, client) {
             game_is_on = false;
             break;
         }
-        time *= 0.94;
+        time *= 0.95;
         players = players_left;
         rounds++;
         last_game = current_game;

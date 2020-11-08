@@ -3,7 +3,7 @@ const { MessageEmbed } = require(`discord.js`)
 
 module.exports = {
     start_message: 'write something in chat!',
-    default_time: 12500,
+    default_time: 17500,
     name: 'write',
     run: async function (channel, players, time, client, info) {
         const collector = channel.createMessageCollector(() => true);
@@ -47,11 +47,18 @@ module.exports = {
                 out_index.push(i);
             }
         })
-        let new_players = players.filter((el) => !out.includes(el))
+        let new_players = players.filter((el) => !out.includes(el));
+        let draw = false;
+        if (new_players.length == 0 && players.length > 1) {
+            draw = true;
+            new_players = players;
+        }
+
         return ({
             players_out: out,
             players_left: new_players,
-            config_out: config
+            config_out: config,
+            draw: draw
         })
     }
 }

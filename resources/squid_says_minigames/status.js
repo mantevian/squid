@@ -2,7 +2,7 @@ const { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     start_message: 'change your status to:',
-    default_time: 25000,
+    default_time: 30000,
     name: 'status',
     run: async function (channel, players, time, client, info) {
         const config = info.config
@@ -43,12 +43,19 @@ module.exports = {
                 }
             }
         })
-        let new_players = players.filter((el) => !out.includes(el))
+        let new_players = players.filter((el) => !out.includes(el));
+        let draw = false;
+        if (new_players.length == 0 && players.length > 1) {
+            draw = true;
+            new_players = players;
+        }
+    
         return ({
             players_out: out,
             players_left: new_players,
-            config_out: config
-        })
+            config_out: config,
+            draw: draw
+        });
     }
 }
 

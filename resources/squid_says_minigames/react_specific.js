@@ -2,7 +2,7 @@ const { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     start_message: 'react to the following message with the emoji in it...',
-    default_time: 25000,
+    default_time: 27500,
     name: 'react_specific',
     run: async function (channel, players, time, client, info) {
         const config = info.config;
@@ -12,12 +12,12 @@ module.exports = {
         let emoji_embed = new MessageEmbed()
             .setDescription(emoji)
             .setColor(`#0F93FF`);
-        const start_message = await channel.send(emoji_embed)
+        const start_message = await channel.send(emoji_embed);
 
         let all_reactions = start_message.awaitReactions(() => true, {
             time: time
-        })
-        await sleep(time - 1000)
+        });
+        await sleep(time - 1000);
         let alright_times_up_embed = new MessageEmbed()
             .setTitle(`Alright time's up!`)
             .setColor(`#0F93FF`);
@@ -31,7 +31,7 @@ module.exports = {
         all_reactions = await all_reactions;
         all_reactions = all_reactions.array();
 
-        let all_users = []
+        let all_users = [];
         for (let reaction of all_reactions) {
             if (reaction.emoji.toString() === emoji) {
                 let users = await reaction.users.fetch();
@@ -56,13 +56,20 @@ module.exports = {
                 out.push(player)
                 out_index.push(i)
             }
-        })
-        let new_players = players.filter((el) => !out.includes(el))
+        });
+        let new_players = players.filter((el) => !out.includes(el));
+        let draw = false;
+        if (new_players.length == 0 && players.length > 1) {
+            draw = true;
+            new_players = players;
+        }
+        
         return ({
             players_out: out,
             players_left: new_players,
-            config_out: config
-        })
+            config_out: config,
+            draw: draw
+        });
     }
 }
 

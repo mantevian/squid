@@ -57,13 +57,19 @@ module.exports = {
             }
         });
         let new_players = players.filter((el) => !out.includes(el));
-
+        let draw = false;
+        if (new_players.length == 0 && players.length > 1) {
+            draw = true;
+            new_players = players;
+        }
+        
         config.opposite_day = !config.opposite_day;
 
         return ({
             players_out: out,
             players_left: new_players,
-            config_out: config
+            config_out: config,
+            draw: draw
         });
     }
 }
