@@ -105,6 +105,10 @@ module.exports = {
 
             case `view`:
                 database.get_guild_config_value(message.guild.id, `message_triggers`).then(function (snapshot) {
+                    if (!snapshot) {
+                        message.reply(`There are no triggers in this server. Use \`s!trigger create\` to add one.`);
+                        return;
+                    }
                     const entries = Object.entries(snapshot.val());
                     if (args.length == 1) {
                         var list = ``;
