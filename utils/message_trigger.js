@@ -12,7 +12,7 @@ module.exports = {
         for (var g = 0; g < triggers.length; g++) {
             if (!triggers[g])
                 continue;
-                
+
             const guild_triggers = Object.entries(triggers[g]);
 
             for (var j = 0; j < guild_triggers.length; j++) {
@@ -57,26 +57,27 @@ module.exports = {
                                 break;
 
                             case `message_content`:
-                                if (r.message_content_includes && r.case_sensitive)
-                                    if (!message.content.includes(r.text))
-                                        requirements_met = false;
-
-                                if (r.message_content_includes && !r.case_sensitive)
-                                    if (!message.content.toLowerCase().includes(r.text.toLowerCase()))
-                                        requirements_met = false;
-
-                                if (!r.message_content_includes && r.case_sensitive)
-                                    if (message.content.toLowerCase() != r.text.toLowerCase())
-                                        requirements_met = false;
-
-                                if (!r.message_content_includes && !r.case_sensitive)
-                                    if (message.content != r.text)
-                                        requirements_met = false;
-                            console.log(r.regex)
-                            console.log(message.content.match(new RegExp(r.regex)))
-                                if (r.regex)
+                                if (r.regex) {
                                     if (!message.content.match(new RegExp(r.regex)))
                                         requirements_met = false;
+                                }
+                                else {
+                                    if (r.message_content_includes && r.case_sensitive)
+                                        if (!message.content.includes(r.text))
+                                            requirements_met = false;
+
+                                    if (r.message_content_includes && !r.case_sensitive)
+                                        if (!message.content.toLowerCase().includes(r.text.toLowerCase()))
+                                            requirements_met = false;
+
+                                    if (!r.message_content_includes && r.case_sensitive)
+                                        if (message.content.toLowerCase() != r.text.toLowerCase())
+                                            requirements_met = false;
+
+                                    if (!r.message_content_includes && !r.case_sensitive)
+                                        if (message.content != r.text)
+                                            requirements_met = false;
+                                }
                                 break;
 
                             case `content_is_number`:
@@ -358,20 +359,20 @@ module.exports = {
                                         stat = Math.floor(Math.sqrt(stat, a.value));
                                         break;
                                 }
-                                
+
                                 var id = message.author.id;
                                 if (a.user_id > 0)
                                     id = a.user_id;
 
                                 var member = message.guild.members.cache.find(m => m.user.id == id);
-                                    if (!member)
-                                        return;
-                                    
-                                    if (!member.user)
-                                        return;
+                                if (!member)
+                                    return;
 
-                                    if (member.user.bot)
-                                        return;
+                                if (!member.user)
+                                    return;
+
+                                if (member.user.bot)
+                                    return;
 
                                 database.set_user_value(message.guild.id, id, a.stat_name, stat);
                                 break;
