@@ -43,6 +43,7 @@ module.exports = {
                     database.set_guild_config_value(message.guild.id, c[0], c[1]);
                     message.reply(`Successfully changed the server's configuration!`);
                 });
+                break;
             default:
                 message.reply(`Command usage: \`view <item> OR set <item1=value1> [item2=value2] ...\``);
         }

@@ -19,6 +19,11 @@ module.exports.args_parse = function args_parse(text) {
             continue;
         }
 
+        if (value == "null") {
+            args[field] = null;
+            continue;
+        }
+
         if (parseInt(value, 10).toString() == value) {
             args[field] = parseInt(value);
             continue;
