@@ -36,8 +36,6 @@ client.on(`ready`, () => {
 });
 
 client.on(`message`, message => {
-    console.log(message.guild.id)
-
     require(`./utils/message_trigger.js`).run(message, client, `sent`);
 
     if (!message.guild || message.author.bot)
@@ -57,17 +55,16 @@ client.on(`message`, message => {
     let command = client.commands.get(message_command);
 
     if (command) {
-        console.log(message.guild.id)
         database.get_guild_config_value(message.guild.id, `use_beta_features`).then(snapshot => {
-            if (!snapshot.val())
+            if (snapshot.val() == false)
                 return;
-            console.log(message.author.username)
+
             var enable_beta = snapshot.val();
             if (enable_beta == false && command.beta == true) {
                 message.reply(`This command is a beta feature which means it's under development. If you want to use beta features in this server, run \`s!config set use_beta_features=true\`, however keep in mind that these commands are not guaranteed to work properly and can cause bugs/crashes.`);
                 return;
             }
-            console.log(message.content)
+
             var users_perm_level = 0;
             if (message.member.hasPermission("MANAGE_MESSAGES"))
                 users_perm_level = 1;
@@ -77,7 +74,6 @@ client.on(`message`, message => {
                 users_perm_level = 3;
             if (message.author.id == config.bot_owner_id)
                 users_perm_level = 4;
-            console.log(users_perm_level)
 
             if ((users_perm_level == 4 && command.permission_level == 4)) {
                 try {
