@@ -72,7 +72,8 @@ module.exports = {
                                 if (!r.message_content_includes && !r.case_sensitive)
                                     if (message.content != r.text)
                                         requirements_met = false;
-
+                            console.log(r.regex)
+                            console.log(message.content.match(new RegExp(r.regex)))
                                 if (r.regex)
                                     if (!message.content.match(new RegExp(r.regex)))
                                         requirements_met = false;
