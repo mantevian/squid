@@ -38,7 +38,10 @@ client.on(`ready`, () => {
 client.on(`message`, message => {
     require(`./utils/message_trigger.js`).run(message, client, `sent`);
 
-    if (message.author.bot || !message.guild || !(message.content.startsWith(client.prefix) || message.content.startsWith(`s!`))) {
+    if (!message.guild || message.author.bot)
+        return;
+
+    if (!(message.content.startsWith(client.prefix) || message.content.startsWith(`s!`))) {
         require(`./utils/leveling.js`).run(message, client);
         return;
     }

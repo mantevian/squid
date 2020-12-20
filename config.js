@@ -69,13 +69,13 @@ module.exports = {
         levelup_message_enabled: true,
         use_beta_features: false,
         settings: {
-            xp_enabled: true,
+            xp_enabled: false,
             xp_cooldown: 60000,
             xp_min: 8,
             xp_max: 16,
             new_role_message_enabled: true,
             hide_uncached_from_leaderboards: false,
-            old_leveling: false,
+            old_leveling: false
         }
     },
 

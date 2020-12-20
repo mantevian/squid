@@ -56,14 +56,15 @@ module.exports = {
 
         const levelup_message_adjectives = (await database.get_guild_config_value(message.guild.id, `levelup_message_adjectives`)).val();
         const levelup_emoji = (await database.get_guild_config_value(message.guild.id, `levelup_emoji`)).val();
-        const level_roles = (await database.get_guild_config_value(message.guild.id, `level_roles`)).val();
 
         const levelup_adjective = utils.weighted_random_choice(levelup_message_adjectives);
 
         message.channel.send(`The ${levelup_adjective} **${message.author.username}** has just leveled up to level **${new_level}**! ${levelup_emoji}`);
 
+        var level_roles = (await database.get_guild_config_value(message.guild.id, `level_roles`));
         if (!level_roles)
             return;
+        level_roles = level_roles.val();
 
         if (!level_roles[`level_${new_level}`])
             return;
