@@ -160,9 +160,10 @@ The action order system allows things such as making a role mentionable, sending
 > message_content
 * Checks for text of the message.
 * Arguments:
-  * `text` - the needed text.,
+  * `text` - the needed text,
   * `message_content_includes` - if true, the whole message doesn't need to match `text` but just include it,
-  * `case_sensitive` - if true, the message has to exactly match `text` in terms of letter case.
+  * `case_sensitive` - if true, the message has to exactly match `text` in terms of letter case,
+  * `regex` - if present, checks if the message content passes this regular expression (doesn't work with any of the other arguments)
   
 > previous_message_author
 * Checks for whoever sent a previous message in this message's channel.

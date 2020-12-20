@@ -58,24 +58,24 @@ module.exports = {
 
                             case `message_content`:
                                 if (r.message_content_includes && r.case_sensitive)
-                                    if (!message.content.includes(r.text)) {
+                                    if (!message.content.includes(r.text))
                                         requirements_met = false;
-                                    }
 
                                 if (r.message_content_includes && !r.case_sensitive)
-                                    if (!message.content.toLowerCase().includes(r.text.toLowerCase())) {
+                                    if (!message.content.toLowerCase().includes(r.text.toLowerCase()))
                                         requirements_met = false;
-                                    }
 
                                 if (!r.message_content_includes && r.case_sensitive)
-                                    if (message.content.toLowerCase() != r.text.toLowerCase()) {
+                                    if (message.content.toLowerCase() != r.text.toLowerCase())
                                         requirements_met = false;
-                                    }
 
                                 if (!r.message_content_includes && !r.case_sensitive)
-                                    if (message.content != r.text) {
+                                    if (message.content != r.text)
                                         requirements_met = false;
-                                    }
+
+                                if (r.regex)
+                                    if (!message.content.match(r.regex))
+                                        requirements_met = false;
                                 break;
 
                             case `content_is_number`:
