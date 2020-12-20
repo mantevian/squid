@@ -74,7 +74,7 @@ module.exports = {
                                         requirements_met = false;
 
                                 if (r.regex)
-                                    if (!message.content.match(r.regex))
+                                    if (!message.content.match(new RegExp(r.regex)))
                                         requirements_met = false;
                                 break;
 
