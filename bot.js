@@ -5,7 +5,7 @@ const
     database = require(`./utils/firebase_connection.js`);
 
 const client = new Discord.Client();
-client.prefix = "s/";
+client.prefix = "s!";
 
 client.commands = new Discord.Collection();
 client.message_triggers = new Discord.Collection();
@@ -38,10 +38,10 @@ client.on(`ready`, () => {
 client.on(`message`, message => {
     require(`./utils/message_trigger.js`).run(message, client, `sent`);
 
-    if (!message.guild)
+    if (!message.guild || message.author.bot)
         return;
 
-    if (!message.content.startsWith(client.prefix) || !message.content.startsWith(`s!`) || message.author.bot) {
+    if (!message.content.startsWith(client.prefix)) {
         require(`./utils/leveling.js`).run(message, client);
         return;
     }
