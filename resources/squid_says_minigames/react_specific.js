@@ -2,7 +2,7 @@ const { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     start_message: 'react to the following message with the emoji in it...',
-    default_time: 27500,
+    default_time: 30000,
     name: 'react_specific',
     run: async function (channel, players, time, client, info) {
         const config = info.config;

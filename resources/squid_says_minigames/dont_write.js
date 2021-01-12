@@ -2,7 +2,7 @@ const { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     start_message: 'don\'t write anything in chat!',
-    default_time: 12500,
+    default_time: 20000,
     name: 'dont_write',
     run: async function (channel, players, time, client, info) {
         const collector = channel.createMessageCollector(() => true);

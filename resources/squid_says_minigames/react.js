@@ -2,7 +2,7 @@
 const { MessageEmbed } = require(`discord.js`)
 module.exports = {
     start_message: 'react to this message!',
-    default_time: 22500,
+    default_time: 25000,
     name: 'react',
     run: async function (channel, players, time, client, info) {
         let all_reactions = info.start_message.awaitReactions(() => true, {

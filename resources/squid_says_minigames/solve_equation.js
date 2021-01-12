@@ -2,7 +2,7 @@ const { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     start_message: 'write the correct answer to the following equation...',
-    default_time: 20000,
+    default_time: 25000,
     name: 'solve_equation',
     run: async function (channel, players, time, client, info) {
         const symbols = ['+', '-', '*']; // ×

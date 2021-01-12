@@ -9,6 +9,11 @@ module.exports = {
     description: "Control the server's stats",
     usage: "stats create|update|remove [stat_name, display_name] OR members add|remove|set [user_id, stat_name=amount ...]",
     run: async (client, message, args) => {
+        if (args.length == 0) {
+            message.reply(`Usage: \`stats create|update|remove [stat_name, display_name] OR members add|remove|set [user_id, stat_name=amount ...]\`. Learn more: https://github.com/mantevian/squid#scoreboard`);
+            return;
+        }
+
         var config = utils.args_parse(message.content);
 
         switch (args[0]) {

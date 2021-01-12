@@ -2,7 +2,7 @@ const { MessageEmbed } = require(`discord.js`);
 
 module.exports = {
     start_message: 'write the following text in chat...',
-    default_time: 22500,
+    default_time: 25000,
     name: 'write_specific',
     run: async function (channel, players, time, client, info) {
         const config = info.config

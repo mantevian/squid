@@ -3,7 +3,7 @@ const { MessageEmbed } = require(`discord.js`)
 
 module.exports = {
     start_message: 'write something in chat!',
-    default_time: 17500,
+    default_time: 20000,
     name: 'write',
     run: async function (channel, players, time, client, info) {
         const collector = channel.createMessageCollector(() => true);

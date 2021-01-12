@@ -2,8 +2,8 @@
 Initially made for my friends' private server, but I'm slowly making it more public. It's a small general purpose bot with a very few unique features.
 Prefix: `s/`, but `s!` is allowed since apparently `s/` can be used to edit a previous message's content.
 
-## General
-### Permission Levels
+# General
+## Permission Levels
 Each command has a permission level assigned to it, restricting its usage from members that aren't supposed to use it.
 * 0 - Everyone
 * 1 - Server Mods (Manage Messages permission)
@@ -11,18 +11,18 @@ Each command has a permission level assigned to it, restricting its usage from m
 * 3 - Server Owner
 * 4 - Bot Developer
 
-### Command argument syntax
+## Command argument syntax
 Some commands use straight default syntax where all arguments go in a specific order: `s/command <arg1> <arg2> ...`, these arguments are listed in `<>` if they are necessary and `[]` if optional.
 Arguments are listed as `<args*>` if they use a different syntax: `item=value` for numbers or single word strings, or `item="Hello World"` for multiple word strings. This is used for complex commands and a list of possible items is always provided in the documentation. Integers and boolean (`false`, `true`) values are properly converted from strings.
 
-### Message triggers
+## Message triggers
 The message trigger system allows making complex custom commands and actions for the bot. Server owners can create message triggers for their servers. A trigger activates whenever a message is sent and if a message passes its requirements, its actions are performed in a specific configurable order. A list of all possible values for this are listed below under **Reference**.
 
 For example, we have a trigger called `ping_pong` that is supposed to reply "Pong!" to every message that contains "ping" in it and put a reaction on that message. This trigger would need a single requirement, with the type of `message_content` and 2 actions: `send_message` and `react_message`.
 The action order system allows things such as making a role mentionable, sending a message mentioning it and then setting it unmentionable.
 
-## Commands
-### config
+# Commands
+## config
 * Permission Level: 2
 * Used to set the bot's configuration for a specific server.
 * Usage:
@@ -33,29 +33,29 @@ The action order system allows things such as making a role mentionable, sending
   * `config view xp_cooldown` shows what's the XP cooldown on this server,
   * `config set xp_min=10 xp_max=20` sets XP given per message to between 10 and 20.
 
-### datapack
+## datapack
 * Permission Level: 0
 * Generates Minecraft datapacks.
 * Usage: `datapack <args*>`
 * Example:
   * `datapack type=random_dimensions dim_count=10 biome_count=10`
   
-### eval
+## eval
 * Permission Level: 4
 * Executes a JavaScript code from the command.
 * Usage: `eval <code>`
 
-### help
+## help
 * Permission Level: 0
 * Shows help text.
 
-### leaderboard
+## leaderboard
 * Permission Level: 0
 * Shows server's XP leaderboard.
 * Usage: `leaderboard <page>`
 * Example: `leaderboard 3`
 
-### level_roles
+## level_roles
 * Permission Level: 2
 * Sets/views server's roles given for reaching XP levels.
 * Usage:
@@ -63,11 +63,11 @@ The action order system allows things such as making a role mentionable, sending
   * `level_roles set <level> <role name>` - sets a level role. `remove` can be used as a name to remove a role from the list.
 * Example: `level_roles set 10 Squidder` - makes the bot give the role "Squidder" to everyone with level 10 or above.
 
-### ping
+## ping
 * Permission Level: 0
 * Checks the bot's response time.
 
-### rank
+## rank
 * Permission Level: 0
 * Checks someone's XP rank. Enabling `custom` will not show a fancy picture, but instead will show all the custom statistics.
 * Usage: `rank [user_id=...] [custom=true|false]`
@@ -77,7 +77,7 @@ The action order system allows things such as making a role mentionable, sending
   * `rank user_id=240841342723424256`
   * `rank user_id=240841342723424256 custom=true`
 
-### scoreboard
+## scoreboard
 * Permission Level: 2
 * Used to manipulate custom statistics for the server.
 * Usage: `stats create|update|remove [stat_name, display_name] OR members add|remove|set [user_id, stat_name=amount ...]`
@@ -86,7 +86,14 @@ The action order system allows things such as making a role mentionable, sending
   * `scoreboard update stat_name=points display_name="Better Server Points"`
   * `scoreboard members set user_id=240841342723424256 points=20 xp=12345`
   
-### trigger
+## squid_says
+* Permission Level: 2
+* Starts the game of Squid Says. There's a reference about how the game works below.
+* Usage: `start <channel mention> <time to join in seconds>`
+* Example:
+  * `squid_says start #general 600`
+
+## trigger
 * Permission Level: 2
 * Configures server's message triggers.
 * Usage:
@@ -99,8 +106,54 @@ The action order system allows things such as making a role mentionable, sending
   * `trigger add_requirement ping_pong 0 requirement=message_content text=ping case_sensitive=0 message_content_includes=0` - adds a requirement of the type `message_content` that looks for messages that exactly match the string `ping` (case insensitive),
   * `trigger add_action ping_pong 0 action=send_message text="Pong!"` - replies with `Pong!` to all messages that pass the requirements, aka which are "ping".
   
-## Reference
-### Datapacks
+# Reference
+## Squid Says
+Squid says works pretty much like a Simon Says game, except it's, well, Squid. The game starts when a moderator types the `squid_says` command and allows members to join by clicking on a reaction. Throughout the game, Squid sends different small challenges listed below for each member of the event to complete within a certain amount of time, which decreases as the game goes on and depends on the difficulty of the challenge (starts at about 20-30 seconds per challenge). If someone fails any challenge, they are out of the entire game and their actions will not be tracked for this game. The game ends when there's one winner.
+Just like in a Simon Says game, this game has the Opposite Day where players are supposed to do the opposite of what they would do normally.
+There's a list of challenges below.
+
+### Don't Write
+* Requirement: don't write anything in the channel where the game is on.
+* Failed if any message by a game member is sent in the game channel.
+* Default time: 20 seconds.
+
+### Opposite Day
+* Notifies players about the starting or the ending of an Opposite Day.
+* Requirement: write `ok` in the game chat.
+* Failed if a member doesn't write `ok` in the game chat.
+* Default time: 20 seconds.
+
+### React Specific
+* Requirement: react to a Squid's message with a certain emoji.
+* Failed if a member doesn't react to the message or if they react with a wrong emoji.
+* Default time: 30 seconds.
+
+### React
+* Requirement: react to a Squid's message with any emoji.
+* Failed if a member doesn't react to the message.
+* Default time: 25 seconds.
+
+### Solve Equation
+* Requirement: write the answer to a given equation in the chat.
+* Failed if a member doesn't send anything, sends an incorrect answer or their message contains any characters other than the numbers of the correct answer.
+* Default time: 25 seconds.
+
+### Status
+* Requirement: change status to the one requested by Squid.
+* Failed if a member doesn't change their Discord status to the needed one (`online`, `idle`, `do not disturb`, `invisible`).
+* Default time: 30 seconds.
+
+### Write Specific
+* Requirement: write a specific thing requested by Squid in the game chat.
+* Failed if a member doesn't send anything or sends a message that doesn't perfectly match whatever was requested (it's case sensitive).
+* Default time: 25 seconds.
+
+### Write
+* Requirement: write anything in the game chat.
+* Failed if a member doesn't send any message in the game chat.
+* Default time: 20 seconds.
+
+## Datapacks
 ### random_dimensions
 * Generates a datapack consisting of multiple dimensions, each consisting of multiple unique biomes.
 * Arguments:

@@ -10,6 +10,11 @@ module.exports = {
     description: "Manage message triggers for a server",
     usage: "create <trigger name> <type> <channel id> OR remove <trigger name> OR add_requirement <trigger name> <args> OR add_action <trigger name> <args>",
     run: async (client, message, args) => {
+        if (args.length == 0) {
+            message.reply(`Usage: \`create <trigger name> <type> <channel id> OR remove <trigger name> OR add_requirement <trigger name> <args> OR add_action <trigger name> <args>\`. Learn more: https://github.com/mantevian/squid#config`);
+            return;
+        }
+
         switch (args[0]) {
             case `create`:
                 if (args.length != 4) {
