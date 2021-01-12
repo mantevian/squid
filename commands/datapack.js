@@ -368,9 +368,6 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
                     }
                 }
 
-                const canvas = createCanvas(world_size, world_size);
-                var ctx = canvas.getContext(`2d`);
-
                 const temperature_noise = new SimplexNoise(temperature_seed);
                 const humidity_noise = new SimplexNoise(humidity_seed);
                 const altitude_noise = new SimplexNoise(altitude_seed);
@@ -445,10 +442,8 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
                 }
 
                 var current_room_amount = 0;
-                function random_door_size() {
+                function random_door_size()
                     return rng.next_int_ranged(1, Math.min(room_size, room_height) - 1);
-                    //return Math.ceil(Math.min(room_size, room_height) - Math.log10(rng.next_int_ranged(1, Math.pow(10, Math.min(room_size, room_height) - 1) * 2)));
-                }
 
                 async function start() {
                     zip.forEach(function (relative_path) {
@@ -480,7 +475,6 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
                         var decoration = JSON.parse(fs.readFileSync(`decorations/${decorations_config[i]}.json`, `utf8`));
                         console.log(decorations_config[i]);
                         for (var j = 0; j < decoration.length; j++)
-                            //console.log(decoration[j].type)
                             decorations.push(decoration[j]);
                     }
 
@@ -542,7 +536,9 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
 
                     for (var i = 0; i < world_size + 1; i++) {
                         for (var j = 0; j < world_size + 1; j++) {
-                            //biomemap[i][j] = 8;
+                            if (config.fixed_biome)
+                                biomemap[i][j] = config.fixed_biome;
+
                             if (levelmap[i][j] > 5)
                                 biomemap[i][j]++;
 
