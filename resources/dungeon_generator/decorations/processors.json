@@ -1,0 +1,762 @@
+[
+    {
+        "biome": "bastion",
+        "type": "replace_randomly",
+        "amount": 0.3,
+        "from": "polished_blackstone_bricks",
+        "to": "cracked_polished_blackstone_bricks"
+    },
+    {
+        "biome": "bastion",
+        "type": "replace_randomly",
+        "amount": 0.015,
+        "from": "polished_blackstone_bricks",
+        "to": "chiseled_polished_blackstone"
+    },
+    {
+        "biome": "bastion",
+        "type": "replace_randomly",
+        "amount": 0.003,
+        "from": "polished_blackstone_bricks",
+        "to": "gold_block"
+    },
+    {
+        "biome": "temple",
+        "type": "replace_randomly",
+        "amount": 0.33,
+        "from": "cobblestone",
+        "to": "mossy_cobblestone"
+    },
+    {
+        "biome": "stronghold",
+        "type": "replace_randomly",
+        "amount": 0.25,
+        "from": "stone_bricks",
+        "to": "mossy_stone_bricks"
+    },
+    {
+        "biome": "stronghold",
+        "type": "replace_randomly",
+        "amount": 0.25,
+        "from": "stone_bricks",
+        "to": "cracked_stone_bricks"
+    },
+    {
+        "type": "replace_all",
+        "biome": "geode",
+        "from": "tuff",
+        "to": "calcite",
+        "noise": {
+            "min": 0.55,
+            "scale": 40,
+            "offset": 0
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "geode",
+        "from": "calcite",
+        "to": "amethyst_block",
+        "noise": {
+            "min": 0.66,
+            "scale": 40,
+            "offset": 0
+        }
+    },
+    {
+        "biome": "geode",
+        "type": "replace_randomly",
+        "amount": 0.1,
+        "from": "amethyst_block",
+        "to": "budding_amethyst"
+    },
+    {
+        "type": "replace_all",
+        "biomes": [
+            "forest",
+            "jungle",
+            "taiga"
+        ],
+        "from": "dirt",
+        "to": "coarse_dirt",
+        "noise": {
+            "min": 0.4,
+            "scale": 25,
+            "offset": 50
+        }
+    },
+    {
+        "type": "replace_all",
+        "biomes": [
+            "forest",
+            "jungle",
+            "taiga",
+            "roofed"
+        ],
+        "from": "grass_block",
+        "to": "podzol",
+        "noise": {
+            "min": 0.7,
+            "scale": 25,
+            "offset": -50
+        }
+    },
+    {
+        "type": "replace_all",
+        "biomes": [
+            "jungle",
+            "bamboo",
+            "taiga",
+            "roofed"
+        ],
+        "from": "podzol",
+        "to": "coarse_dirt",
+        "noise": {
+            "min": 0.2,
+            "scale": 25,
+            "offset": -65
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "cave",
+        "from": "stone",
+        "to": "gravel",
+        "noise": {
+            "min": 0.7,
+            "scale": 18,
+            "offset": 100
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "cave",
+        "from": "stone",
+        "to": "dirt",
+        "noise": {
+            "min": 0.6,
+            "scale": 20,
+            "offset": 200
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "cave",
+        "from": "stone",
+        "to": "granite",
+        "noise": {
+            "min": 0.75,
+            "scale": 18,
+            "offset": 80
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "cave",
+        "from": "stone",
+        "to": "andesite",
+        "noise": {
+            "min": 0.75,
+            "scale": 18,
+            "offset": 180
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "cave",
+        "from": "stone",
+        "to": "diorite",
+        "noise": {
+            "min": 0.75,
+            "scale": 18,
+            "offset": 280
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "desert",
+        "from": "sandstone",
+        "to": "sand",
+        "noise": {
+            "min": 0.7,
+            "scale": 16,
+            "offset": 120
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "badlands",
+        "from": "red_sandstone",
+        "to": "red_sand",
+        "noise": {
+            "min": 0.7,
+            "scale": 16,
+            "offset": 120
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "tundra",
+        "from": "snow",
+        "to": "powder_snow",
+        "noise": {
+            "min": 0.7,
+            "scale": 8,
+            "offset": 36
+        }
+    },
+    {
+        "biomes": [
+            "cave",
+            "geode",
+            "forest",
+            "taiga",
+            "beach",
+            "roofed",
+            "jungle",
+            "bamboo",
+            "end",
+            "desert"
+        ],
+        "type": "fill_layer",
+        "y": 0,
+        "block": "water",
+        "noise": {
+            "min": 0.7,
+            "scale": 16,
+            "offset": 300
+        },
+        "walls_margin": 2
+    },
+    {
+        "biomes": [
+            "cave",
+            "geode",
+            "nether",
+            "fortress",
+            "bastion",
+            "warped",
+            "crimson",
+            "soul"
+        ],
+        "type": "fill_layer",
+        "y": 0,
+        "block": "lava",
+        "noise": {
+            "min": 0.75,
+            "scale": 16,
+            "offset": -300
+        },
+        "walls_margin": 2
+    },
+    {
+        "biomes": [
+            "tundra",
+            "ice"
+        ],
+        "type": "fill_layer",
+        "y": 0,
+        "block": "powder_snow",
+        "noise": {
+            "min": 0.72,
+            "scale": 25,
+            "offset": -70
+        },
+        "walls_margin": 2
+    },
+    {
+        "biomes": [
+            "tundra",
+            "ice"
+        ],
+        "type": "fill_layer",
+        "y": 0,
+        "block": "air",
+        "noise": {
+            "min": 0.4,
+            "max": 0.7,
+            "scale": 25,
+            "offset": -70
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "ice",
+        "type": "fill_layer",
+        "y": 0,
+        "block": "blue_ice",
+        "noise": {
+            "min": 0.8,
+            "scale": 12,
+            "offset": -70
+        },
+        "walls_margin": 4
+    },
+    {
+        "biomes": "mineshaft",
+        "type": "fill_layer",
+        "y": 1,
+        "from": "terracotta",
+        "to": "orange_terracotta",
+        "walls_margin": 0
+    },
+    {
+        "biomes": "mineshaft",
+        "type": "fill_layer",
+        "y": 2,
+        "from": "terracotta",
+        "to": "brown_terracotta",
+        "walls_margin": 0
+    },
+    {
+        "biomes": "mineshaft",
+        "type": "fill_layer",
+        "y": 3,
+        "from": "terracotta",
+        "to": "white_terracotta",
+        "walls_margin": 0
+    },
+    {
+        "biomes": "mineshaft",
+        "type": "fill_layer",
+        "y": 4,
+        "from": "terracotta",
+        "to": "light_gray_terracotta",
+        "walls_margin": 0
+    },
+    {
+        "biomes": "mineshaft",
+        "type": "fill_layer",
+        "y": 6,
+        "from": "terracotta",
+        "to": "orange_terracotta",
+        "walls_margin": 0
+    },
+    {
+        "biomes": "mineshaft",
+        "type": "fill_layer",
+        "y": 7,
+        "from": "terracotta",
+        "to": "yellow_terracotta",
+        "walls_margin": 0
+    },
+    {
+        "biomes": [
+            "beach",
+            "ocean",
+            "monument",
+            "end"
+        ],
+        "type": "replace_randomly",
+        "amount": 0.015,
+        "from": "#mante:base_blocks",
+        "to": "sea_lantern"
+    },
+    {
+        "biome": "cave",
+        "type": "replace_all",
+        "chance": 0.25,
+        "each_chance": 0.9,
+        "x": {
+            "min": -1,
+            "max": 1
+        },
+        "y": 0,
+        "from": "#mante:base_blocks",
+        "to": "oak_planks"
+    },
+    {
+        "biome": "cave",
+        "type": "replace_all",
+        "chance": 0.25,
+        "each_chance": 0.9,
+        "z": {
+            "min": -1,
+            "max": 1
+        },
+        "y": 0,
+        "from": "#mante:base_blocks",
+        "to": "oak_planks"
+    },
+    {
+        "type": "replace_all",
+        "biome": "monument",
+        "from": "water",
+        "to": "dark_prismarine",
+        "noise": {
+            "min": 0.3,
+            "max": 0.6,
+            "scale": 21,
+            "offset": 48
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "monument",
+        "from": "dark_prismarine",
+        "to": "water",
+        "noise": {
+            "min": 0.4,
+            "max": 0.5,
+            "scale": 24,
+            "offset": -48
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "monument",
+        "from": "dark_prismarine",
+        "to": "prismarine",
+        "noise": {
+            "min": 0.4,
+            "max": 0.5,
+            "scale": 18,
+            "offset": -56
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "monument",
+        "from": "prismarine",
+        "to": "prismarine_bricks",
+        "noise": {
+            "min": 0.3,
+            "max": 0.6,
+            "scale": 25,
+            "offset": -72
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "ice",
+        "from": "air",
+        "to": "packed_ice",
+        "noise": {
+            "min": 0.5,
+            "max": 0.575,
+            "scale": 32,
+            "offset": -64
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "ocean",
+        "from": "sandstone",
+        "to": "clay",
+        "noise": {
+            "min": 0.7,
+            "scale": 36,
+            "offset": 220
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "ocean",
+        "from": "sandstone",
+        "to": "gravel",
+        "noise": {
+            "min": 0.7,
+            "scale": 36,
+            "offset": 230
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "ocean",
+        "from": "sandstone",
+        "to": "sand",
+        "noise": {
+            "min": 0.7,
+            "scale": 36,
+            "offset": 240
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "ocean",
+        "from": "sandstone",
+        "to": "dirt",
+        "noise": {
+            "min": 0.6,
+            "scale": 36,
+            "offset": 250
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "ocean",
+        "from": "sandstone",
+        "to": "cut_sandstone",
+        "noise": {
+            "min": 0.4,
+            "scale": 24,
+            "offset": -250
+        }
+    },
+    {
+        "biome": "beach",
+        "type": "surface_noise",
+        "from": "air",
+        "to": "stone_bricks",
+        "chance": 0.2,
+        "scale": 10,
+        "offset": 400,
+        "block_offset": -3,
+        "size": 10,
+        "height": {
+            "min": 1,
+            "max": 3
+        },
+        "noise": {
+            "min": 0.8,
+            "scale": 30,
+            "offset": -400
+        }
+    },
+    {
+        "biome": "beach",
+        "type": "surface_noise",
+        "from": "air",
+        "to": "sand",
+        "chance": 0.75,
+        "scale": 20,
+        "offset": 410,
+        "block_offset": -1,
+        "size": 4,
+        "height": {
+            "min": 1,
+            "max": 1
+        },
+        "noise": {
+            "min": 0.8,
+            "scale": 30,
+            "offset": -410
+        }
+    },
+    {
+        "biome": "beach",
+        "type": "replace_randomly",
+        "amount": 0.33,
+        "from": "stone_bricks",
+        "to": "mossy_stone_bricks"
+    },
+    {
+        "biome": "beach",
+        "type": "replace_randomly",
+        "amount": 0.33,
+        "from": "stone_bricks",
+        "to": "cracked_stone_bricks"
+    },
+    {
+        "biome": "beach",
+        "type": "replace_randomly",
+        "amount": 0.25,
+        "from": "stone_bricks",
+        "to": "air"
+    },
+    {
+        "biome": "fortress",
+        "type": "replace_randomly",
+        "amount": 0.02,
+        "from": "nether_bricks",
+        "to": "magma_block",
+        "noise": {
+            "min": 0.6,
+            "max": 0.9,
+            "scale": 50,
+            "offset": -990
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "fortress",
+        "from": "nether_bricks",
+        "to": "red_nether_bricks",
+        "noise": {
+            "min": 0.485,
+            "max": 0.515,
+            "scale": 50,
+            "offset": 990
+        }
+    },
+    {
+        "biome": "soul",
+        "type": "surface_noise",
+        "from": "air",
+        "to": "soul_soil",
+        "chance": 0.8,
+        "scale": 16,
+        "offset": 490,
+        "block_offset": -1,
+        "size": 4,
+        "min_y": 0,
+        "height": {
+            "min": 2,
+            "max": 2
+        },
+        "noise": {
+            "min": 0.5,
+            "max": 0.9,
+            "scale": 30,
+            "offset": -490
+        }
+    },
+    {
+        "biome": "soul",
+        "type": "surface_noise",
+        "from": "air",
+        "to": "bone_block[axis=x]",
+        "chance": 0.4,
+        "scale": 16,
+        "offset": 470,
+        "block_offset": -5,
+        "size": 10,
+        "min_y": 0,
+        "height": {
+            "min": 1,
+            "max": 1
+        },
+        "noise": {
+            "min": 0.75,
+            "max": 0.9,
+            "scale": 30,
+            "offset": -470
+        }
+    },
+    {
+        "biome": "mineshaft",
+        "type": "surface_noise",
+        "from": "air",
+        "to": "gold_ore",
+        "chance": 0.33,
+        "scale": 20,
+        "offset": 480,
+        "block_offset": -6,
+        "size": 11,
+        "height": {
+            "min": 1,
+            "max": 3
+        },
+        "noise": {
+            "min": 0.8,
+            "scale": 30,
+            "offset": -480
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "end",
+        "from": "#mante:end_base",
+        "to": "obsidian",
+        "noise": {
+            "min": 0.5,
+            "max": 0.525,
+            "scale": 50,
+            "offset": 900
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "highlands",
+        "from": "#mante:end_base",
+        "to": "obsidian",
+        "noise": {
+            "min": 0.51,
+            "max": 0.5175,
+            "scale": 50,
+            "offset": 900
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "end",
+        "from": "obsidian",
+        "to": "crying_obsidian",
+        "each_chance": 0.33,
+        "noise": {
+            "min": 0.5,
+            "max": 0.55,
+            "scale": 25,
+            "offset": -900
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "end",
+        "from": "end_stone",
+        "to": "end_stone_bricks",
+        "each_chance": 0.9,
+        "noise": {
+            "min": 0.4,
+            "max": 0.7,
+            "scale": 26,
+            "offset": 930
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "highlands",
+        "from": "end_stone",
+        "to": "end_stone_bricks",
+        "each_chance": 0.9,
+        "noise": {
+            "min": 0.2,
+            "max": 0.9,
+            "scale": 26,
+            "offset": 930
+        }
+    },
+    {
+        "biome": "tundra",
+        "type": "surface_noise",
+        "from": "air",
+        "to": "snow_block",
+        "chance": 0.85,
+        "scale": 10,
+        "offset": 400,
+        "block_offset": -2,
+        "size": 8,
+        "height": {
+            "min": 3,
+            "max": 5
+        },
+        "noise": {
+            "min": 0.75,
+            "scale": 30,
+            "offset": -800
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "tundra",
+        "from": "snow_block",
+        "to": "packed_ice",
+        "each_chance": 0.8,
+        "noise": {
+            "min": 0.2,
+            "max": 0.6,
+            "scale": 26,
+            "offset": 840
+        }
+    },
+    {
+        "biome": "ice",
+        "type": "surface_noise",
+        "from": "air",
+        "to": "packed_ice",
+        "chance": 0.85,
+        "scale": 10,
+        "offset": 400,
+        "block_offset": -4,
+        "size": 12,
+        "height": {
+            "min": 3,
+            "max": 5
+        },
+        "noise": {
+            "min": 0.75,
+            "scale": 30,
+            "offset": -800
+        }
+    }
+]

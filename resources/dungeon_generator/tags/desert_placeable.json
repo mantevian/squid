@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:orange_concrete",
+        "minecraft:brown_concrete",
+        "minecraft:sand",
+        "minecraft:sandstone",
+        "minecraft:red_sand",
+        "minecraft:red_sandstone",
+        "minecraft:terracotta",
+        "minecraft:dark_oak_planks"
+    ]
+}

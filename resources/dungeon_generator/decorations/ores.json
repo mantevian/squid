@@ -1,0 +1,101 @@
+[
+    {
+        "biome": "cave",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.02,
+            "max": 0.25
+        },
+        "y": 0,
+        "chance": 0.25,
+        "block": "coal_ore"
+    },
+    {
+        "biome": "cave",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.02,
+            "max": 0.15
+        },
+        "y": 0,
+        "chance": 0.15,
+        "block": "iron_ore"
+    },
+    {
+        "biome": "cave",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.12
+        },
+        "y": 0,
+        "chance": 0.1,
+        "block": "gold_ore"
+    },
+    {
+        "biome": "cave",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.04
+        },
+        "y": 0,
+        "chance": 0.06,
+        "block": "diamond_ore"
+    },
+    {
+        "biome": "cave",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.02,
+            "max": 0.2
+        },
+        "y": 0,
+        "chance": 0.08,
+        "block": "lapis_ore"
+    },
+    {
+        "biome": "nether",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.08
+        },
+        "y": 0,
+        "chance": 0.2,
+        "block": "nether_gold_ore"
+    },
+    {
+        "biome": "nether",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.12
+        },
+        "y": 0,
+        "chance": 0.25,
+        "block": "nether_quartz_ore"
+    },
+    {
+        "biome": "nether",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.03
+        },
+        "y": 0,
+        "chance": 0.03,
+        "block": "ancient_debris"
+    },
+    {
+        "biome": "geode",
+        "type": "replace_randomly",
+        "count": {
+            "min": 1,
+            "max": 20
+        },
+        "chance": 0.5,
+        "from": "amethyst_block",
+        "to": "budding_amethyst"
+    }
+]

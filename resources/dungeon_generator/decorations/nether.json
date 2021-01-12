@@ -1,0 +1,472 @@
+[
+    {
+        "biomes": [
+            "nether",
+            "fortress",
+            "bastion"
+        ],
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.01
+        },
+        "chance": 0.2,
+        "blocks": [
+            {
+                "y": "0",
+                "from": "ceiling",
+                "block": "lava"
+            },
+            {
+                "y": "0",
+                "from": "floor",
+                "block": "air"
+            }
+        ]
+    },
+    {
+        "type": "replace_all",
+        "biomes": [
+            "nether",
+            "soul"
+        ],
+        "from": "#mante:base_blocks",
+        "to": "glowstone",
+        "noise": {
+            "min": 0.85,
+            "scale": 12,
+            "offset": 10
+        }
+    },
+    {
+        "type": "replace_all",
+        "biomes": [
+            "warped",
+            "crimson"
+        ],
+        "from": "#mante:base_blocks",
+        "to": "glowstone",
+        "noise": {
+            "min": 0.925,
+            "scale": 12,
+            "offset": 10
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "soul",
+        "from": "soul_soil",
+        "to": "soul_sand",
+        "noise": {
+            "min": 0.1,
+            "scale": 20,
+            "offset": 20
+        }
+    },
+    {
+        "biome": "nether",
+        "type": "surface_noise",
+        "from": "air",
+        "to": "netherrack",
+        "chance": 0.8,
+        "scale": 16,
+        "offset": 540,
+        "block_offset": -1,
+        "size": 5,
+        "min_y": 0,
+        "height": {
+            "min": 1,
+            "max": 3
+        },
+        "noise": {
+            "min": 0.2,
+            "max": 0.95,
+            "scale": 30,
+            "offset": -540
+        }
+    },
+    {
+        "biome": "soul",
+        "type": "replace_randomly",
+        "amount": 0.25,
+        "from": "bone_block[axis=x]",
+        "to": "bone_block[axis=z]"
+    },
+    {
+        "biome": "soul",
+        "type": "replace_randomly",
+        "amount": 0.25,
+        "from": "bone_block[axis=x]",
+        "to": "bone_block[axis=y]"
+    },
+    {
+        "biome": "soul",
+        "type": "replace_randomly",
+        "amount": 0.25,
+        "from": "bone_block[axis=x]",
+        "to": "air"
+    },
+    {
+        "type": "replace_all",
+        "biome": "warped",
+        "from": "warped_nylium",
+        "to": "netherrack",
+        "noise": {
+            "min": 0.7,
+            "scale": 18,
+            "offset": 80
+        }
+    },
+    {
+        "type": "replace_all",
+        "biome": "crimson",
+        "from": "crimson_nylium",
+        "to": "netherrack",
+        "noise": {
+            "min": 0.7,
+            "scale": 18,
+            "offset": 80
+        }
+    },
+    {
+        "biome": "warped",
+        "type": "tree",
+        "leaves_type": "noise",
+        "count": {
+            "min": 1,
+            "max": 5
+        },
+        "chance": 0.75,
+        "leaves": "warped_wart_block",
+        "trunk": "warped_stem[axis=y]",
+        "noise": {
+            "scale": 10,
+            "offset": 120
+        },
+        "leaves_size": {
+            "min": 0.01,
+            "max": 0.03
+        },
+        "width": 0,
+        "allowed_noise": {
+            "min": 0.2,
+            "max": 1.0
+        },
+        "max_height": -1
+    },
+    {
+        "biome": "crimson",
+        "type": "tree",
+        "leaves_type": "noise",
+        "count": {
+            "min": 1,
+            "max": 5
+        },
+        "chance": 0.75,
+        "leaves": "nether_wart_block",
+        "trunk": "crimson_stem[axis=y]",
+        "noise": {
+            "scale": 10,
+            "offset": 120
+        },
+        "leaves_size": {
+            "min": 0.01,
+            "max": 0.03
+        },
+        "width": 0,
+        "allowed_noise": {
+            "min": 0.2,
+            "max": 1.0
+        },
+        "max_height": -1
+    },
+    {
+        "biome": "warped",
+        "type": "replace_randomly",
+        "amount": 0.1,
+        "from": "warped_wart_block",
+        "to": "shroomlight"
+    },
+    {
+        "biome": "crimson",
+        "type": "replace_randomly",
+        "amount": 0.1,
+        "from": "nether_wart_block",
+        "to": "shroomlight"
+    },
+    {
+        "biome": "warped",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.2,
+            "max": 0.8
+        },
+        "y": 1,
+        "blocks": [
+            "warped_roots",
+            "warped_roots",
+            "warped_roots",
+            "nether_sprouts",
+            "nether_sprouts",
+            "warped_fungus"
+        ]
+    },
+    {
+        "biome": "crimson",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.2,
+            "max": 0.8
+        },
+        "y": 1,
+        "blocks": [
+            "crimson_roots",
+            "crimson_roots",
+            "crimson_roots",
+            "crimson_fungus"
+        ]
+    },
+    {
+        "biome": "warped",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.4,
+        "blocks": [
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "twisting_vines"
+            },
+            {
+                "y": "2",
+                "from": "floor",
+                "block": "twisting_vines"
+            }
+        ]
+    },
+    {
+        "biome": "warped",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.4,
+        "blocks": [
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "twisting_vines"
+            },
+            {
+                "y": "2",
+                "from": "floor",
+                "block": "twisting_vines"
+            },
+            {
+                "y": "3",
+                "from": "floor",
+                "block": "twisting_vines"
+            },
+            {
+                "y": "4",
+                "from": "floor",
+                "block": "twisting_vines"
+            }
+        ]
+    },
+    {
+        "biome": "warped",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.4,
+        "blocks": [
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "twisting_vines"
+            },
+            {
+                "y": "2",
+                "from": "floor",
+                "block": "twisting_vines"
+            },
+            {
+                "y": "3",
+                "from": "floor",
+                "block": "twisting_vines"
+            },
+            {
+                "y": "4",
+                "from": "floor",
+                "block": "twisting_vines"
+            },
+            {
+                "y": "5",
+                "from": "floor",
+                "block": "twisting_vines"
+            },
+            {
+                "y": "6",
+                "from": "floor",
+                "block": "twisting_vines"
+            }
+        ]
+    },
+    {
+        "biome": "crimson",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.4,
+        "blocks": [
+            {
+                "y": "-2",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            },
+            {
+                "y": "-1",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            }
+        ]
+    },
+    {
+        "biome": "crimson",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.4,
+        "blocks": [
+            {
+                "y": "-2",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            },
+            {
+                "y": "-1",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            },
+            {
+                "y": "0",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            },
+            {
+                "y": "1",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            }
+        ]
+    },
+    {
+        "biome": "crimson",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.4,
+        "blocks": [
+            {
+                "y": "-2",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            },
+            {
+                "y": "-1",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            },
+            {
+                "y": "0",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            },
+            {
+                "y": "1",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            },
+            {
+                "y": "2",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            },
+            {
+                "y": "3",
+                "from": "ceiling",
+                "block": "weeping_vines"
+            }
+        ]
+    },
+    {
+        "biomes": [
+            "nether",
+            "bastion",
+            "crimson",
+            "warped"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.05,
+            "max": 0.3
+        },
+        "y": 1,
+        "block": "fire"
+    },
+    {
+        "biome": "soul",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.05,
+            "max": 0.3
+        },
+        "y": 1,
+        "block": "soul_fire"
+    },
+    {
+        "biomes": [
+            "nether",
+            "bastion"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.02,
+            "max": 0.3
+        },
+        "y": 0,
+        "block": "magma_block"
+    },
+    {
+        "biomes": [
+            "nether",
+            "fortress",
+            "warped",
+            "crimson"
+        ],
+        "type": "random_patch",
+        "chance": 0.4,
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.1
+        },
+        "y": 1,
+        "blocks": [
+            "red_mushroom",
+            "brown_mushroom"
+        ]
+    }
+]

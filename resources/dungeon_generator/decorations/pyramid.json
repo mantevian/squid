@@ -1,0 +1,303 @@
+[
+    {
+        "type": "fixed",
+        "biome": "pyramid",
+        "structures": [
+            [
+                {
+                    "block": "sandstone",
+                    "start": {
+                        "x": -5,
+                        "y": 5,
+                        "z": -5
+                    },
+                    "end": {
+                        "x": 5,
+                        "y": 5,
+                        "z": 5
+                    }
+                },
+                {
+                    "block": "air",
+                    "start": {
+                        "x": -4,
+                        "y": 5,
+                        "z": -4
+                    },
+                    "end": {
+                        "x": 4,
+                        "y": 5,
+                        "z": 4
+                    }
+                },
+                {
+                    "block": "air",
+                    "start": {
+                        "x": -3,
+                        "y": 6,
+                        "z": -3
+                    },
+                    "end": {
+                        "x": 3,
+                        "y": 6,
+                        "z": 3
+                    }
+                },
+                {
+                    "block": "air",
+                    "start": {
+                        "x": -2,
+                        "y": 7,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 7,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "sandstone",
+                    "start": {
+                        "x": -3,
+                        "y": 1,
+                        "z": -3
+                    },
+                    "end": {
+                        "x": 3,
+                        "y": 1,
+                        "z": 3
+                    }
+                },
+                {
+                    "block": "sandstone",
+                    "start": {
+                        "x": -2,
+                        "y": 2,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 2,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "cut_sandstone",
+                    "start": {
+                        "x": -1,
+                        "y": 1,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 7,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "chiseled_sandstone",
+                    "start": {
+                        "x": -1,
+                        "y": 5,
+                        "z": 0
+                    },
+                    "end": {
+                        "x": -1,
+                        "y": 7,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "chiseled_sandstone",
+                    "start": {
+                        "x": 1,
+                        "y": 5,
+                        "z": 0
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 7,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "chiseled_sandstone",
+                    "start": {
+                        "x": 0,
+                        "y": 5,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 7,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "chiseled_sandstone",
+                    "start": {
+                        "x": 0,
+                        "y": 5,
+                        "z": 1
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 7,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "chest[facing=east]{LootTable:\"mante:desert/pyramid\"}",
+                        "trapped_chest[facing=east]{LootTable:\"mante:desert/pyramid\"}"
+                    ],
+                    "position": {
+                        "x": 1,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "chest[facing=south]{LootTable:\"mante:desert/pyramid\"}",
+                        "trapped_chest[facing=south]{LootTable:\"mante:desert/pyramid\"}"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "chest[facing=west]{LootTable:\"mante:desert/pyramid\"}",
+                        "trapped_chest[facing=west]{LootTable:\"mante:desert/pyramid\"}"
+                    ],
+                    "position": {
+                        "x": -1,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "chest[facing=north]{LootTable:\"mante:desert/pyramid\"}",
+                        "trapped_chest[facing=north]{LootTable:\"mante:desert/pyramid\"}"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": -1
+                    }
+                },
+                {
+                    "blocks": [
+                        "sand",
+                        "sandstone_slab[type=top]",
+                        "cut_sandstone_slab[type=top]",
+                        "smooth_sandstone_slab[type=top]",
+                        "air"
+                    ],
+                    "position": {
+                        "x": 1,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "sand",
+                        "sandstone_slab[type=top]",
+                        "cut_sandstone_slab[type=top]",
+                        "smooth_sandstone_slab[type=top]",
+                        "air"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "sand",
+                        "sandstone_slab[type=top]",
+                        "cut_sandstone_slab[type=top]",
+                        "smooth_sandstone_slab[type=top]",
+                        "air"
+                    ],
+                    "position": {
+                        "x": -1,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "sand",
+                        "sandstone_slab[type=top]",
+                        "cut_sandstone_slab[type=top]",
+                        "smooth_sandstone_slab[type=top]",
+                        "air"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 4,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "tnt",
+                    "chance": 0.8,
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "tnt",
+                    "chance": 0.75,
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 0
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "type": "fixed",
+        "count": {
+            "min": 1,
+            "max": 4
+        },
+        "biome": "pyramid",
+        "relative": {
+            "x": "+-",
+            "z": "+-"
+        },
+        "structures": [
+            [
+                {
+                    "block": "netherrack",
+                    "position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "fire",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 0
+                    }
+                }
+            ]
+        ]
+    }
+]

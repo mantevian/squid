@@ -1,0 +1,144 @@
+[
+    {
+        "biome": "stronghold",
+        "type": "fixed",
+        "chance": 0.1,
+        "structures": [
+            [
+                {
+                    "block": "stone_bricks",
+                    "start": {
+                        "x": -2,
+                        "y": 1,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "air",
+                    "start": {
+                        "x": -1,
+                        "y": 1,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "stone_bricks",
+                    "start": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 0
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "water",
+                    "position": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "chest{LootTable:\"mante:cave/stronghold\"}",
+                    "choose_position": [
+                        {
+                            "x": 1,
+                            "y": 2,
+                            "z": 2
+                        },
+                        {
+                            "x": -1,
+                            "y": 2,
+                            "z": 2
+                        },
+                        {
+                            "x": 2,
+                            "y": 2,
+                            "z": -1
+                        },
+                        {
+                            "x": 2,
+                            "y": 2,
+                            "z": 1
+                        },
+                        {
+                            "x": 1,
+                            "y": 2,
+                            "z": -2
+                        },
+                        {
+                            "x": -1,
+                            "y": 2,
+                            "z": -2
+                        },
+                        {
+                            "x": -2,
+                            "y": 2,
+                            "z": -1
+                        },
+                        {
+                            "x": -2,
+                            "y": 2,
+                            "z": 1
+                        }
+                    ]
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "stronghold",
+        "type": "fixed",
+        "chance": 0.75,
+        "count": {
+            "min": 1,
+            "max": 4
+        },
+        "relative": {
+            "x": "+-",
+            "z": "+-"
+        },
+        "structures": [
+            [
+                {
+                    "block": "smooth_stone_slab[type=bottom]",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "smooth_stone_slab[type=bottom]",
+                    "position": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "smooth_stone_slab[type=bottom]",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    }
+                }
+            ]
+        ]
+    }
+]

@@ -1,0 +1,243 @@
+[
+    {
+        "biomes": [
+            "highlands",
+            "endcity"
+        ],
+        "type": "fixed",
+        "count": {
+            "min": 2,
+            "max": 4
+        },
+        "structures": [
+            [
+                {
+                    "block": "end_rod[facing=west]",
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 2
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    },
+                    "door_size": [
+                        {
+                            "max": 2
+                        },
+                        {},
+                        {},
+                        {}
+                    ]
+                }
+            ],
+            [
+                {
+                    "block": "end_rod[facing=west]",
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 2
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    },
+                    "door_size": [
+                        {
+                            "max": 2
+                        },
+                        {},
+                        {},
+                        {}
+                    ]
+                }
+            ],
+            [
+                {
+                    "block": "end_rod[facing=north]",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 0
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    },
+                    "door_size": [
+                        {},
+                        {
+                            "max": 2
+                        },
+                        {},
+                        {}
+                    ]
+                }
+            ],
+            [
+                {
+                    "block": "end_rod[facing=north]",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 0
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    },
+                    "door_size": [
+                        {},
+                        {
+                            "max": 2
+                        },
+                        {},
+                        {}
+                    ]
+                }
+            ],
+            [
+                {
+                    "block": "end_rod[facing=east]",
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 2
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    },
+                    "door_size": [
+                        {},
+                        {},
+                        {
+                            "max": 2
+                        },
+                        {}
+                    ]
+                }
+            ],
+            [
+                {
+                    "block": "end_rod[facing=east]",
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 2
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    },
+                    "door_size": [
+                        {},
+                        {},
+                        {
+                            "max": 2
+                        },
+                        {}
+                    ]
+                }
+            ],
+            [
+                {
+                    "block": "end_rod[facing=south]",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 0
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    },
+                    "door_size": [
+                        {},
+                        {},
+                        {},
+                        {
+                            "max": 2
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "block": "end_rod[facing=south]",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 0
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    },
+                    "door_size": [
+                        {},
+                        {},
+                        {},
+                        {
+                            "max": 2
+                        }
+                    ]
+                }
+            ]
+        ]
+    },
+    {
+        "biomes": [
+            "end",
+            "highlands"
+        ],
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.04
+        },
+        "type": "line",
+        "axis": "x",
+        "x": {
+            "min": 2,
+            "max": 2
+        },
+        "z": {
+            "min": 2,
+            "max": 2
+        },
+        "y": {
+            "min": 4,
+            "max": -2
+        },
+        "from": "air",
+        "to": "end_stone_brick_slab[type=bottom]"
+    },
+    {
+        "biomes": [
+            "end",
+            "highlands"
+        ],
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.04
+        },
+        "type": "line",
+        "axis": "z",
+        "x": {
+            "min": 2,
+            "max": 2
+        },
+        "z": {
+            "min": 2,
+            "max": 2
+        },
+        "y": {
+            "min": 4,
+            "max": -2
+        },
+        "from": "air",
+        "to": "end_stone_brick_slab[type=bottom]"
+    }
+]

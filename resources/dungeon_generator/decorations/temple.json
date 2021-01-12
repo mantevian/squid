@@ -1,0 +1,1134 @@
+[
+    {
+        "biome": "temple",
+        "type": "line",
+        "axis": "y",
+        "chance": 0.33,
+        "z": 3,
+        "x": 3,
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.07
+        },
+        "from": "air",
+        "to": "cobblestone"
+    },
+    {
+        "biome": "temple",
+        "type": "line",
+        "axis": "y",
+        "chance": 0.33,
+        "z": -3,
+        "x": 3,
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.07
+        },
+        "from": "air",
+        "to": "cobblestone"
+    },
+    {
+        "biome": "temple",
+        "type": "line",
+        "axis": "y",
+        "chance": 0.33,
+        "z": 3,
+        "x": -3,
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.07
+        },
+        "from": "air",
+        "to": "cobblestone"
+    },
+    {
+        "biome": "temple",
+        "type": "line",
+        "axis": "y",
+        "chance": 0.33,
+        "z": -3,
+        "x": -3,
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.07
+        },
+        "from": "air",
+        "to": "cobblestone"
+    },
+    {
+        "type": "fixed",
+        "biome": "temple",
+        "chance": 0.4,
+        "structures": [
+            [
+                {
+                    "block": "cobblestone",
+                    "start": {
+                        "x": -2,
+                        "y": 1,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 2
+                    }
+                },
+                {
+                    "blocks": [
+                        "white_terracotta",
+                        "yellow_terracotta",
+                        "light_blue_terracotta"
+                    ],
+                    "start": {
+                        "x": -1,
+                        "y": 2,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 2,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "air",
+                    "start": {
+                        "x": -1,
+                        "y": 2,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "gray_terracotta",
+                    "position": {
+                        "x": 1,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "gray_terracotta",
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "gray_terracotta",
+                    "position": {
+                        "x": -1,
+                        "y": 2,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "gray_terracotta",
+                    "position": {
+                        "x": -2,
+                        "y": 2,
+                        "z": -2
+                    }
+                },
+                {
+                    "choose_block": [
+                        {
+                            "block": "chest[facing=west]{LootTable:\"mante:jungle/pickaxe_temple\"}",
+                            "x": -2,
+                            "y": 1,
+                            "z": 1
+                        },
+                        {
+                            "block": "chest[facing=south]{LootTable:\"mante:jungle/pickaxe_temple\"}",
+                            "x": -1,
+                            "y": 3,
+                            "z": 2
+                        },
+                        {
+                            "block": "chest[facing=east]{LootTable:\"mante:jungle/pickaxe_temple\"}",
+                            "x": 3,
+                            "y": 1,
+                            "z": -1
+                        },
+                        {
+                            "block": "chest[facing=north]{LootTable:\"mante:jungle/pickaxe_temple\"}",
+                            "x": 1,
+                            "y": 2,
+                            "z": -2
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "block": "cobblestone",
+                    "start": {
+                        "x": -2,
+                        "y": 1,
+                        "z": -3
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 3
+                    }
+                },
+                {
+                    "block": "yellow_terracotta",
+                    "start": {
+                        "x": -1,
+                        "y": 2,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 4,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "brown_terracotta",
+                    "start": {
+                        "x": -1,
+                        "y": 2,
+                        "z": 0
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "brown_terracotta",
+                    "start": {
+                        "x": -1,
+                        "y": 2,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 4,
+                        "z": -2
+                    }
+                },
+                {
+                    "block": "cyan_terracotta",
+                    "start": {
+                        "x": -3,
+                        "y": 4,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": -2,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "cyan_terracotta",
+                    "start": {
+                        "x": 2,
+                        "y": 4,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 3,
+                        "y": 4,
+                        "z": -0
+                    }
+                },
+                {
+                    "block": "light_blue_terracotta",
+                    "position": {
+                        "x": -1,
+                        "y": 3,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "light_blue_terracotta",
+                    "position": {
+                        "x": 1,
+                        "y": 3,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dropper[facing=up]",
+                    "choose_position": [
+                        {
+                            "x": 2,
+                            "y": 1,
+                            "z": -2
+                        },
+                        {
+                            "x": -2,
+                            "y": 1,
+                            "z": -2
+                        },
+                        {
+                            "x": -2,
+                            "y": 1,
+                            "z": 2
+                        },
+                        {
+                            "x": 2,
+                            "y": 1,
+                            "z": 2
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": -3,
+                        "y": 0,
+                        "z": -1
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": -3,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": -3,
+                        "y": 0,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": -2,
+                        "y": 0,
+                        "z": 2
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": -1,
+                        "y": 0,
+                        "z": 3
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": 3
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 1,
+                        "y": 0,
+                        "z": 3
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 2,
+                        "y": 0,
+                        "z": 2
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 3,
+                        "y": 0,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 3,
+                        "y": 0,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 3,
+                        "y": 0,
+                        "z": -1
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 2,
+                        "y": 0,
+                        "z": -2
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 1,
+                        "y": 0,
+                        "z": -3
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 0,
+                        "z": -3
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": -1,
+                        "y": 0,
+                        "z": -3
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_lightly_weathered_copper",
+                        "waxed_lightly_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": -2,
+                        "y": 0,
+                        "z": -2
+                    }
+                },
+                {
+                    "block": "cobblestone",
+                    "start": {
+                        "x": -1,
+                        "y": 1,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "cobblestone",
+                    "start": {
+                        "x": -2,
+                        "y": 1,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "position": {
+                        "x": -2,
+                        "y": 1,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "position": {
+                        "x": -2,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "position": {
+                        "x": -1,
+                        "y": 1,
+                        "z": -2
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "position": {
+                        "x": -1,
+                        "y": 1,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "position": {
+                        "x": 1,
+                        "y": 1,
+                        "z": -2
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "position": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "position": {
+                        "x": 2,
+                        "y": 1,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "position": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "candle[candles=1,lit=true]",
+                        "candle[candles=2,lit=true]",
+                        "candle[candles=3,lit=true]"
+                    ],
+                    "position": {
+                        "x": -2,
+                        "y": 2,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "candle[candles=1,lit=true]",
+                        "candle[candles=2,lit=true]",
+                        "candle[candles=3,lit=true]"
+                    ],
+                    "position": {
+                        "x": 2,
+                        "y": 2,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "candle[candles=1,lit=true]",
+                        "candle[candles=2,lit=true]",
+                        "candle[candles=3,lit=true]"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": -2
+                    }
+                },
+                {
+                    "blocks": [
+                        "candle[candles=1,lit=true]",
+                        "candle[candles=2,lit=true]",
+                        "candle[candles=3,lit=true]"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 2
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_semi_weathered_copper",
+                        "waxed_semi_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_semi_weathered_copper",
+                        "waxed_semi_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_semi_weathered_copper",
+                        "waxed_semi_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": -1,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_semi_weathered_copper",
+                        "waxed_semi_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 1,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "waxed_semi_weathered_cut_copper_stairs[facing=east,half=top,shape=straight]",
+                    "position": {
+                        "x": -2,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "waxed_semi_weathered_cut_copper_stairs[facing=west,half=top,shape=straight]",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "waxed_semi_weathered_cut_copper_slab[type=bottom]",
+                    "position": {
+                        "x": -2,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "waxed_semi_weathered_cut_copper_slab[type=bottom]",
+                    "position": {
+                        "x": 2,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_semi_weathered_copper",
+                        "waxed_semi_weathered_cut_copper"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "waxed_semi_weathered_cut_copper_slab",
+                    "position": {
+                        "x": 0,
+                        "y": 5,
+                        "z": 0
+                    }
+                }
+            ],
+            [
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "start": {
+                        "x": -3,
+                        "y": 1,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 3,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "start": {
+                        "x": -1,
+                        "y": 1,
+                        "z": -3
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 3
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "start": {
+                        "x": -2,
+                        "y": 2,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "cobblestone_slab[type=bottom]",
+                    "start": {
+                        "x": -1,
+                        "y": 2,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 2,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "cobblestone",
+                    "start": {
+                        "x": -2,
+                        "y": 1,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 2,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "cobblestone_wall",
+                    "start": {
+                        "x": -2,
+                        "y": 3,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": -2,
+                        "y": 5,
+                        "z": -2
+                    }
+                },
+                {
+                    "block": "cobblestone_wall",
+                    "start": {
+                        "x": -2,
+                        "y": 3,
+                        "z": 2
+                    },
+                    "end": {
+                        "x": -2,
+                        "y": 5,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "cobblestone_wall",
+                    "start": {
+                        "x": 2,
+                        "y": 3,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 5,
+                        "z": -2
+                    }
+                },
+                {
+                    "block": "cobblestone_wall",
+                    "start": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 2
+                    },
+                    "end": {
+                        "x": 2,
+                        "y": 5,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "water",
+                    "start": {
+                        "x": -1,
+                        "y": 1,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "soul_campfire[facing=east,lit=true,signal_fire=false,waterlogged=true]",
+                        "soul_campfire[facing=west,lit=true,signal_fire=false,waterlogged=true]"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "lily_pad",
+                    "chance": 0.2,
+                    "position": {
+                        "x": -1,
+                        "y": 3,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "lily_pad",
+                    "chance": 0.2,
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "lily_pad",
+                    "chance": 0.2,
+                    "position": {
+                        "x": 1,
+                        "y": 3,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "lily_pad",
+                    "chance": 0.2,
+                    "position": {
+                        "x": -1,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "lily_pad",
+                    "chance": 0.2,
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "lily_pad",
+                    "chance": 0.2,
+                    "position": {
+                        "x": 1,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "lily_pad",
+                    "chance": 0.2,
+                    "position": {
+                        "x": -1,
+                        "y": 3,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "lily_pad",
+                    "chance": 0.2,
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "lily_pad",
+                    "chance": 0.2,
+                    "position": {
+                        "x": 1,
+                        "y": 3,
+                        "z": 1
+                    }
+                }
+            ],
+            [
+                {
+                    "block": "cobblestone",
+                    "start": {
+                        "x": -1,
+                        "y": 1,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "nether_brick_fence",
+                        "dark_oak_fence",
+                        "spruce_fence",
+                        "crimson_fence"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_copper",
+                        "waxed_lightly_weathered_copper",
+                        "waxed_semi_weathered_copper",
+                        "weathered_copper_block",
+                        "waxed_cut_copper",
+                        "waxed_lightly_weathered_cut_copper",
+                        "waxed_semi_weathered_cut_copper",
+                        "weathered_cut_copper",
+                        "lime_terracotta",
+                        "light_blue_terracotta",
+                        "cyan_terracotta",
+                        "magenta_terracotta",
+                        "pink_terracotta",
+                        "white_terracotta"
+                    ],
+                    "start": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 0
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "dark_oak_button[face=wall,facing=north]",
+                        "polished_blackstone_button[face=wall,facing=north]",
+                        "spruce_button[face=wall,facing=north]",
+                        "crimson_button[face=wall,facing=north]"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 4,
+                        "z": -1
+                    }
+                },
+                {
+                    "blocks": [
+                        "dark_oak_button[face=wall,facing=south]",
+                        "polished_blackstone_button[face=wall,facing=south]",
+                        "spruce_button[face=wall,facing=south]",
+                        "crimson_button[face=wall,facing=south]"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "dark_oak_slab[type=bottom]",
+                        "polished_blackstone_slab[type=bottom]",
+                        "spruce_slab[type=bottom]",
+                        "crimson_slab[type=bottom]"
+                    ],
+                    "position": {
+                        "x": -1,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": 1,
+                        "y": 4,
+                        "z": 0
+                    }
+                }
+            ],
+            [
+                {
+                    "block": "cobblestone",
+                    "start": {
+                        "x": 1,
+                        "y": 1,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": -1,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "nether_brick_fence",
+                        "dark_oak_fence",
+                        "spruce_fence",
+                        "crimson_fence"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "waxed_copper",
+                        "waxed_lightly_weathered_copper",
+                        "waxed_semi_weathered_copper",
+                        "weathered_copper_block",
+                        "waxed_cut_copper",
+                        "waxed_lightly_weathered_cut_copper",
+                        "waxed_semi_weathered_cut_copper",
+                        "weathered_cut_copper",
+                        "lime_terracotta",
+                        "light_blue_terracotta",
+                        "cyan_terracotta",
+                        "magenta_terracotta",
+                        "pink_terracotta",
+                        "white_terracotta",
+                        "glowstone",
+                        "shroomlight"
+                    ],
+                    "start": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 0
+                    },
+                    "end": {
+                        "x": -1,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "dark_oak_button[face=wall,facing=north]",
+                        "polished_blackstone_button[face=wall,facing=north]",
+                        "spruce_button[face=wall,facing=north]",
+                        "crimson_button[face=wall,facing=north]"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 4,
+                        "z": -1
+                    }
+                },
+                {
+                    "blocks": [
+                        "dark_oak_button[face=wall,facing=south]",
+                        "polished_blackstone_button[face=wall,facing=south]",
+                        "spruce_button[face=wall,facing=south]",
+                        "crimson_button[face=wall,facing=south]"
+                    ],
+                    "position": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 1
+                    }
+                },
+                {
+                    "blocks": [
+                        "dark_oak_slab[type=bottom]",
+                        "polished_blackstone_slab[type=bottom]",
+                        "spruce_slab[type=bottom]",
+                        "crimson_slab[type=bottom]"
+                    ],
+                    "position": {
+                        "x": 1,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": -1,
+                        "y": 4,
+                        "z": 0
+                    }
+                }
+            ]
+        ]
+    }
+]

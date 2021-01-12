@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:dripstone_block",
+        "minecraft:pointed_dripstone",
+        "minecraft:gray_concrete",
+        "minecraft:brown_concrete",
+        "minecraft:stone",
+        "minecraft:dirt",
+        "minecraft:sandstone",
+        "minecraft:red_sandstone"
+    ]
+}

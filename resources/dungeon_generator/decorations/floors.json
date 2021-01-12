@@ -1,0 +1,50 @@
+[
+    {
+        "biomes": [
+            "forest",
+            "jungle",
+            "roofed"
+        ],
+        "type": "floor",
+        "block": "grass_block"
+    },
+    {
+        "biomes": [
+            "bamboo",
+            "taiga"
+        ],
+        "type": "floor",
+        "block": "podzol"
+    },
+    {
+        "biome": "desert",
+        "type": "floor",
+        "block": "sand"
+    },
+    {
+        "biome": "badlands",
+        "type": "floor",
+        "block": "red_sand"
+    },
+    {
+        "biome": "crimson",
+        "type": "floor",
+        "block": "crimson_nylium"
+    },
+    {
+        "biome": "warped",
+        "type": "floor",
+        "block": "warped_nylium"
+    },
+    {
+        "biome": "mansion",
+        "type": "floor",
+        "block": "birch_planks"
+    },
+    {
+        "biome": "mansion",
+        "type": "floor",
+        "ceiling": true,
+        "block": "birch_planks"
+    }
+]

@@ -1,0 +1,17 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:stone",
+        "minecraft:granite",
+        "minecraft:andesite",
+        "minecraft:diorite",
+        "minecraft:gravel",
+        "minecraft:oak_planks",
+        "minecraft:dark_oak_planks",
+        "minecraft:rail",
+        "minecraft:powered_rail",
+        "minecraft:terracotta",
+        "minecraft:gray_concrete",
+        "minecraft:orange_concrete"
+    ]
+}

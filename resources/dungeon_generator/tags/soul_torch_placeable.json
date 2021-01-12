@@ -1,0 +1,16 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:gray_concrete",
+        "minecraft:magenta_concrete",
+        "minecraft:cyan_concrete",
+        "minecraft:stone",
+        "minecraft:snow_block",
+        "minecraft:packed_ice",
+        "minecraft:dark_oak_planks",
+        "minecraft:soul_soil",
+        "minecraft:nether_bricks",
+        "minecraft:end_stone",
+        "minecraft:end_stone_bricks"
+    ]
+}

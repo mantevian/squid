@@ -1,0 +1,630 @@
+[
+    {
+        "biomes": [
+            "stronghold",
+            "mineshaft"
+        ],
+        "type": "column",
+        "chance": 0.3,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.08
+        },
+        "blocks": [
+            {
+                "block": "cobweb",
+                "y": 1,
+                "from": "ceiling"
+            }
+        ]
+    },
+    {
+        "biomes": [
+            "stronghold",
+            "mineshaft"
+        ],
+        "type": "column",
+        "chance": 0.25,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.07
+        },
+        "blocks": [
+            {
+                "block": "cobweb",
+                "y": 1,
+                "from": "ceiling"
+            },
+            {
+                "block": "cobweb",
+                "y": 2,
+                "from": "ceiling"
+            }
+        ]
+    },
+    {
+        "biomes": [
+            "stronghold",
+            "mineshaft"
+        ],
+        "type": "column",
+        "chance": 0.2,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.06
+        },
+        "room_height": {
+            "min": 3
+        },
+        "blocks": [
+            {
+                "block": "cobweb",
+                "y": 1,
+                "from": "ceiling"
+            },
+            {
+                "block": "cobweb",
+                "y": 2,
+                "from": "ceiling"
+            },
+            {
+                "block": "cobweb",
+                "y": 3,
+                "from": "ceiling"
+            }
+        ]
+    },
+    {
+        "biomes": [
+            "stronghold",
+            "mineshaft"
+        ],
+        "type": "column",
+        "chance": 0.15,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.05
+        },
+        "room_height": {
+            "min": 4
+        },
+        "blocks": [
+            {
+                "block": "cobweb",
+                "y": 1,
+                "from": "ceiling"
+            },
+            {
+                "block": "cobweb",
+                "y": 2,
+                "from": "ceiling"
+            },
+            {
+                "block": "cobweb",
+                "y": 3,
+                "from": "ceiling"
+            },
+            {
+                "block": "cobweb",
+                "y": 4,
+                "from": "ceiling"
+            }
+        ]
+    },
+    {
+        "biomes": [
+            "badlands",
+            "mineshaft"
+        ],
+        "type": "fixed",
+        "chance": 0.75,
+        "relative": {
+            "x": "+"
+        },
+        "door_size": [
+            2,
+            {},
+            {},
+            {}
+        ],
+        "structures": [
+            [
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 2,
+                        "y": 1,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 2,
+                        "y": 2,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 2,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 1
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biomes": [
+            "badlands",
+            "mineshaft"
+        ],
+        "type": "fixed",
+        "chance": 0.75,
+        "relative": {
+            "x": "-"
+        },
+        "door_size": [
+            {},
+            {},
+            2,
+            {}
+        ],
+        "structures": [
+            [
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 2,
+                        "y": 1,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 2,
+                        "y": 2,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 2,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 1
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biomes": [
+            "badlands",
+            "mineshaft"
+        ],
+        "type": "fixed",
+        "chance": 0.75,
+        "relative": {
+            "z": "+"
+        },
+        "door_size": [
+            {},
+            2,
+            {},
+            {}
+        ],
+        "structures": [
+            [
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": -1,
+                        "y": 1,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": -1,
+                        "y": 2,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 1,
+                        "y": 2,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": -1,
+                        "y": 3,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": 1,
+                        "y": 3,
+                        "z": 2
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biomes": [
+            "badlands",
+            "mineshaft"
+        ],
+        "type": "fixed",
+        "chance": 0.75,
+        "relative": {
+            "z": "-"
+        },
+        "door_size": [
+            {},
+            {},
+            {},
+            2
+        ],
+        "structures": [
+            [
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": -1,
+                        "y": 1,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": -1,
+                        "y": 2,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 1,
+                        "y": 2,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": -1,
+                        "y": 3,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 2
+                    }
+                },
+                {
+                    "block": "dark_oak_planks",
+                    "position": {
+                        "x": 1,
+                        "y": 3,
+                        "z": 2
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "mineshaft",
+        "type": "replace_all",
+        "each_chance": 0.5,
+        "x": 0,
+        "y": 1,
+        "from": "air",
+        "to": "rail[shape=north_south]",
+        "door_size": [
+            {},
+            {
+                "min": 1
+            },
+            {},
+            {
+                "min": 1
+            }
+        ]
+    },
+    {
+        "biome": "mineshaft",
+        "type": "replace_all",
+        "each_chance": 0.5,
+        "z": 0,
+        "y": 1,
+        "from": "air",
+        "to": "rail[shape=east_west]",
+        "door_size": [
+            {
+                "min": 1
+            },
+            {},
+            {
+                "min": 1
+            },
+            {}
+        ]
+    },
+    {
+        "biome": "mineshaft",
+        "type": "replace_all",
+        "each_chance": 0.15,
+        "x": 0,
+        "y": 1,
+        "from": "air",
+        "to": "powered_rail[shape=north_south]",
+        "door_size": [
+            {},
+            {
+                "min": 1
+            },
+            {},
+            {
+                "min": 1
+            }
+        ]
+    },
+    {
+        "biome": "mineshaft",
+        "type": "replace_all",
+        "each_chance": 0.15,
+        "z": 0,
+        "y": 1,
+        "from": "air",
+        "to": "powered_rail[shape=east_west]",
+        "door_size": [
+            {
+                "min": 1
+            },
+            {},
+            {
+                "min": 1
+            },
+            {}
+        ]
+    },
+    {
+        "biome": "mineshaft",
+        "type": "replace_all",
+        "chance": 0.8,
+        "each_chance": 0.85,
+        "x": {
+            "min": -1,
+            "max": 1
+        },
+        "y": 0,
+        "from": "terracotta",
+        "to": "dark_oak_planks",
+        "door_size": [
+            {},
+            {
+                "min": 1
+            },
+            {},
+            {
+                "min": 1
+            }
+        ]
+    },
+    {
+        "biome": "mineshaft",
+        "type": "replace_all",
+        "chance": 0.8,
+        "each_chance": 0.85,
+        "z": {
+            "min": -1,
+            "max": 1
+        },
+        "y": 0,
+        "from": "terracotta",
+        "to": "dark_oak_planks",
+        "door_size": [
+            {
+                "min": 1
+            },
+            {},
+            {
+                "min": 1
+            },
+            {}
+        ]
+    },
+    {
+        "biome": "mineshaft",
+        "type": "replace_all",
+        "chance": 0.33,
+        "each_chance": 0.7,
+        "x": {
+            "min": -1,
+            "max": 1
+        },
+        "y": 3,
+        "from": "air",
+        "to": "dark_oak_planks",
+        "door_size": [
+            {},
+            {
+                "min": 1
+            },
+            {},
+            {
+                "min": 1
+            }
+        ]
+    },
+    {
+        "biome": "mineshaft",
+        "type": "replace_all",
+        "chance": 0.33,
+        "each_chance": 0.7,
+        "z": {
+            "min": -1,
+            "max": 1
+        },
+        "y": 3,
+        "from": "air",
+        "to": "dark_oak_planks",
+        "door_size": [
+            {
+                "min": 1
+            },
+            {},
+            {
+                "min": 1
+            },
+            {}
+        ]
+    },
+    {
+        "biome": "cave",
+        "type": "replace_all",
+        "each_chance": 0.33,
+        "chance": 0.33,
+        "x": 0,
+        "y": 1,
+        "from": "air",
+        "to": "rail[shape=north_south]",
+        "door_size": [
+            {},
+            {
+                "min": 1
+            },
+            {},
+            {
+                "min": 1
+            }
+        ]
+    },
+    {
+        "biome": "cave",
+        "type": "replace_all",
+        "each_chance": 0.33,
+        "chance": 0.33,
+        "z": 0,
+        "y": 1,
+        "from": "air",
+        "to": "rail[shape=east_west]",
+        "door_size": [
+            {
+                "min": 1
+            },
+            {},
+            {
+                "min": 1
+            },
+            {}
+        ]
+    }
+]

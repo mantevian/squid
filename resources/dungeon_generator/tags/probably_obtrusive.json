@@ -1,0 +1,19 @@
+{
+    "replace": false,
+    "values": [
+        "#minecraft:leaves",
+        "minecraft:warped_wart_block",
+        "minecraft:nether_wart_block",
+        "minecraft:netherrack",
+        "minecraft:sand",
+        "minecraft:gravel",
+        "minecraft:red_sand",
+        "minecraft:soul_sand",
+        "minecraft:soul_soil",
+        "minecraft:snow_block",
+        "minecraft:packed_ice",
+        "minecraft:shroomlight",
+        "minecraft:glowstone",
+        "minecraft:gold_ore"
+    ]
+}

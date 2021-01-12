@@ -1,0 +1,805 @@
+[
+    {
+        "biome": "cave",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.25,
+        "count": 1,
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:cave/cave\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:cave/cave\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:cave/cave\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:cave/cave\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "geode",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.25,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:cave/geode\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:cave/geode\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:cave/geode\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:cave/geode\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "roofed",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.2,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:forest/roofed\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:forest/roofed\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:forest/roofed\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:forest/roofed\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "mansion",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.33,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:forest/mansion\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:forest/mansion\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:forest/mansion\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:forest/mansion\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "badlands",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.25,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:desert/badlands\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:desert/badlands\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:desert/badlands\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:desert/badlands\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "mineshaft",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.33,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:desert/mineshaft\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:desert/mineshaft\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:desert/mineshaft\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:desert/mineshaft\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "tundra",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.25,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:taiga/tundra\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:taiga/tundra\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:taiga/tundra\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:taiga/tundra\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "ice",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.33,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:taiga/ice\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:taiga/ice\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:taiga/ice\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:taiga/ice\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "bamboo",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.25,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:jungle/bamboo\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:jungle/bamboo\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:jungle/bamboo\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:jungle/bamboo\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "fortress",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.33,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:nether/fortress\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:nether/fortress\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:nether/fortress\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:nether/fortress\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "bastion",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.25,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:nether/bastion\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:nether/bastion\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:nether/bastion\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:nether/bastion\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "highlands",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.25,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:end/highlands\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:end/highlands\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:end/highlands\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:end/highlands\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "endcity",
+        "type": "fixed",
+        "choose": true,
+        "chance": 0.33,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "structures": [
+            [
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:end/endcity\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=west]{LootTable:\"mante:end/endcity\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:end/endcity\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "chest[facing=east]{LootTable:\"mante:end/endcity\"}",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    }
+]

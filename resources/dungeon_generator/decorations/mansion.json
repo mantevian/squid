@@ -1,0 +1,196 @@
+[
+    {
+        "biome": "mansion",
+        "type": "fixed_lines",
+        "axis": "x",
+        "chance": 0.6,
+        "y": 1,
+        "lines": [
+            {
+                "z": -1,
+                "from": "air",
+                "to": "white_carpet"
+            },
+            {
+                "z": 0,
+                "from": "#mante:carpet_and_air",
+                "to": "red_carpet"
+            },
+            {
+                "z": 1,
+                "from": "air",
+                "to": "white_carpet"
+            }
+        ]
+    },
+    {
+        "biome": "mansion",
+        "type": "fixed_lines",
+        "axis": "z",
+        "chance": 0.6,
+        "y": 1,
+        "lines": [
+            {
+                "x": -1,
+                "from": "air",
+                "to": "white_carpet"
+            },
+            {
+                "x": 0,
+                "from": "#mante:carpet_and_air",
+                "to": "red_carpet"
+            },
+            {
+                "x": 1,
+                "from": "air",
+                "to": "white_carpet"
+            }
+        ]
+    },
+    {
+        "biome": "mansion",
+        "type": "fixed",
+        "chance": 0.5,
+        "relative": {
+            "y": "+"
+        },
+        "structures": [
+            [
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": -1,
+                        "y": 2,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 1,
+                        "y": 2,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "dark_oak_fence",
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "torch",
+                    "position": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "torch",
+                    "position": {
+                        "x": -1,
+                        "y": 1,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "torch",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "torch",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": -1
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "mansion",
+        "type": "replace_randomly",
+        "amount": 0.1,
+        "from": "dark_oak_planks",
+        "to": "dark_oak_log[axis=x]"
+    },
+    {
+        "biome": "mansion",
+        "type": "replace_randomly",
+        "amount": 0.1,
+        "from": "dark_oak_planks",
+        "to": "dark_oak_log[axis=y]"
+    },
+    {
+        "biome": "mansion",
+        "type": "replace_randomly",
+        "amount": 0.1,
+        "from": "dark_oak_planks",
+        "to": "dark_oak_log[axis=z]"
+    },
+    {
+        "biome": "mansion",
+        "type": "fixed",
+        "chance": 0.75,
+        "count": {
+            "min": 1,
+            "max": 4
+        },
+        "relative": {
+            "x": "+-",
+            "z": "+-"
+        },
+        "structures": [
+            [
+                {
+                    "block": "cobblestone_wall",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "cobblestone_wall",
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 0
+                    }
+                }
+            ]
+        ]
+    }
+]

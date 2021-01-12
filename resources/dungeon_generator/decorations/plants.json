@@ -1,0 +1,374 @@
+[
+    {
+        "biomes": [
+            "forest",
+            "jungle",
+            "bamboo",
+            "taiga",
+            "roofed"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.1,
+            "max": 0.6
+        },
+        "y": 1,
+        "block": "grass"
+    },
+    {
+        "biomes": [
+            "forest",
+            "jungle",
+            "bamboo",
+            "taiga",
+            "roofed"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.25
+        },
+        "chance": 0.1,
+        "y": 1,
+        "block": "pumpkin"
+    },
+    {
+        "biomes": [
+            "jungle",
+            "bamboo"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.25
+        },
+        "chance": 0.1,
+        "y": 1,
+        "block": "melon"
+    },
+    {
+        "biomes": [
+            "forest",
+            "roofed"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.05,
+            "max": 0.12
+        },
+        "y": 1,
+        "blocks": [
+            "poppy",
+            "dandelion",
+            "lily_of_the_valley",
+            "cornflower",
+            "red_tulip",
+            "orange_tulip",
+            "pink_tulip",
+            "white_tulip",
+            "oxeye_daisy",
+            "blue_orchid",
+            "allium",
+            "azure_bluet",
+            "red_mushroom",
+            "brown_mushroom"
+        ]
+    },
+    {
+        "biomes": [
+            "forest",
+            "roofed",
+            "jungle",
+            "bamboo",
+            "taiga"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.1
+        },
+        "y": 1,
+        "blocks": [
+            "poppy",
+            "dandelion",
+            "oxeye_daisy",
+            "blue_orchid",
+            "azure_bluet",
+            "red_mushroom",
+            "brown_mushroom"
+        ]
+    },
+    {
+        "biomes": [
+            "forest",
+            "roofed",
+            "jungle",
+            "bamboo",
+            "taiga"
+        ],
+        "chance": 0.05,
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.03
+        },
+        "y": 1,
+        "block": "wither_rose"
+    },
+    {
+        "biomes": [
+            "jungle",
+            "bamboo",
+            "roofed",
+            "taiga"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.15
+        },
+        "y": 1,
+        "block": "fern"
+    },
+    {
+        "biomes": [
+            "roofed",
+            "desert",
+            "badlands",
+            "taiga"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.2
+        },
+        "y": 1,
+        "block": "dead_bush"
+    },
+    {
+        "biomes": [
+            "desert",
+            "badlands"
+        ],
+        "type": "column",
+        "chance": 0.5,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.07
+        },
+        "blocks": [
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "cactus"
+            }
+        ]
+    },
+    {
+        "biomes": [
+            "desert",
+            "badlands"
+        ],
+        "type": "column",
+        "chance": 0.33,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.06
+        },
+        "blocks": [
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "cactus"
+            },
+            {
+                "y": "2",
+                "from": "floor",
+                "block": "cactus"
+            }
+        ]
+    },
+    {
+        "biomes": [
+            "desert",
+            "badlands"
+        ],
+        "type": "column",
+        "chance": 0.25,
+        "room_height": {
+            "min": 3
+        },
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.05
+        },
+        "blocks": [
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "cactus"
+            },
+            {
+                "y": "2",
+                "from": "floor",
+                "block": "cactus"
+            },
+            {
+                "y": "3",
+                "from": "floor",
+                "block": "cactus"
+            }
+        ]
+    },
+    {
+        "biomes": [
+            "bamboo",
+            "jungle"
+        ],
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.4,
+        "blocks": [
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "bamboo"
+            },
+            {
+                "y": "2",
+                "from": "floor",
+                "block": "bamboo"
+            }
+        ]
+    },
+    {
+        "biome": "bamboo",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.4,
+        "blocks": [
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "bamboo"
+            },
+            {
+                "y": "2",
+                "from": "floor",
+                "block": "bamboo"
+            },
+            {
+                "y": "3",
+                "from": "floor",
+                "block": "bamboo"
+            }
+        ]
+    },
+    {
+        "biome": "bamboo",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.2
+        },
+        "chance": 0.4,
+        "blocks": [
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "bamboo"
+            },
+            {
+                "y": "2",
+                "from": "floor",
+                "block": "bamboo"
+            },
+            {
+                "y": "3",
+                "from": "floor",
+                "block": "bamboo"
+            },
+            {
+                "y": "4",
+                "from": "floor",
+                "block": "bamboo"
+            }
+        ]
+    },
+    {
+        "biome": "beach",
+        "type": "replace_randomly",
+        "amount": 0.02,
+        "chance": 0.33,
+        "from": "air",
+        "to": "sea_pickle[waterlogged=false,pickles=1]",
+        "place": {
+            "above": "#mante:base_blocks"
+        }
+    },
+    {
+        "biome": "beach",
+        "type": "replace_randomly",
+        "amount": 0.02,
+        "chance": 0.33,
+        "from": "air",
+        "to": "sea_pickle[waterlogged=false,pickles=2]",
+        "place": {
+            "above": "#mante:base_blocks"
+        }
+    },
+    {
+        "biome": "beach",
+        "type": "replace_randomly",
+        "amount": 0.02,
+        "chance": 0.33,
+        "from": "air",
+        "to": "sea_pickle[waterlogged=false,pickles=3]",
+        "place": {
+            "above": "#mante:base_blocks"
+        }
+    },
+    {
+        "biome": "beach",
+        "type": "replace_randomly",
+        "amount": 0.02,
+        "chance": 0.33,
+        "from": "air",
+        "to": "sea_pickle[waterlogged=false,pickles=4]",
+        "place": {
+            "above": "#mante:base_blocks"
+        }
+    },
+    {
+        "biome": "mansion",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.05,
+            "max": 0.12
+        },
+        "y": 1,
+        "from": "air",
+        "blocks": [
+            "potted_poppy",
+            "potted_dandelion",
+            "potted_lily_of_the_valley",
+            "potted_cornflower",
+            "potted_red_tulip",
+            "potted_orange_tulip",
+            "potted_pink_tulip",
+            "potted_white_tulip",
+            "potted_oxeye_daisy",
+            "potted_blue_orchid",
+            "potted_allium",
+            "potted_azure_bluet",
+            "potted_red_mushroom",
+            "potted_brown_mushroom"
+        ]
+    }
+]

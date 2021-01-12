@@ -1,0 +1,488 @@
+{
+    "groups": [
+        {
+            "id": 0,
+            "biome": "cave",
+            "temperature": 0.0,
+            "humidity": 0.0,
+            "altitude": -0.5,
+            "weirdness": 0.0
+        },
+        {
+            "id": 4,
+            "biome": "desert",
+            "temperature": 0.5,
+            "humidity": 0.0,
+            "altitude": 0.25,
+            "weirdness": 0.0
+        },
+        {
+            "id": 8,
+            "biome": "forest",
+            "temperature": 0.0,
+            "humidity": 0.5,
+            "altitude": 0.0,
+            "weirdness": -0.25
+        },
+        {
+            "id": 12,
+            "biome": "taiga",
+            "temperature": -0.5,
+            "humidity": 0.25,
+            "altitude": 0.0,
+            "weirdness": 0.0
+        },
+        {
+            "id": 16,
+            "biome": "jungle",
+            "temperature": 0.25,
+            "humidity": 0.25,
+            "altitude": 0.25,
+            "weirdness": 0.0
+        },
+        {
+            "id": 20,
+            "biome": "beach",
+            "temperature": 0.25,
+            "humidity": 0.5,
+            "altitude": -0.25,
+            "weirdness": 0.0
+        },
+        {
+            "id": 24,
+            "biome": "nether",
+            "temperature": 0.5,
+            "humidity": -0.25,
+            "altitude": -0.25,
+            "weirdness": 0.0
+        },
+        {
+            "id": 28,
+            "biome": "warped",
+            "temperature": 0.25,
+            "humidity": 0.5,
+            "altitude": 0.0,
+            "weirdness": 0.5
+        },
+        {
+            "id": 32,
+            "biome": "end",
+            "temperature": 0.0,
+            "humidity": 0.0,
+            "altitude": 0.25,
+            "weirdness": 0.25
+        }
+    ],
+    "blocks": {
+        "cave": "stone",
+        "stronghold": "stone_bricks",
+        "geode": "tuff",
+        "dripstone": "dripstone_block",
+        "desert": "sandstone",
+        "badlands": "red_sandstone",
+        "mineshaft": "terracotta",
+        "pyramid": "sandstone",
+        "forest": "dirt",
+        "roofed": "coarse_dirt",
+        "mansion": "dark_oak_planks",
+        "farmlands": "coarse_dirt",
+        "taiga": "dirt",
+        "tundra": "snow_block",
+        "ice": "packed_ice",
+        "igloo": "snow_block",
+        "jungle": "dirt",
+        "bamboo": "coarse_dirt",
+        "temple": "cobblestone",
+        "honey": "honeycomb_block",
+        "beach": "sandstone",
+        "ocean": "sandstone",
+        "monument": "prismarine",
+        "nether": "netherrack",
+        "fortress": "nether_bricks",
+        "bastion": "polished_blackstone_bricks",
+        "treasure": "polished_blackstone_bricks",
+        "warped": "netherrack",
+        "crimson": "netherrack",
+        "soul": "soul_soil",
+        "delta": "blackstone",
+        "end": "end_stone",
+        "highlands": "end_stone",
+        "endcity": "purpur_block",
+        "enchant": "end_stone_bricks"
+    },
+    "names": [
+        "cave",
+        "stronghold",
+        "geode",
+        "dripstone",
+        "desert",
+        "badlands",
+        "mineshaft",
+        "pyramid",
+        "forest",
+        "roofed",
+        "mansion",
+        "farmlands",
+        "taiga",
+        "tundra",
+        "ice",
+        "igloo",
+        "jungle",
+        "bamboo",
+        "temple",
+        "honey",
+        "beach",
+        "ocean",
+        "monument",
+        "",
+        "nether",
+        "fortress",
+        "bastion",
+        "treasure",
+        "warped",
+        "crimson",
+        "soul",
+        "delta",
+        "end",
+        "highlands",
+        "endcity",
+        "enchant"
+    ],
+    "min_door_size": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "extend_height": [
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 1
+        },
+        {
+            "floor": 0,
+            "ceiling": 1
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 5
+        },
+        {
+            "floor": 0,
+            "ceiling": 5
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 5
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 5
+        },
+        {
+            "floor": 0,
+            "ceiling": 1
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 2
+        },
+        {
+            "floor": 2,
+            "ceiling": 2
+        },
+        {
+            "floor": 2,
+            "ceiling": 2
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 3
+        },
+        {
+            "floor": 0,
+            "ceiling": 3
+        },
+        {
+            "floor": 0,
+            "ceiling": 3
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        },
+        {
+            "floor": 0,
+            "ceiling": 4
+        },
+        {
+            "floor": 0,
+            "ceiling": 4
+        },
+        {
+            "floor": 2,
+            "ceiling": 4
+        },
+        {
+            "floor": 0,
+            "ceiling": 0
+        }
+    ],
+    "sky": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "fill_water": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "colors": [
+        "666666",
+        "888888",
+        "aa77ee",
+        "5c453b",
+        "dcd1a5",
+        "b96522",
+        "945c42",
+        "f9db46",
+        "785439",
+        "5b402b",
+        "3d2812",
+        "bb9922",
+        "785439",
+        "edfafa",
+        "90b7fb",
+        "96966f",
+        "b7835b",
+        "715137",
+        "77aa77",
+        "ccee33",
+        "e4e1b9",
+        "4477ff",
+        "22ff88",
+        "",
+        "713131",
+        "662222",
+        "443333",
+        "557722",
+        "167d84",
+        "aa2020",
+        "5a4437",
+        "484848",
+        "ebf3b2",
+        "d2d792",
+        "b084b0",
+        "ff33ff"
+    ],
+    "has_special_room": [
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+    ]
+}

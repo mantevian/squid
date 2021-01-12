@@ -1,0 +1,366 @@
+[
+    {
+        "biome": "bastion",
+        "type": "column",
+        "chance": 0.15,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.02
+        },
+        "room_height": {
+            "min": 3
+        },
+        "blocks": [
+            {
+                "block": "chain[axis=y]",
+                "y": 1,
+                "from": "ceiling"
+            },
+            {
+                "block": "chain[axis=y]",
+                "y": 2,
+                "from": "ceiling"
+            },
+            {
+                "block": "quartz_block",
+                "y": 3,
+                "from": "ceiling"
+            }
+        ]
+    },
+    {
+        "biome": "bastion",
+        "type": "column",
+        "chance": 0.15,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.02
+        },
+        "room_height": {
+            "min": 4
+        },
+        "blocks": [
+            {
+                "block": "chain[axis=y]",
+                "y": 1,
+                "from": "ceiling"
+            },
+            {
+                "block": "chain[axis=y]",
+                "y": 2,
+                "from": "ceiling"
+            },
+            {
+                "block": "chain[axis=y]",
+                "y": 3,
+                "from": "ceiling"
+            },
+            {
+                "block": "quartz_block",
+                "y": 4,
+                "from": "ceiling"
+            }
+        ]
+    },
+    {
+        "biome": "bastion",
+        "type": "column",
+        "chance": 0.1,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.02
+        },
+        "room_height": {
+            "min": 5
+        },
+        "blocks": [
+            {
+                "block": "chain[axis=y]",
+                "y": 1,
+                "from": "ceiling"
+            },
+            {
+                "block": "chain[axis=y]",
+                "y": 2,
+                "from": "ceiling"
+            },
+            {
+                "block": "chain[axis=y]",
+                "y": 3,
+                "from": "ceiling"
+            },
+            {
+                "block": "chain[axis=y]",
+                "y": 4,
+                "from": "ceiling"
+            },
+            {
+                "block": "quartz_block",
+                "y": 5,
+                "from": "ceiling"
+            }
+        ]
+    },
+    {
+        "biome": "bastion",
+        "type": "column",
+        "chance": 0.05,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.03
+        },
+        "blocks": [
+            {
+                "block": "gold_block",
+                "y": 1,
+                "from": "floor"
+            },
+            {
+                "block": "quartz_block",
+                "y": 2,
+                "from": "floor"
+            }
+        ]
+    },
+    {
+        "biome": "bastion",
+        "type": "column",
+        "chance": 0.15,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.03
+        },
+        "blocks": [
+            {
+                "block": "quartz_block",
+                "y": 1,
+                "from": "floor"
+            },
+            {
+                "block": "quartz_slab[type=bottom]",
+                "y": 2,
+                "from": "floor"
+            }
+        ]
+    },
+    {
+        "biome": "bastion",
+        "type": "random_patch",
+        "chance": 0.15,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.04
+        },
+        "y": 1,
+        "block": "quartz_slab[type=bottom]"
+    },
+    {
+        "biome": "bastion",
+        "type": "random_patch",
+        "chance": 0.3,
+        "amount_horizontal": {
+            "min": 0.01,
+            "max": 0.04
+        },
+        "y": 1,
+        "block": "quartz_block"
+    },
+    {
+        "biome": "fortress",
+        "type": "line",
+        "axis": "y",
+        "chance": 0.33,
+        "z": 3,
+        "x": 3,
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.07
+        },
+        "from": "air",
+        "to": "nether_brick_wall"
+    },
+    {
+        "biome": "fortress",
+        "type": "line",
+        "axis": "y",
+        "chance": 0.33,
+        "z": -3,
+        "x": 3,
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.07
+        },
+        "from": "air",
+        "to": "nether_brick_wall"
+    },
+    {
+        "biome": "fortress",
+        "type": "line",
+        "axis": "y",
+        "chance": 0.33,
+        "z": 3,
+        "x": -3,
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.07
+        },
+        "from": "air",
+        "to": "nether_brick_wall"
+    },
+    {
+        "biome": "fortress",
+        "type": "line",
+        "axis": "y",
+        "chance": 0.33,
+        "z": -3,
+        "x": -3,
+        "amount_horizontal": {
+            "min": 0.03,
+            "max": 0.07
+        },
+        "from": "air",
+        "to": "nether_brick_wall"
+    },
+    {
+        "biome": "fortress",
+        "type": "fixed",
+        "chance": 0.2,
+        "structures": [
+            [
+                {
+                    "blocks": [
+                        "nether_bricks",
+                        "cracked_nether_bricks"
+                    ],
+                    "start": {
+                        "x": -1,
+                        "y": 1,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 1,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "lava",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 0
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "fortress",
+        "type": "fixed",
+        "count": {
+            "min": 2,
+            "max": 8
+        },
+        "choose": true,
+        "structures": [
+            [
+                {
+                    "block": "nether_brick_fence",
+                    "position": {
+                        "x": -1,
+                        "y": 2,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "nether_brick_fence",
+                    "position": {
+                        "x": -1,
+                        "y": 2,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "nether_brick_fence",
+                    "position": {
+                        "x": 1,
+                        "y": 2,
+                        "z": -1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "nether_brick_fence",
+                    "position": {
+                        "x": 1,
+                        "y": 2,
+                        "z": -1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "nether_brick_fence",
+                    "position": {
+                        "x": -1,
+                        "y": 2,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "+"
+                    }
+                },
+                {
+                    "block": "nether_brick_fence",
+                    "position": {
+                        "x": -1,
+                        "y": 2,
+                        "z": 1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "nether_brick_fence",
+                    "position": {
+                        "x": 1,
+                        "y": 2,
+                        "z": -1
+                    },
+                    "relative": {
+                        "x": "+",
+                        "z": "-"
+                    }
+                },
+                {
+                    "block": "nether_brick_fence",
+                    "position": {
+                        "x": 1,
+                        "y": 2,
+                        "z": -1
+                    },
+                    "relative": {
+                        "x": "-",
+                        "z": "-"
+                    }
+                }
+            ]
+        ]
+    }
+]

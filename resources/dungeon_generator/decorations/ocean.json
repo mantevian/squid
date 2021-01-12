@@ -1,0 +1,304 @@
+[
+    {
+        "biome": "ocean",
+        "type": "vein",
+        "y": -1,
+        "from": "water",
+        "to": "fire_coral_block",
+        "chance": 0.5,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "size": {
+            "min": 3,
+            "max": 8
+        },
+        "branches": {
+            "min": 2,
+            "max": 5
+        }
+    },
+    {
+        "biome": "ocean",
+        "type": "vein",
+        "y": -1,
+        "from": "water",
+        "to": "brain_coral_block",
+        "chance": 0.5,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "size": {
+            "min": 3,
+            "max": 8
+        },
+        "branches": {
+            "min": 2,
+            "max": 5
+        }
+    },
+    {
+        "biome": "ocean",
+        "type": "vein",
+        "y": -1,
+        "from": "water",
+        "to": "bubble_coral_block",
+        "chance": 0.5,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "size": {
+            "min": 3,
+            "max": 8
+        },
+        "branches": {
+            "min": 2,
+            "max": 5
+        }
+    },
+    {
+        "biome": "ocean",
+        "type": "vein",
+        "y": -1,
+        "from": "water",
+        "to": "horn_coral_block",
+        "chance": 0.5,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "size": {
+            "min": 3,
+            "max": 8
+        },
+        "branches": {
+            "min": 2,
+            "max": 5
+        }
+    },
+    {
+        "biome": "ocean",
+        "type": "vein",
+        "y": -1,
+        "from": "water",
+        "to": "tube_coral_block",
+        "chance": 0.5,
+        "count": {
+            "min": 1,
+            "max": 2
+        },
+        "size": {
+            "min": 3,
+            "max": 8
+        },
+        "branches": {
+            "min": 2,
+            "max": 5
+        }
+    },
+    {
+        "biome": "ocean",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.33,
+        "blocks": [
+            {
+                "y": "-1",
+                "from": "floor",
+                "block": "kelp"
+            },
+            {
+                "y": "0",
+                "from": "floor",
+                "block": "kelp"
+            }
+        ]
+    },
+    {
+        "biome": "ocean",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.33,
+        "blocks": [
+            {
+                "y": "-1",
+                "from": "floor",
+                "block": "kelp"
+            },
+            {
+                "y": "0",
+                "from": "floor",
+                "block": "kelp"
+            },
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "kelp"
+            },
+            {
+                "y": "2",
+                "from": "floor",
+                "block": "kelp"
+            }
+        ]
+    },
+    {
+        "biome": "ocean",
+        "type": "column",
+        "amount_horizontal": {
+            "min": 0.04,
+            "max": 0.2
+        },
+        "chance": 0.33,
+        "blocks": [
+            {
+                "y": "-1",
+                "from": "floor",
+                "block": "kelp"
+            },
+            {
+                "y": "0",
+                "from": "floor",
+                "block": "kelp"
+            },
+            {
+                "y": "1",
+                "from": "floor",
+                "block": "kelp"
+            },
+            {
+                "y": "2",
+                "from": "floor",
+                "block": "kelp"
+            },
+            {
+                "y": "3",
+                "from": "floor",
+                "block": "kelp"
+            },
+            {
+                "y": "4",
+                "from": "floor",
+                "block": "kelp"
+            }
+        ]
+    },
+    {
+        "biomes": [
+            "ocean",
+            "monument"
+        ],
+        "type": "replace_randomly",
+        "amount": 0.02,
+        "chance": 0.33,
+        "from": "air",
+        "to": "sea_pickle[pickles=1]",
+        "place": {
+            "above": "#mante:base_blocks"
+        }
+    },
+    {
+        "biomes": [
+            "ocean",
+            "monument"
+        ],
+        "type": "replace_randomly",
+        "amount": 0.02,
+        "chance": 0.33,
+        "from": "air",
+        "to": "sea_pickle[pickles=2]",
+        "place": {
+            "above": "#mante:base_blocks"
+        }
+    },
+    {
+        "biomes": [
+            "ocean",
+            "monument"
+        ],
+        "type": "replace_randomly",
+        "amount": 0.02,
+        "chance": 0.33,
+        "from": "air",
+        "to": "sea_pickle[pickles=3]",
+        "place": {
+            "above": "#mante:base_blocks"
+        }
+    },
+    {
+        "biomes": [
+            "ocean",
+            "monument"
+        ],
+        "type": "replace_randomly",
+        "amount": 0.02,
+        "chance": 0.33,
+        "from": "air",
+        "to": "sea_pickle[pickles=4]",
+        "place": {
+            "above": "#mante:base_blocks"
+        }
+    },
+    {
+        "biomes": [
+            "ocean",
+            "monument"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.02,
+            "max": 0.25
+        },
+        "chance": 0.6,
+        "y": -2,
+        "block": "magma_block"
+    },
+    {
+        "biomes": [
+            "ocean",
+            "monument"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.02,
+            "max": 0.25
+        },
+        "chance": 0.6,
+        "y": -2,
+        "block": "soul_sand"
+    },
+    {
+        "biomes": [
+            "ocean",
+            "monument"
+        ],
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.1,
+            "max": 0.6
+        },
+        "chance": 0.6,
+        "y": -1,
+        "block": "seagrass"
+    },
+    {
+        "biome": "ocean",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.02,
+            "max": 0.3
+        },
+        "chance": 0.6,
+        "y": -2,
+        "block": "lava"
+    }
+]

@@ -1,0 +1,17 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:gray_concrete",
+        "minecraft:yellow_concrete",
+        "minecraft:brown_concrete",
+        "minecraft:stone",
+        "minecraft:stone_bricks",
+        "minecraft:dirt",
+        "minecraft:sandstone",
+        "minecraft:red_sandstone",
+        "minecraft:oak_planks",
+        "minecraft:dark_oak_planks",
+        "minecraft:nether_bricks",
+        "minecraft:end_stone"
+    ]
+}

@@ -1,0 +1,688 @@
+[
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 0,
+        "block": "farmland[moisture=7]",
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 1,
+        "block": "wheat[age=3]",
+        "noise": {
+            "min": 0.1,
+            "scale": 16,
+            "offset": 1200
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 1,
+        "block": "wheat[age=5]",
+        "noise": {
+            "min": 0.4,
+            "scale": 16,
+            "offset": 1200
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 1,
+        "block": "wheat[age=7]",
+        "noise": {
+            "min": 0.7,
+            "scale": 16,
+            "offset": 1200
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 1,
+        "block": "carrots[age=3]",
+        "noise": {
+            "min": 0.1,
+            "scale": 16,
+            "offset": 1300
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 1,
+        "block": "carrots[age=5]",
+        "noise": {
+            "min": 0.4,
+            "scale": 16,
+            "offset": 1300
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 1,
+        "block": "carrots[age=7]",
+        "noise": {
+            "min": 0.7,
+            "scale": 16,
+            "offset": 1300
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 1,
+        "block": "potatoes[age=3]",
+        "noise": {
+            "min": 0.1,
+            "scale": 16,
+            "offset": 1400
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 1,
+        "block": "potatoes[age=5]",
+        "noise": {
+            "min": 0.4,
+            "scale": 16,
+            "offset": 1400
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 1,
+        "block": "potatoes[age=7]",
+        "noise": {
+            "min": 0.7,
+            "scale": 16,
+            "offset": 1400
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "fill_layer",
+        "y": 0,
+        "block": "grass_block",
+        "noise": {
+            "min": 0.4,
+            "scale": 16,
+            "offset": -1200
+        },
+        "walls_margin": 2
+    },
+    {
+        "biome": "farmlands",
+        "type": "random_patch",
+        "amount_horizontal": {
+            "min": 0.05,
+            "max": 0.25
+        },
+        "y": 1,
+        "block": "pumpkin"
+    },
+    {
+        "biome": "farmlands",
+        "type": "fixed",
+        "structures": [
+            [
+                {
+                    "block": "barrier",
+                    "start": {
+                        "x": -2,
+                        "y": 3,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "oak_fence",
+                        "birch_fence",
+                        "dark_oak_fence",
+                        "jungle_fence",
+                        "acacia_fence"
+                    ],
+                    "start": {
+                        "x": -2,
+                        "y": 1,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 2,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "soul_soil",
+                    "chance": 0.33,
+                    "position": {
+                        "x": -1,
+                        "y": 2,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": -2,
+                        "y": 1,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "jack_o_lantern",
+                    "position": {
+                        "x": -1,
+                        "y": 3,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "yellow_carpet",
+                    "start": {
+                        "x": -2,
+                        "y": 4,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "hay_block",
+                    "position": {
+                        "x": -1,
+                        "y": 4,
+                        "z": -1
+                    }
+                }
+            ],
+            [
+                {
+                    "block": "barrier",
+                    "start": {
+                        "x": -2,
+                        "y": 4,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "oak_fence",
+                        "birch_fence",
+                        "dark_oak_fence",
+                        "jungle_fence",
+                        "acacia_fence"
+                    ],
+                    "start": {
+                        "x": -2,
+                        "y": 1,
+                        "z": -1
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 3,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "soul_soil",
+                    "chance": 0.33,
+                    "position": {
+                        "x": -1,
+                        "y": 3,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": -2,
+                        "y": 2,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": -2,
+                        "y": 1,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "jack_o_lantern",
+                    "position": {
+                        "x": -1,
+                        "y": 4,
+                        "z": -1
+                    }
+                },
+                {
+                    "block": "yellow_carpet",
+                    "start": {
+                        "x": -2,
+                        "y": 5,
+                        "z": -2
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 5,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "hay_block",
+                    "position": {
+                        "x": -1,
+                        "y": 5,
+                        "z": -1
+                    }
+                }
+            ],
+            [
+                {
+                    "block": "barrier",
+                    "start": {
+                        "x": 2,
+                        "y": 3,
+                        "z": 2
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "oak_fence",
+                        "birch_fence",
+                        "dark_oak_fence",
+                        "jungle_fence",
+                        "acacia_fence"
+                    ],
+                    "start": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "soul_soil",
+                    "chance": 0.33,
+                    "position": {
+                        "x": 1,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "jack_o_lantern",
+                    "position": {
+                        "x": 1,
+                        "y": 3,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "yellow_carpet",
+                    "start": {
+                        "x": 2,
+                        "y": 4,
+                        "z": 2
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "hay_block",
+                    "position": {
+                        "x": 1,
+                        "y": 4,
+                        "z": 1
+                    }
+                }
+            ],
+            [
+                {
+                    "block": "barrier",
+                    "start": {
+                        "x": 2,
+                        "y": 4,
+                        "z": 2
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 4,
+                        "z": 0
+                    }
+                },
+                {
+                    "blocks": [
+                        "oak_fence",
+                        "birch_fence",
+                        "dark_oak_fence",
+                        "jungle_fence",
+                        "acacia_fence"
+                    ],
+                    "start": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 1
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 3,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "soul_soil",
+                    "chance": 0.33,
+                    "position": {
+                        "x": 1,
+                        "y": 3,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": 2,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": 0,
+                        "y": 2,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": 2,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "air",
+                    "position": {
+                        "x": 0,
+                        "y": 1,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "jack_o_lantern",
+                    "position": {
+                        "x": 1,
+                        "y": 4,
+                        "z": 1
+                    }
+                },
+                {
+                    "block": "yellow_carpet",
+                    "start": {
+                        "x": 2,
+                        "y": 5,
+                        "z": 2
+                    },
+                    "end": {
+                        "x": 0,
+                        "y": 5,
+                        "z": 0
+                    }
+                },
+                {
+                    "block": "hay_block",
+                    "position": {
+                        "x": 1,
+                        "y": 5,
+                        "z": 1
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "farmlands",
+        "type": "fixed_lines",
+        "axis": "x",
+        "chance": 0.6,
+        "y": 0,
+        "lines": [
+            {
+                "z": -1,
+                "to": "dirt_path"
+            },
+            {
+                "z": 0,
+                "to": "dirt_path"
+            },
+            {
+                "z": 1,
+                "to": "dirt_path"
+            }
+        ]
+    },
+    {
+        "biome": "farmlands",
+        "type": "fixed_lines",
+        "axis": "z",
+        "chance": 0.6,
+        "y": 0,
+        "lines": [
+            {
+                "x": -1,
+                "to": "dirt_path"
+            },
+            {
+                "x": 0,
+                "to": "dirt_path"
+            },
+            {
+                "x": 1,
+                "to": "dirt_path"
+            }
+        ]
+    },
+    {
+        "biome": "farmlands",
+        "type": "fixed",
+        "structures": [
+            [
+                {
+                    "block": "water",
+                    "position": {
+                        "x": -4,
+                        "y": 0,
+                        "z": -4
+                    }
+                },
+                {
+                    "block": "water",
+                    "position": {
+                        "x": -4,
+                        "y": 0,
+                        "z": 4
+                    }
+                },
+                {
+                    "block": "water",
+                    "position": {
+                        "x": 4,
+                        "y": 0,
+                        "z": -4
+                    }
+                },
+                {
+                    "block": "water",
+                    "position": {
+                        "x": 4,
+                        "y": 0,
+                        "z": 4
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "biome": "farmlands",
+        "type": "fixed",
+        "count": {
+            "min": 1,
+            "max": 6
+        },
+        "structures": [
+            [
+                {
+                    "block": "water",
+                    "choose_position": [
+                        {
+                            "x": -4,
+                            "y": 0,
+                            "z": -5
+                        },
+                        {
+                            "x": -3,
+                            "y": 0,
+                            "z": -2
+                        },
+                        {
+                            "x": -2,
+                            "y": 0,
+                            "z": -4
+                        },
+                        {
+                            "x": 3,
+                            "y": 0,
+                            "z": 2
+                        },
+                        {
+                            "x": 4,
+                            "y": 0,
+                            "z": 3
+                        },
+                        {
+                            "x": 3,
+                            "y": 0,
+                            "z": 5
+                        },
+                        {
+                            "x": -5,
+                            "y": 0,
+                            "z": -4
+                        },
+                        {
+                            "x": -4,
+                            "y": 0,
+                            "z": -2
+                        },
+                        {
+                            "x": -3,
+                            "y": 0,
+                            "z": -2
+                        },
+                        {
+                            "x": 2,
+                            "y": 0,
+                            "z": 4
+                        },
+                        {
+                            "x": 3,
+                            "y": 0,
+                            "z": 4
+                        },
+                        {
+                            "x": 2,
+                            "y": 0,
+                            "z": 5
+                        }
+                    ]
+                }
+            ]
+        ]
+    }
+]

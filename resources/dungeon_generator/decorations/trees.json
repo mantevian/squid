@@ -1,0 +1,106 @@
+[
+    {
+        "biome": "forest",
+        "type": "tree",
+        "leaves_type": "noise",
+        "count": {
+            "min": 1,
+            "max": 3
+        },
+        "chance": 0.75,
+        "leaves": "oak_leaves[persistent=true]",
+        "trunk": "oak_log[axis=y]",
+        "noise": {
+            "scale": 14,
+            "offset": 116
+        },
+        "leaves_size": {
+            "min": 0.005,
+            "max": 0.03
+        },
+        "width": 0,
+        "allowed_noise": {
+            "min": 0.3,
+            "max": 1.0
+        },
+        "max_height": -3
+    },
+    {
+        "biome": "roofed",
+        "type": "tree",
+        "leaves_type": "noise",
+        "count": {
+            "min": 1,
+            "max": 3
+        },
+        "chance": 0.75,
+        "leaves": "dark_oak_leaves[persistent=true]",
+        "trunk": "dark_oak_log[axis=y]",
+        "noise": {
+            "scale": 18,
+            "offset": 118
+        },
+        "width": 1,
+        "leaves_size": {
+            "min": 0.01,
+            "max": 0.03
+        },
+        "allowed_noise": {
+            "min": 0.1,
+            "max": 1.0
+        },
+        "max_height": -3
+    },
+    {
+        "biome": "taiga",
+        "type": "tree",
+        "leaves_type": "noise",
+        "count": {
+            "min": 1,
+            "max": 3
+        },
+        "chance": 0.75,
+        "leaves": "spruce_leaves[persistent=true]",
+        "trunk": "spruce_log[axis=y]",
+        "noise": {
+            "scale": 10,
+            "offset": 120
+        },
+        "leaves_size": {
+            "min": 0.01,
+            "max": 0.03
+        },
+        "width": 0,
+        "allowed_noise": {
+            "min": 0.5,
+            "max": 1.0
+        },
+        "max_height": -3
+    },
+    {
+        "biome": "jungle",
+        "type": "tree",
+        "leaves_type": "vein",
+        "count": {
+            "min": 2,
+            "max": 4
+        },
+        "chance": 0.75,
+        "leaves": "jungle_leaves[persistent=true]",
+        "trunk": "jungle_log[axis=y]",
+        "noise": {
+            "scale": 16,
+            "offset": 120
+        },
+        "branches": {
+            "min": 4,
+            "max": 7
+        },
+        "size": {
+            "min": 5,
+            "max": 12
+        },
+        "width": 0,
+        "max_height": -3
+    }
+]
