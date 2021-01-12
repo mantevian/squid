@@ -376,11 +376,11 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
                 const level_noise = new SimplexNoise(level_seed);
                 const replace_noise = new SimplexNoise(replace_seed);
 
-                const biome_config = JSON.parse(fs.readFileSync(`./biomes.json`));
+                const biome_config = JSON.parse(fs.readFileSync(`./resources/dungeon_generator/biomes.json`));
                 var biome_groups = biome_config.groups;
                 shuffle(biome_groups);
 
-                const decorations_config = JSON.parse(fs.readFileSync(`./decorations.json`));
+                const decorations_config = JSON.parse(fs.readFileSync(`./resources/dungeon_generator/decorations.json`));
                 const decorations = [];
 
                 class Room {
@@ -461,20 +461,20 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
                     zip.file(`data/mante/functions/tick.mcfunction`, ``);
                     zip.folder(`data/mante/functions/generator`);
 
-                    let tag_files = await readdir(`tags`);
+                    let tag_files = await readdir(`resources/dungeon_generator/tags`);
                     for (var i = 0; i < tag_files.length; i++)
                         zip.file(`data/mante/tags/blocks/${tag_files[i]}`, fs.readFileSync(`tags/${tag_files[i]}`, `utf8`));
 
-                    let loot_folders = await readdir(`loot_tables`);
+                    let loot_folders = await readdir(`resources/dungeon_generator/loot_tables`);
                     for (var i = 0; i < loot_folders.length; i++) {
-                        let loot_files = await readdir(`loot_tables/${loot_folders[i]}`);
+                        let loot_files = await readdir(`resources/dungeon_generator/loot_tables/${loot_folders[i]}`);
                         for (var j = 0; j < loot_files.length; j++) {
-                            zip.file(`data/mante/loot_tables/${loot_folders[i]}/${loot_files[j]}`, fs.readFileSync(`loot_tables/${loot_folders[i]}/${loot_files[j]}`, `utf8`));
+                            zip.file(`data/mante/loot_tables/${loot_folders[i]}/${loot_files[j]}`, fs.readFileSync(`resources/dungeon_generator/loot_tables/${loot_folders[i]}/${loot_files[j]}`, `utf8`));
                         }
                     }
 
                     for (var i = 0; i < decorations_config.length; i++) {
-                        var decoration = JSON.parse(fs.readFileSync(`decorations/${decorations_config[i]}.json`, `utf8`));
+                        var decoration = JSON.parse(fs.readFileSync(`resources/dungeon_generator/decorations/${decorations_config[i]}.json`, `utf8`));
                         console.log(decorations_config[i]);
                         for (var j = 0; j < decoration.length; j++)
                             decorations.push(decoration[j]);
