@@ -5,6 +5,7 @@ const
     { promisify } = require(`util`),
     JSZip = require(`jszip`),
     zip = new JSZip(),
+    SimplexNoise = require(`simplex-noise`),
     readdir = promisify(fs.readdir);
 
 module.exports = {
