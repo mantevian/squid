@@ -442,8 +442,9 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
                 }
 
                 var current_room_amount = 0;
-                function random_door_size()
+                function random_door_size() {
                     return rng.next_int_ranged(1, Math.min(room_size, room_height) - 1);
+                }
 
                 async function start() {
                     zip.forEach(function (relative_path) {
