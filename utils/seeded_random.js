@@ -22,5 +22,5 @@ this.RNG.prototype.next_int_ranged = function (start, end) {
 }
 
 this.RNG.prototype.choice = function (array) {
-    return array[this.nextRange(0, array.length)];
+    return array[this.next_int_ranged(0, array.length)];
 }

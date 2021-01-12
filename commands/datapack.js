@@ -392,7 +392,6 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
                         this.real_z = (z - Math.floor(world_size / 2)) * (room_size + 2);
                         this.biome = biome;
                         this.level = level;
-                        //console.log(`x ${this.x}   z ${this.z}   rx ${this.real_x}   rz ${this.real_z}`)
 
                         this.doors = [0, 0, 0, 0];
                     }
@@ -475,7 +474,6 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
 
                     for (var i = 0; i < decorations_config.length; i++) {
                         var decoration = JSON.parse(fs.readFileSync(`resources/dungeon_generator/decorations/${decorations_config[i]}.json`, `utf8`));
-                        console.log(decorations_config[i]);
                         for (var j = 0; j < decoration.length; j++)
                             decorations.push(decoration[j]);
                     }
@@ -562,8 +560,6 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
                     rooms[Math.floor(world_size / 2) + 1][Math.floor(world_size / 2) + 1] = new Room(Math.floor(world_size / 2) + 1, Math.floor(world_size / 2) + 1, biome_config.names[biomemap[Math.floor(world_size / 2) + 1][Math.floor(world_size / 2) + 1]]);
 
                     while (current_room_amount < room_count) {
-                        //console.log(`Room #${current_room_amount}: x=${x} z=${z} rx=${(x - world_size) * room_size} rz=${(z - world_size) * room_size} level=${level} direction=${direction}`);
-
                         for (var i = 0; i < world_size + 1; i++) {
                             for (var j = 0; j < world_size + 1; j++) {
                                 if (rooms[i][j] == null)
@@ -735,7 +731,6 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
 
                             for (var d = 0; d < decorations.length; d++) {
                                 var deco = decorations[d];
-                                //console.log(deco.type)
 
                                 if (deco.biome)
                                     if (deco.biome != biome_name(biomemap[i][j]))
