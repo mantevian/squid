@@ -39,6 +39,7 @@ The action order system allows things such as making a role mentionable, sending
 * Usage: `datapack <args*>`
 * Example:
   * `datapack type=random_dimensions dim_count=10 biome_count=10`
+  * `datapack type=dungeon_generator room_count=50`
   
 ## eval
 * Permission Level: 4
@@ -157,6 +158,7 @@ There's a list of challenges below.
 ### random_dimensions
 * Generates a datapack consisting of multiple dimensions, each consisting of multiple unique biomes.
 * Arguments:
+  * `seed` - the seed to use (don't input for random seed),
   * `dim_count` - how many dimensions to generate,
   * `biome_count` - how many biomes to generate in each dimension,
   * `bedrock_roof` - if a bedrock roof should be present in the dimensions. `yes` to always generate roofs, `no` to never generate them and can be omitted to have worlds both with and without a roof,
@@ -172,6 +174,16 @@ There's a list of challenges below.
     * `natural` - makes compasses and clocks spin around randomly (`0` for always unnatural) or Zombified Piglins to be spawned from nether portals (natural),
     * `has_skylight` - whether a world has light coming from the sky,
     * `has_ceiling` - whether a world has a bedrock ceiling.
+
+### dungeon_generator
+* Generates a datapack with a function that fills in a producerally generated dungeon (a set of connected rooms with different decorations)
+* This is WIP, can have bugs, misplaced blocks, doesn't have all the chest loot yet, has no mobs yet.
+* Arguments:
+  * `seed` - the seed to use (don't input for random seed),
+  * `room_count` - the amount of rooms that the generator will *aim* to make but doesn't guarantee perfect match (default: 75),
+  * `door_chance` - the chance for a door to be generated in a room, float between 0 and 1 (default: 0.1),
+  * `special_room_count` - the amount of special rooms to make in a circle of `special_room_distance` around the center (default: 7),
+  * `special_room_distance` - the distance at which every special room is from the center of the generator (default: 5)
 
 ### Message trigger requirements
 ### always

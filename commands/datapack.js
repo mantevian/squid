@@ -337,8 +337,14 @@ module.exports = {
                 var weirdness_scale = 20;
                 var level_scale = 7;
 
-                var special_room_count = 15;
-                var special_room_distance = 4;
+                var special_room_count = 7;
+                if (config.special_room_count)
+                    special_room_count = config.special_room_count;
+
+                var special_room_distance = 5;
+                if (config.special_room_distance)
+                    special_room_distance = config.special_room_distance;
+
                 const special_room_angle = 2 * Math.PI / special_room_count;
 
                 var temperature_modifier = 0;
@@ -355,9 +361,15 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
                 var functions = [];
 
                 var room_count = 75;
+                if (config.room_count)
+                    room_count = config.room_count;
+
                 var world_size = Math.floor(Math.sqrt(room_count) * 6 / Math.log(Math.sqrt(room_count / 8)));
                 var level = 0;
                 var door_chance = 0.1;
+                if (config.door_chance)
+                    door_chance = config.door_chance;
+
                 var room_height = 5;
                 var room_size = 13;
                 var deco_room = 0;
