@@ -463,7 +463,7 @@ tellraw @s { "color": "red", "bold": true, "text": "Please do not move until the
 
                     let tag_files = await readdir(`resources/dungeon_generator/tags`);
                     for (var i = 0; i < tag_files.length; i++)
-                        zip.file(`data/mante/tags/blocks/${tag_files[i]}`, fs.readFileSync(`tags/${tag_files[i]}`, `utf8`));
+                        zip.file(`data/mante/tags/blocks/${tag_files[i]}`, fs.readFileSync(`resources/dungeon_generator/tags/${tag_files[i]}`, `utf8`));
 
                     let loot_folders = await readdir(`resources/dungeon_generator/loot_tables`);
                     for (var i = 0; i < loot_folders.length; i++) {
