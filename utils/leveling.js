@@ -5,9 +5,6 @@ const
 
 module.exports = {
     run: async (message, client) => {
-        if (!message.guild || message.author.bot)
-            return;
-
         const guild_settings = (await database.get_guild_config_value(message.guild.id, `settings`)).val();
 
         if (!guild_settings) {

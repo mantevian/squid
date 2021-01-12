@@ -7,7 +7,6 @@ module.exports = {
     name: "trigger",
     enabled: true,
     permission_level: 2,
-    beta: true,
     description: "Manage message triggers for a server",
     usage: "create <trigger name> <type> <channel id> OR remove <trigger name> OR add_requirement <trigger name> <args> OR add_action <trigger name> <args>",
     run: async (client, message, args) => {

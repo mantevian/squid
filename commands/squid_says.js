@@ -5,7 +5,6 @@ module.exports = {
     name: "squid_says",
     enabled: true,
     permission_level: 2,
-    beta: true,
     description: "The Simon Says game",
     usage: "start <channel> <time to join in seconds>",
     run: async (client, message, args) => {

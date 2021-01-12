@@ -2,7 +2,6 @@ module.exports = {
     name: "eval",
     enabled: true,
     permission_level: 4,
-    beta: false,
     description: "Evaluates a JavaScript code",
     args: 1,
     usage: "<code>",

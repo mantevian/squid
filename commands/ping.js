@@ -2,7 +2,6 @@ module.exports = {
     name: "ping",
     enabled: true,
     permission_level: 0,
-    beta: false,
     description: "Checks the server's responce time",
     usage: "",
     run: async (client, message, args) => {

@@ -55,48 +55,37 @@ client.on(`message`, message => {
     let command = client.commands.get(message_command);
 
     if (command) {
-        database.get_guild_config_value(message.guild.id, `use_beta_features`).then(snapshot => {
-            if (snapshot.val() == false)
-                return;
+        var users_perm_level = 0;
+        if (message.member.hasPermission("MANAGE_MESSAGES"))
+            users_perm_level = 1;
+        if (message.member.hasPermission("MANAGE_GUILD"))
+            users_perm_level = 2;
+        if (message.member == message.guild.owner)
+            users_perm_level = 3;
+        if (message.author.id == config.bot_owner_id)
+            users_perm_level = 4;
 
-            var enable_beta = snapshot.val();
-            if (enable_beta == false && command.beta == true) {
-                message.reply(`This command is a beta feature which means it's under development. If you want to use beta features in this server, run \`s!config set use_beta_features=true\`, however keep in mind that these commands are not guaranteed to work properly and can cause bugs/crashes.`);
-                return;
+        if ((users_perm_level == 4 && command.permission_level == 4)) {
+            try {
+                command.run(client, message, args);
             }
-
-            var users_perm_level = 0;
-            if (message.member.hasPermission("MANAGE_MESSAGES"))
-                users_perm_level = 1;
-            if (message.member.hasPermission("MANAGE_GUILD"))
-                users_perm_level = 2;
-            if (message.member == message.guild.owner)
-                users_perm_level = 3;
-            if (message.author.id == config.bot_owner_id)
-                users_perm_level = 4;
-
-            if ((users_perm_level == 4 && command.permission_level == 4)) {
-                try {
-                    command.run(client, message, args);
-                }
-                catch (error) {
-                    console.error(error);
-                    message.channel.send(`An error has occured while executing this command. ${error}`);
-                }
+            catch (error) {
+                console.error(error);
+                message.channel.send(`An error has occured while executing this command. ${error}`);
             }
+        }
 
-            else if (command.permission_level <= users_perm_level) {
-                try {
-                    command.run(client, message, args);
-                }
-                catch (error) {
-                    console.error(error);
-                    message.channel.send(`An error has occured while executing this command. ${error}`);
-                }
+        else if (command.permission_level <= users_perm_level) {
+            try {
+                command.run(client, message, args);
             }
-            else
-                message.reply(`You don't have the permission to run this command!`);
-        });
+            catch (error) {
+                console.error(error);
+                message.channel.send(`An error has occured while executing this command. ${error}`);
+            }
+        }
+        else
+            message.reply(`You don't have the permission to run this command!`);
     }
 });
 
