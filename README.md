@@ -22,7 +22,7 @@ For example, we have a trigger called `ping_pong` that is supposed to reply "Pon
 The action order system allows things such as making a role mentionable, sending a message mentioning it and then setting it unmentionable.
 
 ## Commands
-> config
+### config
 * Permission Level: 2
 * Used to set the bot's configuration for a specific server.
 * Usage:
@@ -33,29 +33,29 @@ The action order system allows things such as making a role mentionable, sending
   * `config view xp_cooldown` shows what's the XP cooldown on this server,
   * `config set xp_min=10 xp_max=20` sets XP given per message to between 10 and 20.
 
-> datapack
+### datapack
 * Permission Level: 0
 * Generates Minecraft datapacks.
 * Usage: `datapack <args*>`
 * Example:
   * `datapack type=random_dimensions dim_count=10 biome_count=10`
   
-> eval
+### eval
 * Permission Level: 4
 * Executes a JavaScript code from the command.
 * Usage: `eval <code>`
 
-> help
+### help
 * Permission Level: 0
 * Shows help text.
 
-> leaderboard
+### leaderboard
 * Permission Level: 0
 * Shows server's XP leaderboard.
 * Usage: `leaderboard <page>`
 * Example: `leaderboard 3`
 
-> level_roles
+### level_roles
 * Permission Level: 2
 * Sets/views server's roles given for reaching XP levels.
 * Usage:
@@ -63,11 +63,11 @@ The action order system allows things such as making a role mentionable, sending
   * `level_roles set <level> <role name>` - sets a level role. `remove` can be used as a name to remove a role from the list.
 * Example: `level_roles set 10 Squidder` - makes the bot give the role "Squidder" to everyone with level 10 or above.
 
-> ping
+### ping
 * Permission Level: 0
 * Checks the bot's response time.
 
-> rank
+### rank
 * Permission Level: 0
 * Checks someone's XP rank. Enabling `custom` will not show a fancy picture, but instead will show all the custom statistics.
 * Usage: `rank [user_id=...] [custom=true|false]`
@@ -77,7 +77,7 @@ The action order system allows things such as making a role mentionable, sending
   * `rank user_id=240841342723424256`
   * `rank user_id=240841342723424256 custom=true`
 
-> scoreboard
+### scoreboard
 * Permission Level: 2
 * Used to manipulate custom statistics for the server.
 * Usage: `stats create|update|remove [stat_name, display_name] OR members add|remove|set [user_id, stat_name=amount ...]`
@@ -86,7 +86,7 @@ The action order system allows things such as making a role mentionable, sending
   * `scoreboard update stat_name=points display_name="Better Server Points"`
   * `scoreboard members set user_id=240841342723424256 points=20 xp=12345`
   
-> trigger
+### trigger
 * Permission Level: 2
 * Configures server's message triggers.
 * Usage:
@@ -101,7 +101,7 @@ The action order system allows things such as making a role mentionable, sending
   
 ## Reference
 ### Datapacks
-> random_dimensions
+### random_dimensions
 * Generates a datapack consisting of multiple dimensions, each consisting of multiple unique biomes.
 * Arguments:
   * `dim_count` - how many dimensions to generate,
@@ -121,28 +121,28 @@ The action order system allows things such as making a role mentionable, sending
     * `has_ceiling` - whether a world has a bedrock ceiling.
 
 ### Message trigger requirements
-> always
+### always
 * Always passes.
 
-> author_has_role
+### author_has_role
 * Passes if whoever sent a message has a specific role.
 * Arguments:
   * `role_id` - the role's ID,
   * `inverted` - if true, passes if the message author does not have the role.
   
-> author_stats
+### author_stats
 * Checks message author's server stats.
 * Arguments:
   * `stat_name` - the name of the scoreboard statistic,
   * `value` - the value to compare with,
   * `operation` - can be one of these: `<`, `<=`, `>`, `>=`, `=`, `!=`. Compares message author's stat with the argument `value`.
 
-> chance
+### chance
 * Makes the requirement succeed or fail based on a random chance.
 * Arguments:
   * `chance` - a float number between 0 and 1 representing the chance for the requirement to succeed. For example, `0.5` means 50% chance, `0.3333334` is approximately 1 in 3.
   
-> compare_messages_content
+### compare_messages_content
 * Fetches a message and compares its content with this message's content.
 * Arguments:
   * `compared_channel_id` - ID of a text channel to fetch a message in. `-1` for the same channel as this message's,
@@ -150,14 +150,14 @@ The action order system allows things such as making a role mentionable, sending
   * `compare_type` - can be either `number` or `lexicographical` (for reference use https://en.wikipedia.org/wiki/Lexicographical_order),
   * `compare_operation` - can be one of these: `<`, `<=`, `>`, `>=`, `=`, `!=`.
   
-> content_is_number
+### content_is_number
 * Passes if the whole message can be converted to a decimal number.
 * Arguments:
   * `inverted` - if true, passes only when the message is not a number,
   * `min` - minimum number needed for this requirement,
   * `max` - maximum number.
   
-> message_content
+### message_content
 * Checks for text of the message.
 * Arguments:
   * `text` - the needed text,
@@ -165,47 +165,47 @@ The action order system allows things such as making a role mentionable, sending
   * `case_sensitive` - if true, the message has to exactly match `text` in terms of letter case,
   * `regex` - if present, checks if the message content passes this regular expression (doesn't work with any of the other arguments)
   
-> previous_message_author
+### previous_message_author
 * Checks for whoever sent a previous message in this message's channel.
 * Arguments:
   * `author_id` - if `-1`, checks if the message is sent by the same account as this message,
   * `inverted` - if true, passes if the messages were sent by different accounts.
   
 ### Message trigger actions
-> delete_message
+### delete_message
 * Deletes this message.
 * Arguments:
   * `timeout` - time before deletion, in milliseconds,
   * `reason` - reason for this action to be logged.
   
-> pin_message
+### pin_message
 * Pins this message.
   
-> react_message
+### react_message
 * Puts a reaction on this message.
 * Arguments:
   * `emoji` - the emoji to put.
   
-> send_message
+### send_message
 * Sends a message.
 * Arguments:
   * `channel_id` - a text channel to send the message to. `-1` for the same channel as this message's,
   * `text` - the text to send.
   
-> set_role_mentionable
+### set_role_mentionable
 * Sets a role's mentionable setting.
 * Arguments:
   * `role_id` - the role to change,
   * `force_mentionable` - `1` to always set to mentionable, `0` to always set to unmentionable, `-1` to switch between states each time this trigger activates.
   
-> set_user_role
+### set_user_role
 * Gives or removes someone's role.
 * Arguments:
   * `role_id` - the role to use,
   * `forced_role` - `1` to always give, `0` to always remove, `-1` to switch each time this trigger activates.
   
-> suppress_message_embeds
+### suppress_message_embeds
 * Removes all message's embeds.
 
-> unpin_message
+### unpin_message
 * Unpins this message.
