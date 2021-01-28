@@ -11,7 +11,7 @@ module.exports = {
             if (!all_settings[g])
                 continue;
 
-            const guild_settings = Object.entries(all_settings[g]);
+            const guild_settings = Object.entries(client.guild_settings.get(message.guild.id));
 
             if (!guild_settings) {
                 database.create_guild(message.guild.id);

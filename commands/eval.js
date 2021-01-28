@@ -1,3 +1,14 @@
+const
+    fs = require(`fs`),
+    { RNG } = require(`../utils/seeded_random.js`),
+    utils = require(`../utils/util_functions.js`),
+    { promisify } = require(`util`),
+    JSZip = require(`jszip`),
+    zip = new JSZip(),
+    SimplexNoise = require(`simplex-noise`),
+    readdir = promisify(fs.readdir),
+    database = require(`../utils/firebase_connection.js`);
+
 module.exports = {
     name: "eval",
     enabled: true,

@@ -13,7 +13,7 @@ module.exports = {
             if (!triggers[g])
                 continue;
 
-            const guild_triggers = Object.entries(triggers[g]);
+            const guild_triggers = Object.entries(client.message_triggers.get(message.guild.id));
 
             for (var j = 0; j < guild_triggers.length; j++) {
                 let t = guild_triggers[j][1];
