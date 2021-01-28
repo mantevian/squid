@@ -10,6 +10,7 @@ client.prefix = "s!";
 client.commands = new Discord.Collection();
 client.message_triggers = new Discord.Collection();
 client.scoreboards = new Discord.Collection();
+client.guild_settings = new Discord.Collection();
 
 const commands = fs.readdirSync(`./commands/`).filter(f => f.endsWith(`.js`));
 
@@ -33,6 +34,7 @@ client.on(`ready`, () => {
     console.log(`squiddley`);
     require(`./utils/save_triggers.js`)(client);
     require(`./utils/save_guild_scoreboards.js`)(client);
+    require(`./utils/save_guild_settings.js`)(client);
 });
 
 client.on(`message`, message => {

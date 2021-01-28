@@ -41,6 +41,7 @@ module.exports = {
                 config.forEach(c => {                        
                     database.set_guild_config_value(message.guild.id, c[0], c[1]);
                     message.reply(`Successfully changed the server's configuration!`);
+                    require(`../utils/save_guild_settings.js`)(client);
                 });
                 break;
             default:
