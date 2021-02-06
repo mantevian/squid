@@ -101,11 +101,15 @@ The action order system allows things such as making a role mentionable, sending
   * `trigger create <trigger name> <type> <text channel ID>` - adds a trigger to the server. By default only works in the specific channel entered in the command (use `-1` as text channel ID to enable it in all channels). Type can be one of these: `sent`, `edited` or `deleted`. `sent` checks for new messages in the server, `edited` checks for edited messages and reads the new message text, `deleted` checks for deleted messages and still can read their content,
   * `trigger remove <trigger name>` - removes a trigger from the server,
   * `trigger add_requirement <trigger name> <order> <args*>` - adds a requirement for this trigger,
-  * `trigger add_action <trigger name> <order> <args*>` - adds an action for this trigger.
+  * `trigger add_action <trigger name> <order> <args*>` - adds an action for this trigger,
+  * `trigger update <trigger name> <args*>` - change the current settings of a trigger,
+  * `trigger view` - view the list of all triggers in the server,
+  * `trigger view <trigger name>` - view raw JSON data for a trigger.
 * Examples:
   * `trigger create ping_pong 123456789` - creates a trigger called `ping_pong` in the channel `<#123456789>`,
   * `trigger add_requirement ping_pong 0 requirement=message_content text=ping case_sensitive=0 message_content_includes=0` - adds a requirement of the type `message_content` that looks for messages that exactly match the string `ping` (case insensitive),
-  * `trigger add_action ping_pong 0 action=send_message text="Pong!"` - replies with `Pong!` to all messages that pass the requirements, aka which are "ping".
+  * `trigger add_action ping_pong 0 action=send_message text="Pong!"` - replies with `Pong!` to all messages that pass the requirements, aka which are "ping",
+  * `trigger view ping_pong` - sends raw JSON data of the trigger `ping_pong`.
   
 # Reference
 ## Squid Says
