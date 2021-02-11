@@ -149,6 +149,28 @@ module.exports = {
                                     requirements_met = false;
                             break;
 
+                        case `message_length`:
+                            if (!r.inverted) {
+                                if (r.min)
+                                    if (message.content.length < r.min)
+                                        requirements_met = false;
+
+                                if (r.max)
+                                    if (message.content.length > r.max)
+                                        requirements_met = false;
+                            }
+
+                            if (r.inverted) {
+                                if (r.min)
+                                    if (message.content.length >= r.min)
+                                        requirements_met = false;
+
+                                if (r.max)
+                                    if (message.content.length <= r.max)
+                                        requirements_met = false;
+                            }
+                            break;
+
                         case `compare_messages_content`:
                             let compared_channel_id = message.channel.id;
                             if (r.compared_channel_id != -1)

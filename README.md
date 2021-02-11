@@ -233,6 +233,13 @@ There's a list of challenges below.
   * `message_content_includes` - if true, the whole message doesn't need to match `text` but just include it,
   * `case_sensitive` - if true, the message has to exactly match `text` in terms of letter case,
   * `regex` - if present, checks if the message content passes this regular expression (doesn't work with any of the other arguments)
+
+### message_length
+* Checks for the length of the message.
+* Arguments:
+  * `min` - the minimum amount of characters required to pass the requirement,
+  * `max` - the maximum amount required,
+  * `inverted` - if `true`, the requirement passes when the length is outside the min-max boundaries (defaulted to `false` if omitted)
   
 ### previous_message_author
 * Checks for whoever sent a previous message in this message's channel.
