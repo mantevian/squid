@@ -83,8 +83,8 @@ The action order system allows things such as making a role mentionable, sending
 * Used to manipulate custom statistics for the server.
 * Usage: `stats create|update|remove [stat_name, display_name] OR members add|remove|set [user_id, stat_name=amount ...]`
 * Examples:
-  * `scoreboard create stat_name=points display_name="Server Points"`
-  * `scoreboard update stat_name=points display_name="Better Server Points"`
+  * `scoreboard stats create stat_name=points display_name="Server Points"`
+  * `scoreboard stats update stat_name=points display_name="Better Server Points"`
   * `scoreboard members set user_id=240841342723424256 points=20 xp=12345`
   
 ## squid_says
@@ -187,17 +187,27 @@ There's a list of challenges below.
   * `room_count` - the amount of rooms that the generator will *aim* to make but doesn't guarantee perfect match (default: 75),
   * `door_chance` - the chance for a door to be generated in a room, float between 0 and 1 (default: 0.1),
   * `special_room_count` - the amount of special rooms to make in a circle of `special_room_distance` around the center (default: 7),
-  * `special_room_distance` - the distance at which every special room is from the center of the generator (default: 5)
+  * `special_room_distance` - the distance at which every special room is from the center of the generator (default: 5),
+  * Various parameters determining the placement of biomes and room levels:
+    * `temperature_scale`, `humidity_scale`, `altitude_scale`, `weirdness_scale` - modify the scale of biome noises (default: 20),
+    * `level_scale` - modifies the scale of room level noise (default: 7),
+    * `temperature_modifier`, `humidity_modifier`, `altitude_modifier`, `weirdness_modifier` - their values are added to parameters of all rooms (default: 0)
 
 ### Message trigger requirements
 ### always
 * Always passes.
 
+### author_has_perms
+* Checks for message author's permissions in the server.
+* Arguments:
+  * `permission` - the permission to check for (use https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags for reference), e.g. `MANAGE_MESSAGES`,
+  * `inverted` - if `true`, passes if the message author does not have the permission, defaulted to `false` if omitted.
+
 ### author_has_role
-* Passes if whoever sent a message has a specific role.
+* Checks for roles of the message author.
 * Arguments:
   * `role_id` - the role's ID,
-  * `inverted` - if true, passes if the message author does not have the role.
+  * `inverted` - if `true`, passes if the message author does not have the role, defaulted to `false` if omitted.
   
 ### author_stats
 * Checks message author's server stats.
@@ -216,15 +226,15 @@ There's a list of challenges below.
 * Arguments:
   * `compared_channel_id` - ID of a text channel to fetch a message in. `-1` for the same channel as this message's,
   * `compared_message_id` - ID of a message to compare with. If negative, uses a message that's `compared_message_id` messages before this one,
-  * `compare_type` - can be either `number` or `lexicographical` (for reference use https://en.wikipedia.org/wiki/Lexicographical_order),
+  * `compare_type` - can be either `number` (compare the messages' contents as numbers) or `lexicographical` (for reference use https://en.wikipedia.org/wiki/Lexicographical_order),
   * `compare_operation` - can be one of these: `<`, `<=`, `>`, `>=`, `=`, `!=`.
   
 ### content_is_number
-* Passes if the whole message can be converted to a decimal number.
+* Checks if a message is a decimal number.
 * Arguments:
-  * `inverted` - if true, passes only when the message is not a number,
   * `min` - minimum number needed for this requirement,
-  * `max` - maximum number.
+  * `max` - maximum number,
+  * `inverted` - if `true`, passes only when the message is not a number, defaulted to `false` if omitted.
   
 ### message_content
 * Checks for text of the message.
@@ -232,7 +242,7 @@ There's a list of challenges below.
   * `text` - the needed text,
   * `message_content_includes` - if true, the whole message doesn't need to match `text` but just include it,
   * `case_sensitive` - if true, the message has to exactly match `text` in terms of letter case,
-  * `regex` - if present, checks if the message content passes this regular expression (doesn't work with any of the other arguments)
+  * `regex` - if present, checks if the message content passes this regular expression (don't use any of the other arguments with this).
 
 ### message_length
 * Checks for the length of the message.

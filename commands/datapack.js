@@ -321,7 +321,7 @@ module.exports = {
 
                 if (config.seed)
                     seed = config.seed;
-                    
+
                 const rng = new RNG(seed);
 
                 var temperature_seed = rng.next_int();
@@ -337,6 +337,21 @@ module.exports = {
                 var weirdness_scale = 20;
                 var level_scale = 7;
 
+                if (config.temperature_scale)
+                    temperature_scale = config.temperature_scale;
+
+                if (config.humidity_scale)
+                    humidity_scale = config.humidity_scale;
+
+                if (config.altitude_scale)
+                    altitude_scale = config.altitude_scale;
+
+                if (config.weirdness_scale)
+                    weirdness_scale = config.weirdness_scale;
+
+                if (config.level_scale)
+                    level_scale = config.level_scale;
+
                 var special_room_count = 7;
                 if (config.special_room_count)
                     special_room_count = config.special_room_count;
@@ -351,6 +366,18 @@ module.exports = {
                 var humidity_modifier = 0;
                 var altitude_modifier = 0;
                 var weirdness_modifier = 0;
+
+                if (config.temperature_modifier)
+                    temperature_modifier = config.temperature_modifier;
+
+                if (config.humidity_modifier)
+                    humidity_modifier = config.humidity_modifier;
+
+                if (config.altitude_modifier)
+                    altitude_modifier = config.altitude_modifier;
+
+                if (config.weirdness_modifier)
+                    weirdness_modifier = config.weirdness_modifier;
 
                 var main_function = `gamerule doTileDrops false
 gamerule randomTickSpeed 10

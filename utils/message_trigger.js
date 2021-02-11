@@ -149,6 +149,18 @@ module.exports = {
                                     requirements_met = false;
                             break;
 
+                        case `author_has_perms`:
+                            if (!r.inverted) {
+                                if (!message.member.hasPermission(r.permission))
+                                    requirements_met = false;
+                            }
+
+                            if (r.inverted) {
+                                if (message.member.hasPermission(r.permission))
+                                    requirements_met = false;
+                            }
+                            break;
+
                         case `message_length`:
                             if (!r.inverted) {
                                 if (r.min)
