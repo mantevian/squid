@@ -39,6 +39,7 @@ client.on(`ready`, () => {
 
 client.on(`message`, message => {
     require(`./utils/message_trigger.js`).run(message, client, `sent`);
+    require(`./utils/message_trigger.js`).run(message, client, `sent_or_edited`);
 
     if (!message.guild || message.author.bot)
         return;
@@ -93,6 +94,7 @@ client.on(`message`, message => {
 
 client.on(`messageUpdate`, (old_message, new_message) => {
     require(`./utils/message_trigger.js`).run(new_message, client, `edited`);
+    require(`./utils/message_trigger.js`).run(new_message, client, `sent_or_edited`);
 });
 
 client.on(`messageDelete`, message => {
