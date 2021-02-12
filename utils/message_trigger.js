@@ -7,6 +7,9 @@ module.exports = {
         if (!message.guild)
             return;
 
+        if (!client.message_triggers.get(message.guild.id))
+            return;
+            
         const guild_triggers = Object.entries(client.message_triggers.get(message.guild.id));
 
         for (var j = 0; j < guild_triggers.length; j++) {

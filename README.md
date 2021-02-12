@@ -1,10 +1,10 @@
 # Squid
 Initially made for my friends' private server, but I'm slowly making it more public. It's a small general purpose bot with a very few unique features.
-Prefix: `s/`, but `s!` is allowed since apparently `s/` can be used to edit a previous message's content.
+Prefix: `s!`.
 
 # General
 ## Permission Levels
-Each command has a permission level assigned to it, restricting its usage from members that aren't supposed to use it.
+Each command has a permission level assigned to it, restricting its usage from members that aren't supposed to use it. Levels 2 and 3 get all permissions from lower levels.
 * 0 - Everyone
 * 1 - Server Mods (Manage Messages permission)
 * 2 - Server Admins (Manage Server permission)
@@ -13,7 +13,7 @@ Each command has a permission level assigned to it, restricting its usage from m
 
 ## Command argument syntax
 Some commands use straight default syntax where all arguments go in a specific order: `s/command <arg1> <arg2> ...`, these arguments are listed in `<>` if they are necessary and `[]` if optional.
-Arguments are listed as `<args*>` if they use a different syntax: `item=value` for numbers or single word strings, or `item="Hello World"` for multiple word strings. This is used for complex commands and a list of possible items is always provided in the documentation. Integers and boolean (`false`, `true`) values are properly converted from strings.
+Arguments are listed as `<args*>` if they use a different syntax: `item=value` for numbers or single word strings, or `item="Hello World"` for multiple word strings. This is used for complex commands and a list of possible items is always provided in the documentation. Integers and boolean values (`false`, `true`) are properly converted from strings. If an argument in a trigger requirement or action is omitted, it defaults to an empty string, `0` or `false` depending on which type is needed.
 
 ## Message triggers
 The message trigger system allows making complex custom commands and actions for the bot. Server owners can create message triggers for their servers. A trigger activates whenever a message is sent and if a message passes its requirements, its actions are performed in a specific configurable order. A list of all possible values for this are listed below under **Reference**.
@@ -37,7 +37,7 @@ The action order system allows things such as making a role mentionable, sending
 * Permission Level: 0
 * Generates Minecraft datapacks.
 * Usage: `datapack <args*>`
-* Example:
+* Examples:
   * `datapack type=random_dimensions dim_count=10 biome_count=10`
   * `datapack type=dungeon_generator room_count=50`
   
