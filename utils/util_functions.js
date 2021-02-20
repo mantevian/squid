@@ -143,3 +143,7 @@ module.exports.weighted_random_choice = function weighted_random_choice(arr) {
             return entries[i].item;
     }
 }
+
+module.exports.replace_all = function replace_all(str, from, to) {
+    return str.split(from).join(to);
+}

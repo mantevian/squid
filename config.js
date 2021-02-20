@@ -2,7 +2,7 @@ module.exports = {
     bot_owner_id: "240841342723424256",
     mante_tag: "Mante#6804",
     sputnix_tag: "SputNix#0001",
-    bot_version: "0.3.0-f1",
+    bot_version: "0.3.0-g1",
 
     default_guild_config: {
         level_roles: null,

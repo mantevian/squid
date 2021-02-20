@@ -277,6 +277,21 @@ There's a list of challenges below.
 * Arguments:
   * `channel_id` - a text channel to send the message to. `-1` for the same channel as this message's,
   * `text` - the text to send.
+* Multiple variables can be used in the `text` field that are replaced with corresponding values:
+  * `${author.username}` - the Discord username of whoever sent the message (the author),
+  * `${author.displayName}` - the server nickname of the author (or their username if they don't have a server nickname),
+  * `${author.discrim}` - the author's discriminator number (e.g. 6804),
+  * `${author.tag}` - the author's full tag (e.g. Mante#6804),
+  * `${author.mention}` - the author's mention (e.g. <@240841342723424256> which shows as @Mante),
+  * `${author.id}` - the author's client ID,
+  * `${message.id}` - the ID of the message,
+  * `${message.content}` - full contents of the message (no ways to work with that yet),
+  * `${message.createdAt}` - the date of creation of the message,
+  * `${message.url}` - a link that leads to the message,
+  * `${channel.id}` - the ID of the channel the message is in,
+  * `${channel.name}` - the name of the channel the message is in,
+  * `${guild.id}` - the ID of the server the message is in,
+  * `${guild.name}` - the name of the server the message is in.
   
 ### set_role_mentionable
 * Sets a role's mentionable setting.
