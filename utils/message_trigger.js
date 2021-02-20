@@ -292,6 +292,9 @@ module.exports = {
 
                         case `send_message`:
                             let text = a.text;
+                            let content = message.content;
+                            if (content.length > 1000)
+                                content = content.slice(0, 1000) + ` ...`;
                             text = utils.replace_all(text, '${author.username}', message.author.username);
                             text = utils.replace_all(text, '${author.displayName}', message.member.displayName);
                             text = utils.replace_all(text, '${author.discrim}', message.author.discrim);
@@ -299,7 +302,7 @@ module.exports = {
                             text = utils.replace_all(text, '${author.mention}', `<@${message.author.id}>`);
                             text = utils.replace_all(text, '${author.id}', message.author.id);
                             text = utils.replace_all(text, '${message.id}', message.id);
-                            text = utils.replace_all(text, '${message.content}', message.content);
+                            text = utils.replace_all(text, '${message.content}', content);
                             text = utils.replace_all(text, '${message.length}', message.content.length);
                             text = utils.replace_all(text, '${message.createdAt}', message.createdAt);
                             text = utils.replace_all(text, '${message.url}', message.url);
