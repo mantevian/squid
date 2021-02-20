@@ -294,7 +294,7 @@ module.exports = {
                             if (a.channel_id == -1)
                                 message.channel.send(a.text);
 
-                            else
+                            else {
                                 let text = a.text;
                                 text = utils.replace_all(text, '${author.username}', message.author.username);
                                 text = utils.replace_all(text, '${author.displayName}', message.member.displayName);
@@ -311,6 +311,7 @@ module.exports = {
                                 text = utils.replace_all(text, '${guild.id}', message.guild.id);
                                 text = utils.replace_all(text, '${guild.name}', message.guild.name);
                                 message.guild.channels.cache.find(c => c.id == a.channel_id).send(text);
+                            }
                             break;
 
                         case `set_user_role`:
