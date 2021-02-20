@@ -286,6 +286,7 @@ There's a list of challenges below.
   * `${author.id}` - the author's client ID,
   * `${message.id}` - the ID of the message,
   * `${message.content}` - full contents of the message (no ways to work with that yet),
+  * `${message.length}` - the length of the message,
   * `${message.createdAt}` - the date of creation of the message,
   * `${message.url}` - a link that leads to the message,
   * `${channel.id}` - the ID of the channel the message is in,
