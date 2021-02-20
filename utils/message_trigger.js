@@ -9,7 +9,7 @@ module.exports = {
 
         if (!client.message_triggers.get(message.guild.id))
             return;
-            
+
         const guild_triggers = Object.entries(client.message_triggers.get(message.guild.id));
 
         for (var j = 0; j < guild_triggers.length; j++) {
@@ -291,27 +291,26 @@ module.exports = {
                             break;
 
                         case `send_message`:
-                            if (a.channel_id == -1)
-                                message.channel.send(a.text);
+                            let text = a.text;
+                            text = utils.replace_all(text, '${author.username}', message.author.username);
+                            text = utils.replace_all(text, '${author.displayName}', message.member.displayName);
+                            text = utils.replace_all(text, '${author.discrim}', message.author.discrim);
+                            text = utils.replace_all(text, '${author.tag}', message.author.tag);
+                            text = utils.replace_all(text, '${author.mention}', `<@${message.author.id}>`);
+                            text = utils.replace_all(text, '${author.id}', message.author.id);
+                            text = utils.replace_all(text, '${message.id}', message.id);
+                            text = utils.replace_all(text, '${message.content}', message.content);
+                            text = utils.replace_all(text, '${message.createdAt}', message.createdAt);
+                            text = utils.replace_all(text, '${message.url}', message.url);
+                            text = utils.replace_all(text, '${channel.id}', message.channel.id);
+                            text = utils.replace_all(text, '${channel.name}', message.channel.name);
+                            text = utils.replace_all(text, '${guild.id}', message.guild.id);
+                            text = utils.replace_all(text, '${guild.name}', message.guild.name);
 
-                            else {
-                                let text = a.text;
-                                text = utils.replace_all(text, '${author.username}', message.author.username);
-                                text = utils.replace_all(text, '${author.displayName}', message.member.displayName);
-                                text = utils.replace_all(text, '${author.discrim}', message.author.discrim);
-                                text = utils.replace_all(text, '${author.tag}', message.author.tag);
-                                text = utils.replace_all(text, '${author.mention}', `<@${message.author.id}>`);
-                                text = utils.replace_all(text, '${author.id}', message.author.id);
-                                text = utils.replace_all(text, '${message.id}', message.id);
-                                text = utils.replace_all(text, '${message.content}', message.content);
-                                text = utils.replace_all(text, '${message.createdAt}', message.createdAt);
-                                text = utils.replace_all(text, '${message.url}', message.url);
-                                text = utils.replace_all(text, '${channel.id}', message.channel.id);
-                                text = utils.replace_all(text, '${channe.name}', message.channel.name);
-                                text = utils.replace_all(text, '${guild.id}', message.guild.id);
-                                text = utils.replace_all(text, '${guild.name}', message.guild.name);
+                            if (a.channel_id == -1)
+                                message.channel.send(text);
+                            else
                                 message.guild.channels.cache.find(c => c.id == a.channel_id).send(text);
-                            }
                             break;
 
                         case `set_user_role`:
