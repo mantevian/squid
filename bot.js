@@ -38,11 +38,11 @@ client.on(`ready`, () => {
 });
 
 client.on(`message`, message => {
-    require(`./utils/message_trigger.js`).run(message, client, `sent`);
-    require(`./utils/message_trigger.js`).run(message, client, `sent_or_edited`);
-
     if (!message.guild || message.author.bot)
         return;
+
+    require(`./utils/message_trigger.js`).run(message, client, `sent`);
+    require(`./utils/message_trigger.js`).run(message, client, `sent_or_edited`);
 
     if (!message.content.startsWith(client.prefix)) {
         require(`./utils/leveling.js`).run(message, client);
