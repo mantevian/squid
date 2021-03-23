@@ -1504,6 +1504,8 @@ tellraw @a [ { "color": "green", "bold": true, "text": "Done! You can move now. 
                 let config_difficulty = 2;
                 if (config.difficulty)
                     config_difficulty = config.difficulty;
+                if (config_difficulty > 5)
+                    config_difficulty = 5;
 
                 const params = [
                     { item: `default`, weight: config.default ? config.default : 15 },
