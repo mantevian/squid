@@ -17,19 +17,15 @@ module.exports = {
     run: async (client, message, args) => {
         const config = utils.args_parse(message.content);
 
-        var seed = Math.floor(Math.random() * Math.pow(2, 31));
-
-        if (config.seed)
-            seed = config.seed;
-
-        const rng = new RNG(seed);
-
         zip.forEach(function (relative_path, file) {
             zip.remove(relative_path);
         });
 
         switch (config.type) {
             case `random_dimensions`:
+                var seed = Math.floor(Math.random() * Math.pow(2, 31));
+                const rng = new RNG(config.seed ? config.seed : seed);
+
                 message.channel.send(`Generating the datapack...`);
                 const defaults = {};
                 const files = await readdir(`resources/worldgen_defaults`);
@@ -318,11 +314,7 @@ module.exports = {
 
             case `dungeon_generator`:
                 var seed = Math.floor(Math.random() * Math.pow(2, 31));
-
-                if (config.seed)
-                    seed = config.seed;
-
-                const rng = new RNG(seed);
+                const rng = new RNG(config.seed ? config.seed : seed);
 
                 var temperature_seed = rng.next_int();
                 var humidity_seed = rng.next_int();
@@ -1486,6 +1478,9 @@ tellraw @a [ { "color": "green", "bold": true, "text": "Done! You can move now. 
                 break;
 
             case `bingo`:
+                var seed = Math.floor(Math.random() * Math.pow(2, 31));
+                const rng = new RNG(config.seed ? config.seed : seed);
+                
                 zip.file(`pack.mcmeta`, `{"pack":{"pack_format":6,"description":"Bingo generator by Mante"}}`);
 
                 zip.folder(`data`);
