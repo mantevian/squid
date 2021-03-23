@@ -24,7 +24,7 @@ module.exports = {
         switch (config.type) {
             case `random_dimensions`:
                 var seed = Math.floor(Math.random() * Math.pow(2, 31));
-                const rng = new RNG(config.seed ? config.seed : seed);
+                var rng = new RNG(config.seed ? config.seed : seed);
 
                 message.channel.send(`Generating the datapack...`);
                 const defaults = {};
@@ -314,7 +314,7 @@ module.exports = {
 
             case `dungeon_generator`:
                 var seed = Math.floor(Math.random() * Math.pow(2, 31));
-                const rng = new RNG(config.seed ? config.seed : seed);
+                var rng = new RNG(config.seed ? config.seed : seed);
 
                 var temperature_seed = rng.next_int();
                 var humidity_seed = rng.next_int();
@@ -1479,8 +1479,8 @@ tellraw @a [ { "color": "green", "bold": true, "text": "Done! You can move now. 
 
             case `bingo`:
                 var seed = Math.floor(Math.random() * Math.pow(2, 31));
-                const rng = new RNG(config.seed ? config.seed : seed);
-                
+                var rng = new RNG(config.seed ? config.seed : seed);
+
                 zip.file(`pack.mcmeta`, `{"pack":{"pack_format":6,"description":"Bingo generator by Mante"}}`);
 
                 zip.folder(`data`);
