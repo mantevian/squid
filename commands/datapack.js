@@ -41,7 +41,7 @@ module.exports = {
                     return `minecraft:${utils.random_choice(defaults.stateless_block_list)}`;
                 }
 
-                for (var d = 0; d < config.dim_count; d++) {
+                for (var d = 0; d < config.dim_count ? config.dim_count : 5; d++) {
                     var dimension_type = {
                         has_raids: rng.next_float() < config.has_raids,
                         logical_height: 256,
@@ -122,7 +122,7 @@ module.exports = {
                     dimension.type = `infdim:type_${d}`;
 
                     dimension.generator.biome_source.biomes = [];
-                    for (var b = 0; b < config.biome_count; b++) {
+                    for (var b = 0; b < config.biome_count ? config.biome_count : 5; b++) {
                         var biome = defaults.default_biome;
                         biome.scale = rng.next_int_ranged(1, 300) / 100;
                         biome.depth = rng.next_int_ranged(1, 200) / 100 - 1;

@@ -30,10 +30,22 @@ module.exports.RNG = function RNG(seed) {
     }
 
     this.next_sign = function() {
-        var result = this.next_int_ranged(0, 2);
-        if (result == 0)
-            result = -1;
+        return this.choice([1, -1]);
+    }
 
-        return result;
+    this.weighted_random = function weighted_random(arr) {
+        var entries = [];
+        var accumulated_weight = 0;
+    
+        for (var i = 0; i < arr.length; i++) {
+            accumulated_weight += arr[i].weight;
+            entries.push({ item: arr[i].item, accumulated_weight: accumulated_weight });
+        }
+        
+        for (var i = 0; i < arr.length; i++) {
+            var r = this.next_float() * accumulated_weight;
+            if (entries[i].accumulated_weight >= r)
+                return entries[i].item;
+        }
     }
 }
