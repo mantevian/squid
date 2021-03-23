@@ -1501,37 +1501,16 @@ tellraw @a [ { "color": "green", "bold": true, "text": "Done! You can move now. 
                 zip.file(`data/minecraft/tags/functions/load.json`, `{"values": ["bingo:load"]}`);
                 zip.file(`data/minecraft/tags/functions/tick.json`, `{"values": ["bingo:tick"]}`);
 
-                let default_weight = 15;
-                let nether_weight = 5;
-                let silk_touch_weight = 1;
-                let rare_weight = 0;
-                let ocean_monument_weight = 1;
-                let difficulty = 0;
-
-                if (config.default)
-                    default_weight = config.default;
-
-                if (config.nether)
-                    nether_weight = config.nether;
-
-                if (config.silk_touch)
-                    silk_touch_weight = config.silk_touch;
-
-                if (config.rare)
-                    rare_weight = config.rare;
-
-                if (config.ocean_monument)
-                    ocean_monument_weight = config.ocean_monument;
-
+                let config_difficulty = 0;
                 if (config.difficulty)
-                    difficulty = config.difficulty;
+                    config_difficulty = config.difficulty;
 
                 const params = [
-                    { item: `default`, weight: default_weight },
-                    { item: `nether`, weight: nether_weight },
-                    { item: `silk_touch`, weight: silk_touch_weight },
-                    { item: `rare`, weight: rare_weight },
-                    { item: `ocean_monument`, weight: ocean_monument_weight }
+                    { item: `default`, weight: config.default ? config.default : 15 },
+                    { item: `nether`, weight: config.nether ? config.nether : 5 },
+                    { item: `silk_touch`, weight: config.silk_touch ? config.silk_touch : 1 },
+                    { item: `rare`, weight: config.rare ? config.rare : 0 },
+                    { item: `ocean_monument`, weight: config.ocean_monument ? config.ocean_monument : 1 }
                 ];
 
                 const items = JSON.parse(fs.readFileSync(`resources/bingo/items.json`));
@@ -1579,12 +1558,12 @@ tellraw @a [ { "color": "green", "bold": true, "text": "Done! You can move now. 
                             let category = rng.weighted_random(params);
 
                             let difficulty = rng.weighted_random([
-                                { item: Math.ceil(x / 3), weight: Math.max(10 - difficulty, 1) },
-                                { item: Math.ceil(x / 2), weight: Math.max(20 - difficulty * 2, 1) },
-                                { item: Math.max(0, x - 2), weight: Math.max(20 - difficulty * 2, 1) },
-                                { item: Math.max(0, x - 1), weight: Math.max(30 - difficulty * 3, 1) },
-                                { item: x, weight: 70 },
-                                { item: Math.min(4, x + 1), weight: Math.max(10 + difficulty, 1) }
+                                { item: Math.ceil(x / 3), weight: Math.max(10 - config_difficulty, 1) },
+                                { item: Math.ceil(x / 2), weight: Math.max(20 - config_difficulty, 1) },
+                                { item: Math.max(0, x - 2), weight: Math.max(20 - config_difficulty, 1) },
+                                { item: Math.max(0, x - 1), weight: Math.max(30 - config_difficulty * 2, 1) },
+                                { item: x, weight: Math.max(70 - config_difficulty * 4, 1) },
+                                { item: Math.min(4, x + 1), weight: Math.max(10 + config_difficulty, 1) }
                             ]);
 
                             if (category == `nether`)
