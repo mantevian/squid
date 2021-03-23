@@ -1501,7 +1501,7 @@ tellraw @a [ { "color": "green", "bold": true, "text": "Done! You can move now. 
                 zip.file(`data/minecraft/tags/functions/load.json`, `{"values": ["bingo:load"]}`);
                 zip.file(`data/minecraft/tags/functions/tick.json`, `{"values": ["bingo:tick"]}`);
 
-                let config_difficulty = 0;
+                let config_difficulty = 2;
                 if (config.difficulty)
                     config_difficulty = config.difficulty;
 
@@ -1535,7 +1535,9 @@ tellraw @a [ { "color": "green", "bold": true, "text": "Done! You can move now. 
 
                 const default_advancement = JSON.parse(fs.readFileSync(`resources/bingo/default_advancement.json`));
 
-                while (difficulties[1] < 7 || difficulties[2] < 5 || difficulties[3] != 4 || difficulties[4] != 2) {
+                while (difficulties[2] < config_difficulty * 3 
+                    && difficulties[3] < config_difficulty * 2
+                    && difficulties[4] < config_difficulty) {
                     difficulties = [0, 0, 0, 0, 0];
                     for (var y = 0; y < 5; y++) {
                         for (var x = 0; x < 6; x++) {
@@ -1557,14 +1559,7 @@ tellraw @a [ { "color": "green", "bold": true, "text": "Done! You can move now. 
 
                             let category = rng.weighted_random(params);
 
-                            let difficulty = rng.weighted_random([
-                                { item: Math.ceil(x / 3), weight: Math.max(10 - config_difficulty, 1) },
-                                { item: Math.ceil(x / 2), weight: Math.max(20 - config_difficulty, 1) },
-                                { item: Math.max(0, x - 2), weight: Math.max(20 - config_difficulty, 1) },
-                                { item: Math.max(0, x - 1), weight: Math.max(30 - config_difficulty * 2, 1) },
-                                { item: x, weight: Math.max(70 - config_difficulty * 4, 1) },
-                                { item: Math.min(4, x + 1), weight: Math.max(10 + config_difficulty, 1) }
-                            ]);
+                            let difficulty = rng.next_int_ranged(0, 4)
 
                             if (category == `nether`)
                                 if (difficulty == 0)
