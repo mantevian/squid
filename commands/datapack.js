@@ -1484,6 +1484,172 @@ tellraw @a [ { "color": "green", "bold": true, "text": "Done! You can move now. 
 
                 start();
                 break;
+
+            case `bingo`:
+                zip.file(`pack.mcmeta`, `{"pack":{"pack_format":6,"description":"Bingo generator by Mante"}}`);
+
+                zip.folder(`data`);
+                zip.folder(`data/bingo`);
+                zip.folder(`data/bingo/functions`);
+                zip.folder(`data/bingo/advancements`);
+                zip.folder(`data/minecraft`);
+                zip.folder(`data/minecraft/tags`);
+                zip.folder(`data/minecraft/tags/functions`);
+
+                zip.file(`data/bingo/advancements/root.json`, `{"display": {"title": {"text": "Bingo"},"description": {"text": "See the items you need to get here","color": "gold"},"icon": {"item": "minecraft:book"},"frame": "task","show_toast": true,"announce_to_chat": false,"hidden": false,"background": "minecraft:textures/block/bricks.png"},"criteria": {"impossible": {"trigger": "minecraft:impossible"}}}`)
+
+                let function_files = await readdir(`resources/bingo/functions`);
+
+                for (let i = 0; i < function_files.length; i++)
+                    zip.file(`data/bingo/functions/${function_files[i]}`, fs.readFileSync(`resources/bingo/functions/${function_files[i]}`));
+
+                zip.file(`data/minecraft/tags/functions/load.json`, `{"values": ["bingo:load"]}`);
+                zip.file(`data/minecraft/tags/functions/tick.json`, `{"values": ["bingo:tick"]}`);
+
+                let default_weight = 15;
+                let nether_weight = 5;
+                let silk_touch_weight = 1;
+                let rare_weight = 0;
+                let ocean_monument_weight = 1;
+                let difficulty = 0;
+
+                if (config.default)
+                    default_weight = config.default;
+
+                if (config.nether)
+                    nether_weight = config.nether;
+
+                if (config.silk_touch)
+                    silk_touch_weight = config.silk_touch;
+
+                if (config.rare)
+                    rare_weight = config.rare;
+
+                if (config.ocean_monument)
+                    ocean_monument_weight = config.ocean_monument;
+
+                if (config.difficulty)
+                    difficulty = config.difficulty;
+
+                const params = [
+                    { item: `default`, weight: default_weight },
+                    { item: `nether`, weight: nether_weight },
+                    { item: `silk_touch`, weight: silk_touch_weight },
+                    { item: `rare`, weight: rare_weight },
+                    { item: `ocean_monument`, weight: ocean_monument_weight }
+                ];
+
+                const items = JSON.parse(fs.readFileSync(`resources/bingo/items.json`));
+
+                items.default[0] = Object.entries(items.default[0]);
+                items.default[1] = Object.entries(items.default[1]);
+                items.default[2] = Object.entries(items.default[2]);
+                items.default[3] = Object.entries(items.default[3]);
+                items.default[4] = Object.entries(items.default[4]);
+                items.nether[0] = Object.entries(items.nether[0]);
+                items.nether[1] = Object.entries(items.nether[1]);
+                items.nether[2] = Object.entries(items.nether[2]);
+                items.nether[3] = Object.entries(items.nether[3]);
+                items.nether[4] = Object.entries(items.nether[4]);
+                items.silk_touch[4] = Object.entries(items.silk_touch[4]);
+                items.end[4] = Object.entries(items.end[4]);
+                items.rare[4] = Object.entries(items.rare[4]);
+                items.ocean_monument[4] = Object.entries(items.ocean_monument[4]);
+
+                var picked_items = [];
+                let difficulties = [0, 0, 0, 0, 0];
+
+                const default_advancement = JSON.parse(fs.readFileSync(`resources/bingo/default_advancement.json`));
+
+                while (difficulties[1] < 7 || difficulties[2] < 5 || difficulties[3] != 4 || difficulties[4] != 2) {
+                    difficulties = [0, 0, 0, 0, 0];
+                    for (var y = 0; y < 5; y++) {
+                        for (var x = 0; x < 6; x++) {
+                            let advancement = default_advancement;
+
+                            if (x == 5) {
+                                advancement =
+                                {
+                                    criteria: {
+                                        impossible: {
+                                            trigger: `minecraft:impossible`
+                                        }
+                                    },
+                                    parent: `bingo:4_${y}`
+                                };
+                                zip.file(`data/bingo/advancements/${x}_${y}.json`, JSON.stringify(advancement));
+                                continue;
+                            }
+
+                            let category = rng.weighted_random(params);
+
+                            let difficulty = rng.weighted_random([
+                                { item: Math.ceil(x / 3), weight: Math.max(10 - difficulty, 1) },
+                                { item: Math.ceil(x / 2), weight: Math.max(20 - difficulty * 2, 1) },
+                                { item: Math.max(0, x - 2), weight: Math.max(20 - difficulty * 2, 1) },
+                                { item: Math.max(0, x - 1), weight: Math.max(30 - difficulty * 3, 1) },
+                                { item: x, weight: 70 },
+                                { item: Math.min(4, x + 1), weight: Math.max(10 + difficulty, 1) }
+                            ]);
+
+                            if (category == `nether`)
+                                if (difficulty == 0)
+                                    difficulty = 1;
+
+                            if (category != `default` && category != `nether`)
+                                difficulty = 4;
+
+                            let item = rng.choice(items[category][difficulty]);
+
+                            while (picked_items.includes(item[1]))
+                                item = rng.choice(items[category][difficulty]);
+
+                            picked_items[y * 5 + x] = item[1];
+                            difficulties[difficulty]++;
+
+                            advancement.display.title.text = item[1];
+                            advancement.display.description.text = `Obtain ${item[1]}. Reward: ${difficulty + 3} points`;
+                            advancement.display.icon.item = item[0];
+
+                            switch (difficulty) {
+                                case 0:
+                                case 1:
+                                case 2:
+                                    advancement.display.frame = `task`;
+                                    break;
+
+                                case 3:
+                                    advancement.display.frame = `goal`;
+                                    break;
+
+                                case 4:
+                                    advancement.display.frame = `challenge`;
+                                    break;
+                            }
+
+                            advancement.criteria.item.conditions.items[0].item = item[0];
+                            advancement.rewards.function = `bingo:add_score_${difficulty + 3}`;
+                            advancement.parent = `bingo:${x - 1}_${y}`;
+                            if (x == 0)
+                                advancement.parent = `bingo:root`;
+
+                            zip.file(`data/bingo/advancements/${x}_${y}.json`, JSON.stringify(advancement));
+                        }
+                    }
+                }
+
+                zip
+                    .generateNodeStream({ type: `nodebuffer`, streamFiles: true })
+                    .pipe(fs.createWriteStream(`bingo.zip`))
+                    .on('finish', function () {
+                        message.channel.send({
+                            files: [{
+                                attachment: `/app/bingo.zip`,
+                                name: `bingo_${seed}.zip`
+                            }]
+                        });
+                    });
+                break;
             default:
                 message.reply(`No such datapack type available.`);
                 return;

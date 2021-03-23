@@ -1,0 +1,33 @@
+{
+    "display": {
+        "title": {
+            "text": ""
+        },
+        "description": {
+            "text": ""
+        },
+        "icon": {
+            "item": ""
+        },
+        "frame": "",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": ""
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": ""
+    },
+    "parent": ""
+}

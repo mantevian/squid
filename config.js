@@ -2,7 +2,7 @@ module.exports = {
     bot_owner_id: "240841342723424256",
     mante_tag: "Mante#6804",
     sputnix_tag: "SputNix#0001",
-    bot_version: "0.3.0-g2",
+    bot_version: "0.4.0-a1",
 
     default_guild_config: {
         level_roles: null,
@@ -67,7 +67,6 @@ module.exports = {
         levelup_emoji: ":trophy:",
         new_role_emoji: ":crown:",
         levelup_message_enabled: true,
-        use_beta_features: false,
         settings: {
             xp_enabled: false,
             xp_cooldown: 60000,

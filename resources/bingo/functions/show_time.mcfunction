@@ -1,0 +1,20 @@
+scoreboard players operation time_seconds bingo_var = time bingo_var
+scoreboard players operation time_seconds bingo_var /= 20 bingo_const
+
+scoreboard players operation time_minutes bingo_var = time_seconds bingo_var
+scoreboard players operation time_minutes bingo_var /= 60 bingo_const
+
+scoreboard players operation time_hours bingo_var = time_minutes bingo_var
+scoreboard players operation time_hours bingo_var /= 60 bingo_const
+
+scoreboard players operation time_seconds bingo_var %= 60 bingo_const
+scoreboard players operation time_minutes bingo_var %= 60 bingo_const
+
+execute if score time_hours bingo_var matches 0..9 if score time_minutes bingo_var matches 0..9 if score time_seconds bingo_var matches 0..9 run title @a actionbar [ { "text": "0" }, { "score": { "name": "time_hours", "objective": "bingo_var" } }, { "text": ":0" }, { "score": { "name": "time_minutes", "objective": "bingo_var" } }, { "text": ":0" }, { "score": { "name": "time_seconds", "objective": "bingo_var" } } ]
+execute if score time_hours bingo_var matches 0..9 if score time_minutes bingo_var matches 0..9 if score time_seconds bingo_var matches 10..99 run title @a actionbar [ { "text": "0" }, { "score": { "name": "time_hours", "objective": "bingo_var" } }, { "text": ":0" }, { "score": { "name": "time_minutes", "objective": "bingo_var" } }, { "text": ":" }, { "score": { "name": "time_seconds", "objective": "bingo_var" } } ]
+execute if score time_hours bingo_var matches 0..9 if score time_minutes bingo_var matches 10..99 if score time_seconds bingo_var matches 0..9 run title @a actionbar [ { "text": "0" }, { "score": { "name": "time_hours", "objective": "bingo_var" } }, { "text": ":" }, { "score": { "name": "time_minutes", "objective": "bingo_var" } }, { "text": ":0" }, { "score": { "name": "time_seconds", "objective": "bingo_var" } } ]
+execute if score time_hours bingo_var matches 0..9 if score time_minutes bingo_var matches 10..99 if score time_seconds bingo_var matches 10..99 run title @a actionbar [ { "text": "0" }, { "score": { "name": "time_hours", "objective": "bingo_var" } }, { "text": ":" }, { "score": { "name": "time_minutes", "objective": "bingo_var" } }, { "text": ":" }, { "score": { "name": "time_seconds", "objective": "bingo_var" } } ]
+execute if score time_hours bingo_var matches 10..99 if score time_minutes bingo_var matches 0..9 if score time_seconds bingo_var matches 0..9 run title @a actionbar [ { "text": "" }, { "score": { "name": "time_hours", "objective": "bingo_var" } }, { "text": ":0" }, { "score": { "name": "time_minutes", "objective": "bingo_var" } }, { "text": ":0" }, { "score": { "name": "time_seconds", "objective": "bingo_var" } } ]
+execute if score time_hours bingo_var matches 10..99 if score time_minutes bingo_var matches 0..9 if score time_seconds bingo_var matches 10..99 run title @a actionbar [ { "text": "" }, { "score": { "name": "time_hours", "objective": "bingo_var" } }, { "text": ":0" }, { "score": { "name": "time_minutes", "objective": "bingo_var" } }, { "text": ":" }, { "score": { "name": "time_seconds", "objective": "bingo_var" } } ]
+execute if score time_hours bingo_var matches 10..99 if score time_minutes bingo_var matches 10..99 if score time_seconds bingo_var matches 0..9 run title @a actionbar [ { "text": "" }, { "score": { "name": "time_hours", "objective": "bingo_var" } }, { "text": ":" }, { "score": { "name": "time_minutes", "objective": "bingo_var" } }, { "text": ":0" }, { "score": { "name": "time_seconds", "objective": "bingo_var" } } ]
+execute if score time_hours bingo_var matches 10..99 if score time_minutes bingo_var matches 10..99 if score time_seconds bingo_var matches 10..99 run title @a actionbar [ { "text": "" }, { "score": { "name": "time_hours", "objective": "bingo_var" } }, { "text": ":" }, { "score": { "name": "time_minutes", "objective": "bingo_var" } }, { "text": ":" }, { "score": { "name": "time_seconds", "objective": "bingo_var" } } ]
